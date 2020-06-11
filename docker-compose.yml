@@ -1,0 +1,6 @@
+version: '3'
+services:
+  helloworldservice11:
+    build: helloworldservice11
+    ports:
+      - "8080:8080"
