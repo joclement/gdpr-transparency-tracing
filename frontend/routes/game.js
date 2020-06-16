@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 
 /*
-//todo: add mongoose for session save
+//t_odo: add mongoose for session save
 router.post('/saveScore', function (req, res, next) {
     if(httpConsent.consentGiven(req, ["coo", "fcn"])) {
         if (req.session.points) {
