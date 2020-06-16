@@ -9,7 +9,6 @@ body{
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 7fr 2fr 1fr;
-    background-color: darkslategrey;
     grid-template-areas:
             "header header header header"
             "nav content aside .";
@@ -23,7 +22,6 @@ body{
     padding: 2px;
     display: grid;
     grid-template-columns: 2fr 6fr 2fr 1fr;
-    background-color: darkslategrey;
     grid-template-areas:
             "header header header header"
             "nav nav nav nav"

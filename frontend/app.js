@@ -6,11 +6,11 @@ process.on('unhandledRejection', (reason, p) => {
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const morgan = require('morgan');
+//const morgan = require('morgan');
 
 const favicon = require('serve-favicon');
 
-const httpConsent = require('@schnuri/http-consent');
+//const httpConsent = require('@schnuri/http-consent');
 
 //const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -76,11 +76,12 @@ app.set('view engine', 'pug');
 app.use(favicon(path.join(__dirname, 'public', 'images', 'cookie-96.ico') ) );
 
 
-morgan.token('dataCollected', function (req, res) {return res.locals.dataCollectionLog.join(",");} );
+/*
 //app.use(morgan('dev'));
 app.use(morgan(":method :url :status :response-time ms - :res[content-length] -- " +
     "accept-privacy :req[x-accept-privacy] -- " +
     "CollectedData :dataCollected -- privacy response header :res[x-privacy]"));
+ */
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 //app.use(cookieParser());

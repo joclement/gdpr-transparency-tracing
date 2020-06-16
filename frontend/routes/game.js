@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const httpConsent  = require("@schnuri/http-consent");
 
 
 
@@ -9,26 +8,12 @@ const httpConsent  = require("@schnuri/http-consent");
 
 
 router.get('/', function(req, res, next) {
-
-    if (httpConsent.consentGiven(req, ["coo", "trd"])) {
-        res.locals.dataCollectionLog.push("Embedded gTag");
-        res.render('game');
-    } else {
-        console.log("requesting consent");
-
-        httpConsent.askForConsent(
-            res,
-            "We'd like to let google and others track you to improve our services",
-            "PProtocol Inc.",
-            ["coo", "trd"]
-        );
-
-        res.render('gameWithoutGTag');
-    }
+    res.render('game');
 });
 
 
 
+/*
 //todo: add mongoose for session save
 router.post('/saveScore', function (req, res, next) {
     if(httpConsent.consentGiven(req, ["coo", "fcn"])) {
@@ -60,5 +45,6 @@ router.get('/saveScore', function(req, res, next){
         res.status(406).send("Please give the required consent");
     }
 });
+*/
 
 module.exports = router;

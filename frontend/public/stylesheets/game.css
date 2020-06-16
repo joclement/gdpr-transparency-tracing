@@ -48,20 +48,20 @@
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 7fr 2fr 1fr;
-        background-color: darkslategrey;
+        background-color: lightgrey;
         grid-template-areas:
                 "header header header header"
                 "nav game-container score-container .";
     }
 }
 
-@media (max-width: 99x9px) {
+@media (max-width: 999px) {
     #game-website {
         width: 90%;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 2fr 6fr 2fr 1fr;
-        background-color: darkslategrey;
+        background-color: lightgrey;
         grid-template-areas:
                 "header header header header"
                 "nav nav nav nav"
