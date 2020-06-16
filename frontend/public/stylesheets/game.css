@@ -1,0 +1,79 @@
+/*.container{
+    box-sizing: border-box;
+    padding : 0px;
+    margin : 0px;
+
+}*/
+
+
+#score-container{
+    grid-area: score-container;
+    text-align: left;
+    border: dashed grey 1px;
+}
+
+#game-container-container {
+    box-sizing: border-box;
+    grid-area: game-container;
+
+    font-size : 0;
+    border: dashed grey 1px;
+    margin: 0 5px 5px;
+}
+
+#game-container {
+    width : 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    background-color: black;
+}
+
+#endScreen, #pauseScreen {
+    font-size: large;
+    font-family: sans-serif;
+    color: red;
+    text-align: center;
+}
+
+
+.gamecell {
+    display: inline-block;
+    background-color: black;
+}
+
+@media (min-width: 1000px) {
+    #game-website {
+        width: 900px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 7fr 2fr 1fr;
+        background-color: darkslategrey;
+        grid-template-areas:
+                "header header header header"
+                "nav game-container score-container .";
+    }
+}
+
+@media (max-width: 99x9px) {
+    #game-website {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr 1fr;
+        background-color: darkslategrey;
+        grid-template-areas:
+                "header header header header"
+                "nav nav nav nav"
+                "game-container game-container game-container score-container";
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+}
