@@ -4,6 +4,10 @@ services:
     build: helloworldservice11
     ports:
       - "8080:8080"
+  highscoreservice11:
+    build: highscoreservice11
+    ports:
+      - "9090:9090"
   jaeger:
     image: jaegertracing/all-in-one:1.16
     ports:

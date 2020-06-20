@@ -19,9 +19,59 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/npm-shrinkwrap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="removed more httpconsent (C3PO) related stuff, changed background color">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_3_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/service/HighscoreService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/test/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/peng-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/peng-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/template-service/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,39 +106,36 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/highscoreservice11" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/helloworldservice11" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/helloworldservice11" />
       <recent name="$PROJECT_DIR$/helloworldservice11/target/classes/berlin/tu/peng/tracingproject/helloworldservice11" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/highscoreservice11" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/helloworldservice11" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="mvnw (1)" type="ShConfigurationType" temporary="true">
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/helloworldservice11/mvnw" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/highscoreservice11/mvnw" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/helloworldservice11/target/classes/berlin/tu/peng/tracingproject/helloworldservice11" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mvnw" type="ShConfigurationType" temporary="true">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/helloworldservice11/mvnw" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/helloworldservice11" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/highscoreservice11" />
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="/bin/zsh" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,6 +144,13 @@
     <configuration name="Helloworldservice11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="helloworldservice11" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="berlin.tu.peng.tracingproject.helloworldservice11.Helloworldservice11Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Highscoreservice11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="highscoreservice11" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="berlin.tu.peng.tracingproject.highscoreservice11.Highscoreservice11Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,6 +171,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="highscoreservice11/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="highscoreservice11/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -129,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.helloworldservice11/Dockerfile" />
-        <item itemvalue="Shell Script.mvnw" />
+        <item itemvalue="Docker.highscoreservice11/Dockerfile" />
         <item itemvalue="Shell Script.mvnw (1)" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="Docker.helloworldservice11/Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -151,6 +213,7 @@
       <workItem from="1591857078870" duration="2847000" />
       <workItem from="1592215671086" duration="624000" />
       <workItem from="1592316908771" duration="2523000" />
+      <workItem from="1592654669010" duration="1772000" />
     </task>
     <task id="LOCAL-00001" summary="first micoservice running&#10;maven instal required, working with intellij&#10;test localhost:8080/helloworld">
       <created>1591860865248</created>
@@ -194,66 +257,80 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="358" y="79" key="#Helloworldservice11Application/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591698826384" />
+    <state x="773" y="-806" key="#com.intellij.ide.util.MemberChooser" timestamp="1592655351932">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="773" y="-806" key="#com.intellij.ide.util.MemberChooser/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592655351932" />
     <state x="267" y="-1057" key="CommitChangelistDialog2" timestamp="1592318744216">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
     <state x="267" y="-1057" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592318744216" />
     <state x="200" y="23" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860864585" />
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom" timestamp="1592320813609">
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom" timestamp="1592656496346">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813609" />
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496346" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438714" />
-    <state width="1878" height="231" key="GridCell.Tab.0.center" timestamp="1592320813607">
+    <state width="1294" height="290" key="GridCell.Tab.0.center" timestamp="1592656496345">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813607" />
+    <state width="1294" height="290" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496345" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072731" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438710" />
-    <state width="1878" height="231" key="GridCell.Tab.0.left" timestamp="1592320813607">
+    <state width="1294" height="290" key="GridCell.Tab.0.left" timestamp="1592656496344">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813607" />
+    <state width="1294" height="290" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496344" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072730" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438704" />
-    <state width="1878" height="231" key="GridCell.Tab.0.right" timestamp="1592320813608">
+    <state width="1294" height="290" key="GridCell.Tab.0.right" timestamp="1592656496345">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813608" />
+    <state width="1294" height="290" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496345" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072732" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438712" />
-    <state width="1398" height="231" key="GridCell.Tab.1.bottom" timestamp="1591901438719">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom" timestamp="1592656496349">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496349" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072736" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438719" />
-    <state width="1398" height="231" key="GridCell.Tab.1.center" timestamp="1591901438717">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.center" timestamp="1592656496348">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496348" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072734" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438717" />
-    <state width="1398" height="231" key="GridCell.Tab.1.left" timestamp="1591901438715">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.left" timestamp="1592656496347">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496347" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438715" />
-    <state width="1398" height="231" key="GridCell.Tab.1.right" timestamp="1591901438718">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.right" timestamp="1592656496348">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496348" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072735" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438718" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1591860873462">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860873462" />
-    <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592317411066">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592651056820">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592651056820" />
     <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317411066" />
-    <state x="143" y="124" key="new project wizard" timestamp="1592317602334">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="667" y="-896" width="586" height="735" key="find.popup" timestamp="1592656183701">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="667" y="-896" width="586" height="735" key="find.popup/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656183701" />
+    <state x="191" y="-935" key="new project wizard" timestamp="1592653013950">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="191" y="-935" key="new project wizard/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592653013950" />
     <state x="143" y="124" key="new project wizard/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317602334" />
   </component>
 </project>
