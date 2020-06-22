@@ -19,59 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="removed more httpconsent (C3PO) related stuff, changed background color">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_36.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_36.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_3_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/service/HighscoreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highscoreservice11/src/test/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/peng-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/peng-project.iml" afterDir="false" />
+    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="Started Service for Managing Highscores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/template-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +40,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -213,7 +172,9 @@
       <workItem from="1591857078870" duration="2847000" />
       <workItem from="1592215671086" duration="624000" />
       <workItem from="1592316908771" duration="2523000" />
-      <workItem from="1592654669010" duration="1772000" />
+      <workItem from="1592654669010" duration="2019000" />
+      <workItem from="1592829715286" duration="3260000" />
+      <workItem from="1592834435876" duration="1559000" />
     </task>
     <task id="LOCAL-00001" summary="first micoservice running&#10;maven instal required, working with intellij&#10;test localhost:8080/helloworld">
       <created>1591860865248</created>
@@ -229,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592318744603</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started Service for Managing Highscores">
+      <created>1592656734240</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592656734241</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +218,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first micoservice running&#10;maven instal required, working with intellij&#10;test localhost:8080/helloworld" />
     <MESSAGE value="added frontend and started to remove unimportant stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="added frontend and started to remove unimportant stuff" />
+    <MESSAGE value="Started Service for Managing Highscores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Service for Managing Highscores" />
   </component>
   <component name="WindowStateProjectService">
     <state x="358" y="79" key="#Helloworldservice11Application" timestamp="1591698826384">
@@ -266,62 +235,63 @@
     </state>
     <state x="267" y="-1057" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592318744216" />
     <state x="200" y="23" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860864585" />
-    <state width="1294" height="290" key="GridCell.Tab.0.bottom" timestamp="1592656496346">
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom" timestamp="1592656756195">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496346" />
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756195" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438714" />
-    <state width="1294" height="290" key="GridCell.Tab.0.center" timestamp="1592656496345">
+    <state width="1294" height="290" key="GridCell.Tab.0.center" timestamp="1592656756194">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496345" />
+    <state width="1294" height="290" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756194" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072731" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438710" />
-    <state width="1294" height="290" key="GridCell.Tab.0.left" timestamp="1592656496344">
+    <state width="1294" height="290" key="GridCell.Tab.0.left" timestamp="1592656756193">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496344" />
+    <state width="1294" height="290" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756193" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072730" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438704" />
-    <state width="1294" height="290" key="GridCell.Tab.0.right" timestamp="1592656496345">
+    <state width="1294" height="290" key="GridCell.Tab.0.right" timestamp="1592656756194">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496345" />
+    <state width="1294" height="290" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756194" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072732" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438712" />
-    <state width="1294" height="290" key="GridCell.Tab.1.bottom" timestamp="1592656496349">
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom" timestamp="1592656756197">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496349" />
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756197" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072736" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438719" />
-    <state width="1294" height="290" key="GridCell.Tab.1.center" timestamp="1592656496348">
+    <state width="1294" height="290" key="GridCell.Tab.1.center" timestamp="1592656756196">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496348" />
+    <state width="1294" height="290" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756196" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072734" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438717" />
-    <state width="1294" height="290" key="GridCell.Tab.1.left" timestamp="1592656496347">
+    <state width="1294" height="290" key="GridCell.Tab.1.left" timestamp="1592656756195">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496347" />
+    <state width="1294" height="290" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756195" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438715" />
-    <state width="1294" height="290" key="GridCell.Tab.1.right" timestamp="1592656496348">
+    <state width="1294" height="290" key="GridCell.Tab.1.right" timestamp="1592656756196">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1294" height="290" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656496348" />
+    <state width="1294" height="290" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756196" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072735" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438718" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1591860873462">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860873462" />
-    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592651056820">
+    <state x="427" y="-842" key="Vcs.Push.Dialog.v2" timestamp="1592656745152">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592651056820" />
+    <state x="427" y="-842" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656745152" />
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860873462" />
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592834193478">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592834193478" />
     <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317411066" />
     <state x="667" y="-896" width="586" height="735" key="find.popup" timestamp="1592656183701">
       <screen x="0" y="-1057" width="1920" height="1057" />
