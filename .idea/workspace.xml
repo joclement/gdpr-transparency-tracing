@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/npm-shrinkwrap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+    <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="[Bugfix] highscores service now reachable on port 8082">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="highscoreservice" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -59,7 +64,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -74,21 +79,10 @@
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="mvnw (1)" type="ShConfigurationType" temporary="true">
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/helloworldservice11/mvnw" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/highscoreservice11/mvnw" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/helloworldservice11/target/classes/berlin/tu/peng/tracingproject/helloworldservice11" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="/bin/zsh" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="mvnw" type="ShConfigurationType" temporary="true">
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/helloworldservice11/mvnw" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/helloworldservice11" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/highscoreservice11" />
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="/bin/zsh" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,6 +111,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="highscoreservice11/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="highscoreservice11/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -129,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.helloworldservice11/Dockerfile" />
-        <item itemvalue="Shell Script.mvnw" />
         <item itemvalue="Shell Script.mvnw (1)" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="Docker.highscoreservice11/Dockerfile" />
+        <item itemvalue="Docker.helloworldservice11/Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -194,6 +196,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="358" y="79" key="#Helloworldservice11Application/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591698826384" />
+    <state x="793" y="-807" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog" timestamp="1592836720796">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="793" y="-807" key="#com.intellij.ide.ui.customization.CustomizableActionsPanel.FindAvailableActionsDialog/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592836720796" />
     <state x="267" y="-1057" key="CommitChangelistDialog2" timestamp="1592318744216">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
@@ -243,6 +249,10 @@
     </state>
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072735" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438718" />
+    <state x="469" y="-890" key="SettingsEditor" timestamp="1592836722378">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="469" y="-890" key="SettingsEditor/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592836722378" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1591860873462">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -251,6 +261,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317411066" />
+    <state x="714" y="-809" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592836751998">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="714" y="-809" key="git4idea.branch.GitSmartOperationDialog/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592836751998" />
     <state x="143" y="124" key="new project wizard" timestamp="1592317602334">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
