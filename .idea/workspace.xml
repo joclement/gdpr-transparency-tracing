@@ -61,20 +61,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/highscoreservice11" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/helloworldservice11" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/helloworldservice11" />
       <recent name="$PROJECT_DIR$/helloworldservice11/target/classes/berlin/tu/peng/tracingproject/helloworldservice11" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/highscoreservice11" />
+      <recent name="$PROJECT_DIR$/frontend" />
+      <recent name="$PROJECT_DIR$/helloworldservice11" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="mvnw (1)" type="ShConfigurationType" temporary="true">
@@ -91,6 +99,13 @@
     <configuration name="Helloworldservice11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="helloworldservice11" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="berlin.tu.peng.tracingproject.helloworldservice11.Helloworldservice11Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Highscoreservice11Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="highscoreservice11" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="berlin.tu.peng.tracingproject.highscoreservice11.Highscoreservice11Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,6 +168,9 @@
       <workItem from="1591857078870" duration="2847000" />
       <workItem from="1592215671086" duration="624000" />
       <workItem from="1592316908771" duration="2523000" />
+      <workItem from="1592654669010" duration="2019000" />
+      <workItem from="1592829715286" duration="3260000" />
+      <workItem from="1592834435876" duration="1559000" />
     </task>
     <task id="LOCAL-00001" summary="first micoservice running&#10;maven instal required, working with intellij&#10;test localhost:8080/helloworld">
       <created>1591860865248</created>
@@ -168,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592318744603</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started Service for Managing Highscores">
+      <created>1592656734240</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592656734241</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +214,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first micoservice running&#10;maven instal required, working with intellij&#10;test localhost:8080/helloworld" />
     <MESSAGE value="added frontend and started to remove unimportant stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="added frontend and started to remove unimportant stuff" />
+    <MESSAGE value="Started Service for Managing Highscores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Service for Managing Highscores" />
   </component>
   <component name="WindowStateProjectService">
     <state x="358" y="79" key="#Helloworldservice11Application" timestamp="1591698826384">
@@ -205,69 +231,80 @@
     </state>
     <state x="267" y="-1057" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592318744216" />
     <state x="200" y="23" key="CommitChangelistDialog2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860864585" />
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom" timestamp="1592320813609">
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom" timestamp="1592656756195">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813609" />
+    <state width="1294" height="290" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756195" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438714" />
-    <state width="1878" height="231" key="GridCell.Tab.0.center" timestamp="1592320813607">
+    <state width="1294" height="290" key="GridCell.Tab.0.center" timestamp="1592656756194">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813607" />
+    <state width="1294" height="290" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756194" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072731" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438710" />
-    <state width="1878" height="231" key="GridCell.Tab.0.left" timestamp="1592320813607">
+    <state width="1294" height="290" key="GridCell.Tab.0.left" timestamp="1592656756193">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813607" />
+    <state width="1294" height="290" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756193" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072730" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438704" />
-    <state width="1878" height="231" key="GridCell.Tab.0.right" timestamp="1592320813608">
+    <state width="1294" height="290" key="GridCell.Tab.0.right" timestamp="1592656756194">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
-    <state width="1878" height="231" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592320813608" />
+    <state width="1294" height="290" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756194" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072732" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438712" />
-    <state width="1398" height="231" key="GridCell.Tab.1.bottom" timestamp="1591901438719">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom" timestamp="1592656756197">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756197" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072736" />
     <state width="1398" height="231" key="GridCell.Tab.1.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438719" />
-    <state width="1398" height="231" key="GridCell.Tab.1.center" timestamp="1591901438717">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.center" timestamp="1592656756196">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756196" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072734" />
     <state width="1398" height="231" key="GridCell.Tab.1.center/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438717" />
-    <state width="1398" height="231" key="GridCell.Tab.1.left" timestamp="1591901438715">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.left" timestamp="1592656756195">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756195" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072733" />
     <state width="1398" height="231" key="GridCell.Tab.1.left/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438715" />
-    <state width="1398" height="231" key="GridCell.Tab.1.right" timestamp="1591901438718">
-      <screen x="0" y="23" width="2560" height="1417" />
+    <state width="1294" height="290" key="GridCell.Tab.1.right" timestamp="1592656756196">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="1294" height="290" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656756196" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591858072735" />
     <state width="1398" height="231" key="GridCell.Tab.1.right/0.23.2560.1417@0.23.2560.1417" timestamp="1591901438718" />
     <state x="469" y="-890" key="SettingsEditor" timestamp="1592836722378">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
     <state x="469" y="-890" key="SettingsEditor/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592836722378" />
-    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1591860873462">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="427" y="-842" key="Vcs.Push.Dialog.v2" timestamp="1592656745152">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="427" y="-842" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656745152" />
     <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1591860873462" />
-    <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592317411066">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592834193478">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="697" y="-624" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592834193478" />
     <state x="523" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317411066" />
     <state x="714" y="-809" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592836751998">
       <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
     <state x="714" y="-809" key="git4idea.branch.GitSmartOperationDialog/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592836751998" />
-    <state x="143" y="124" key="new project wizard" timestamp="1592317602334">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="667" y="-896" width="586" height="735" key="find.popup" timestamp="1592656183701">
+      <screen x="0" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="667" y="-896" width="586" height="735" key="find.popup/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592656183701" />
+    <state x="191" y="-935" key="new project wizard" timestamp="1592653013950">
+      <screen x="0" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="191" y="-935" key="new project wizard/0.-1057.1920.1057/0.23.1440.877@0.-1057.1920.1057" timestamp="1592653013950" />
     <state x="143" y="124" key="new project wizard/0.-1057.1920.1057/0.23.1440.877@0.23.1440.877" timestamp="1592317602334" />
   </component>
 </project>

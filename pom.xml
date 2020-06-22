@@ -8,5 +8,6 @@
 
     <modules>
         <module>helloworldservice11</module>
+        <module>highscoreservice11</module>
     </modules>
 </project>
