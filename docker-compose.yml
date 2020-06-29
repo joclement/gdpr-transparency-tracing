@@ -8,7 +8,11 @@ services:
     build: highscoreservice11
     ports:
       - "8082:8082"
+    environment:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
   jaeger:
+    container_name: jaeger
     image: jaegertracing/all-in-one:1.16
     ports:
       - "5775:5775/udp"

@@ -22,6 +22,11 @@
     <list default="true" id="854c0b25-0e4a-4126-a096-deeaca4f1490" name="Default Changelist" comment="[Bugfix] highscores service now reachable on port 8082">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworldservice11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/helloworldservice11/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/Highscoreservice11Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/highscoreservice11/src/main/java/berlin/tu/peng/tracingproject/highscoreservice11/api/HighscoreController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
