@@ -1,9 +1,26 @@
 version: '3'
 services:
+  uaa:
+    image: scg-demo-uaa:latest
+    container_name: uaa
+    expose:
+      - "8090"
+    ports:
+      - "8090:8090"
+  gateway:
+    image: scg-demo-security-gateway:latest
+    container_name: gateway
+    expose:
+        - "8080"
+    ports:
+        - "8080:8080"
+    depends_on:
+        - highscoreservice11
+        - uaa
   helloworldservice11:
     build: helloworldservice11
     ports:
-      - "8080:8080"
+      - "8081:8081"
   highscoreservice11:
     build: highscoreservice11
     ports:

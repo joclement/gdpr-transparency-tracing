@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="helloworldservice11" />
         <module name="highscoreservice11" />
+        <module name="securitygateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="helloworldservice11" target="11" />
       <module name="highscoreservice11" target="11" />
       <module name="peng-project" target="1.5" />
+      <module name="securitygateway" target="1.8" />
       <module name="userservice11" target="1.5" />
     </bytecodeTargetLevel>
   </component>
@@ -21,6 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="helloworldservice11" options="-parameters" />
       <module name="highscoreservice11" options="-parameters" />
+      <module name="securitygateway" options="-parameters" />
       <module name="userservice11" options="-parameters" />
     </option>
   </component>
