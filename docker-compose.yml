@@ -1,9 +1,11 @@
 version: '3'
+
 services:
   helloworldservice11:
     build: helloworldservice11
     ports:
       - "8080:8080"
+
   highscoreservice11:
     build: highscoreservice11
     ports:
@@ -11,6 +13,7 @@ services:
     environment:
       - JAEGER_AGENT_HOST=jaeger
       - JAEGER_AGENT_PORT=6831
+
   jaeger:
     container_name: jaeger
     image: jaegertracing/all-in-one:1.16
