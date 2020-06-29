@@ -22,15 +22,19 @@ public class GatewayApplication {
     @Autowired
     private TokenRelayGatewayFilterFactory filterFactory;
 
-    @Bean
+/*    @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("resource", r -> r.path("/resource")
+                .route("highscores", r -> r.path("/game/highscores")
                         .filters(f -> f.filters(filterFactory.apply())
                                 .removeRequestHeader("Cookie")) // Prevents cookie being sent downstream
-                        .uri("http://resource:9000")) // Taking advantage of docker naming
+                        .uri("http://highscores:8082")) // Taking advantage of docker naming
+                .route("helloworld", r -> r.path("/helloworld")
+                        .filters(f -> f.filters(filterFactory.apply())
+                                .removeRequestHeader("Cookie"))
+                        .uri("http://helloworld:8081"))
                 .build();
-    }
+    }*/
 
     @GetMapping("/")
     public String index(Model model,

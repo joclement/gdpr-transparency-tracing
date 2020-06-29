@@ -34,13 +34,20 @@ spring:
             user-info-uri: http://uaa:8090/uaa/userinfo
             user-name-attribute: sub
             jwk-set-uri: http://uaa:8090/uaa/token_keys
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: resource
-#          uri: http://resource:9000
-#          predicates:
-#            - Path=/resource
-#          filters:
-#            - TokenRelay=
-#            - RemoveRequestHeader=Cookie
+  cloud:
+    gateway:
+      routes:
+        - id: highscores
+          uri: http://highscores:8082
+          predicates:
+            - Path=/game/highscores
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
+        - id: helloworld
+          uri: http://helloworld:8081
+          predicates:
+            - Path=/helloworld
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
