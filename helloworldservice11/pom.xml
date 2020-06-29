@@ -49,6 +49,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>io.jaegertracing</groupId>
+			<artifactId>jaeger-client</artifactId>
+			<version>0.35.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>

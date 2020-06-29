@@ -5,6 +5,9 @@ services:
     build: helloworldservice11
     ports:
       - "8080:8080"
+    environment:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
 
   highscoreservice11:
     build: highscoreservice11
