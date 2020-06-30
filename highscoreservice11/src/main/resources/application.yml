@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 8082
 
 spring:
   security:
@@ -8,13 +8,13 @@ spring:
         jwt:
           jwk-set-uri: http://uaa:8090/uaa/token_keys
   datasource:
-    url: jdbc:postgresql://localhost:5432
+    url: jdbc:postgresql://db:5432/postgres
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: example
   jpa:
-    properties.hibrnate.dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate.ddl-auto:
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: create
 
 
 logging:
