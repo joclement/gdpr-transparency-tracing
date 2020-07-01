@@ -30,7 +30,6 @@ public class HighscoreController {
         span.setTag("purpose", "service fullfilment");
         span.finish();
 
-
         System.out.println(jwt.getClaims().get("user_name"));
         return highscoreService.getHighscores();
     }
