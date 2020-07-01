@@ -2,7 +2,7 @@ version: '3'
 
 services:
   uaa:
-    image: scg-demo-uaa:latest
+    build: uaa
     container_name: uaa
     expose:
       - "8090"
@@ -10,7 +10,7 @@ services:
       - "8090:8090"
 
   gateway:
-    image: scg-demo-security-gateway:latest
+    build: security-gateway
     container_name: gateway
     expose:
         - "8080"
