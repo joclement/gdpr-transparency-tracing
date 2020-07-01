@@ -11,13 +11,15 @@ import io.opentracing.Span;
 import io.opentracing.Tracer;
 
 
+import java.util.List;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 public class HighscoreController {
 
-    private HighscoreService highscoreService;
-    private Tracer tracer;
+    private final HighscoreService highscoreService;
+    private final Tracer tracer;
 
     public HighscoreController(Tracer tracer, HighscoreService highscoreService) {
         this.highscoreService = highscoreService;
@@ -25,13 +27,17 @@ public class HighscoreController {
     }
 
     @GetMapping(value = "/game/highscores", produces = APPLICATION_JSON_VALUE)
-    public Iterable<HighscoreModel> getHighscores(@AuthenticationPrincipal Jwt jwt ){
+    public List<HighscoreModel> getHighscores(@AuthenticationPrincipal Jwt jwt ){
         Span span = tracer.buildSpan("get highscore").start();
         span.setTag("purpose", "service fullfilment");
         span.finish();
 
 
         System.out.println(jwt.getClaims().get("user_name"));
-        return highscoreService.getHighscores();
+
+        final List<HighscoreModel> result = highscoreService.getHighscores();
+        result.forEach(item -> System.out.println(item.getId()));
+
+        return result;
     }
 }

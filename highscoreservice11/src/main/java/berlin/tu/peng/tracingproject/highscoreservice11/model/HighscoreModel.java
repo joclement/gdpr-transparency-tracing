@@ -12,4 +12,20 @@ public class HighscoreModel {
     @Id
     private UUID id;
     private Integer highscore;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Integer getHighscore() {
+        return highscore;
+    }
+
+    public void setHighscore(Integer highscore) {
+        this.highscore = highscore;
+    }
 }

@@ -20,7 +20,7 @@ public class HighscoreService {
     }
 
     @Transactional(readOnly = true)
-    public Iterable<HighscoreModel> getHighscores(){
+    public List<HighscoreModel> getHighscores(){
         return userRepository.findAll();
     }
 }

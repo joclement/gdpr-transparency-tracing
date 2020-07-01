@@ -3,6 +3,7 @@ function createGame({rowCount: rowCount}) {
     let gameField;
     let personalBest;
     let currentScore;
+    let overallHighscore;
 
     let cellwidth = Math.floor(100 / rowCount) + "%";
     let cellheight = cellwidth;
@@ -55,6 +56,7 @@ function createGame({rowCount: rowCount}) {
         container = document.getElementById("game-container");
         personalBest = document.getElementById("personal-best-points");
         currentScore = document.getElementById("current-score-points");
+        overallHighscore = document.getElementById("overall-highscore-points");
 
         gameField = document.createElement("div");
         gameField.id = "game-field";
@@ -67,7 +69,8 @@ function createGame({rowCount: rowCount}) {
         gameField.style.bottom = "0";
 
 
-        getSavedPoints();
+        //getSavedPoints(); todo add when spring boot backend is ready
+        getHighscore();
 
 
         for (let i = 0; i < rowCount; i++) {
@@ -95,7 +98,7 @@ function createGame({rowCount: rowCount}) {
     }
 
     function setSnake({x: xValue, y: yValue}) {
-        if(! gameValues.snake.find(snakeElem => snakeElem.x === xValue && snakeElem.y === yValue)){       //ist das schön?
+        if (!gameValues.snake.find(snakeElem => snakeElem.x === xValue && snakeElem.y === yValue)) {       //ist das schön?
             gameValues.snake.push({x: xValue, y: yValue});
         }
         paintCell({x: xValue, y: yValue, color: "red"});
@@ -104,7 +107,7 @@ function createGame({rowCount: rowCount}) {
     function startGame({x: startValueX, y: startValueY}) {
         createGraphics();
         setSnake({x: startValueX, y: startValueY});
-        if(gameValues.snake.length > 1){
+        if (gameValues.snake.length > 1) {
             repaintSnake();
         }
         generateFood();
@@ -116,7 +119,8 @@ function createGame({rowCount: rowCount}) {
                     clearInterval(snakeInterval);
                     endGame();
 
-                } if (e instanceof GamePauseException) {
+                }
+                if (e instanceof GamePauseException) {
                     clearInterval(snakeInterval);
                     pauseGame();
                 } else {
@@ -141,11 +145,10 @@ function createGame({rowCount: rowCount}) {
 
         paintCell(Object.assign({color: "red"}, gameValues.snake[0]));
         paintCell(Object.assign({color: "darkred"}, gameValues.snake[1]));
-;
         addPoints({additionalPoints: -1});
     }
 
-    function repaintSnake(){
+    function repaintSnake() {
         gameValues.snake.forEach(snakePart => paintCell(Object.assign({color: "red"}, snakePart)));
     }
 
@@ -171,25 +174,25 @@ function createGame({rowCount: rowCount}) {
     }
 
     function checkForGamePauseRequested() {
-        if(gameValues.gamePauseRequested){
+        if (gameValues.gamePauseRequested) {
             gameValues.gamePauseRequested = false;
-            throw new GamePauseException("GamePauseRequested",gameValues.points);
+            throw new GamePauseException("GamePauseRequested", gameValues.points);
         }
 
     }
 
-    function xAndYAreInArray({x: x, y: y, array: array}){
-        return ! array.every( arrayPart => ((arrayPart.x !== x) || (arrayPart.y !== y)) );
+    function xAndYAreInArray({x: x, y: y, array: array}) {
+        return !array.every(arrayPart => ((arrayPart.x !== x) || (arrayPart.y !== y)));
     }
 
     function checkForBiteItself({x: checkX, y: checkY}) {
-        if( xAndYAreInArray({x: checkX, y: checkY, array: gameValues.snake}) ){
+        if (xAndYAreInArray({x: checkX, y: checkY, array: gameValues.snake})) {
             throw new GameLostException("Congratulations! You got " + gameValues.points + " points!", gameValues.points);
         }
     }
 
     function checkForFood({x: checkX, y: checkY}) {
-        if( xAndYAreInArray({x: checkX, y: checkY, array: gameValues.foodList}) ){
+        if (xAndYAreInArray({x: checkX, y: checkY, array: gameValues.foodList})) {
             console.log("found food");
             deleteFood({x: checkX, y: checkY});
             addLength();
@@ -209,7 +212,7 @@ function createGame({rowCount: rowCount}) {
     }
 
     function generateFood(numberOfTries = 0) {          //todo: ein bisschen schäbig, lieber abbruchbedingung woanders!
-        if (numberOfTries > 20){
+        if (numberOfTries > 20) {
             console.log("tried to often to generate food");
             return;
         }
@@ -218,9 +221,9 @@ function createGame({rowCount: rowCount}) {
         let foodY = Math.round(Math.random() * (gameValues.rowCount - 1));
 
 
-        if( xAndYAreInArray({x: foodX, y: foodY, array: gameValues.snake})){
+        if (xAndYAreInArray({x: foodX, y: foodY, array: gameValues.snake})) {
             generateFood(numberOfTries + 1);
-        }else {
+        } else {
             gameValues.foodList.push({x: foodX, y: foodY});
             paintCell({x: foodX, y: foodY, color: "green"});
             console.log("New food at X:" + foodX + ", Y:" + foodY);
@@ -245,7 +248,7 @@ function createGame({rowCount: rowCount}) {
     }
 
     function directionChange(e) {
-        if(gameValues.directionChanged) return;
+        if (gameValues.directionChanged) return;
         gameValues.directionChanged = true;
         e = e || window.event;
         let keynum = e.keyCode || e.which;
@@ -263,7 +266,7 @@ function createGame({rowCount: rowCount}) {
     }
 
     function exitGame(e) {
-        if(e.keyCode === 27){
+        if (e.keyCode === 27) {
             gameValues.gamePauseRequested = true;
         }
 
@@ -289,7 +292,7 @@ function createGame({rowCount: rowCount}) {
             document.getElementById("saveScoreButton").addEventListener("click", savePoints);
             //resetGame();
 
-        }else{
+        } else {
             alert("Your Browser is not able to play the game properly.");
             resetGame();
         }
@@ -305,7 +308,7 @@ function createGame({rowCount: rowCount}) {
             container.appendChild(document.importNode(pauseScreen, true));
             document.getElementById("pauseScore").innerHTML = gameValues.points;
 
-            document.getElementById("continueButton").addEventListener("click",function (){
+            document.getElementById("continueButton").addEventListener("click", function () {
 
                 startGame(gameValues.snake[0]);
                 //paintCell({ x: gameValues.snake[0].x, y: gameValues.snake[0].y, color: "blue"});
@@ -313,18 +316,18 @@ function createGame({rowCount: rowCount}) {
             document.getElementById("endGameButton").addEventListener("click", endGame);
             //resetGame();
 
-        }else{
+        } else {
             alert("Your Browser is not able to play the game properly.");
             resetGame();
         }
     }
 
-    function savePoints(){
+    function savePoints() {
         console.log("trying to save points");
         makeRequest({
             method: "POST",
             url: "/game/saveScore",
-            contentType:  "application/json",
+            contentType: "application/json",
             content: JSON.stringify({points: gameValues.points})
         }).catch(function (reason) {
             console.log(reason);
@@ -332,7 +335,7 @@ function createGame({rowCount: rowCount}) {
 
     }
 
-    function makeRequest ({method: method, url: url, content: content, contentType: contentType}) { // code by SomeKittens/Stackoverflow, modified by me, https://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr
+    function makeRequest({method: method, url: url, content: content, contentType: contentType}) { // code by SomeKittens/Stackoverflow, modified by me, https://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr
         return new Promise(function (resolve, reject) {
             var xhr = new XMLHttpRequest();
             xhr.open(method, url);
@@ -352,10 +355,10 @@ function createGame({rowCount: rowCount}) {
                     statusText: xhr.statusText
                 });
             };
-            if(contentType){
+            if (contentType) {
                 xhr.setRequestHeader("Content-type", contentType);
             }
-            if (content === undefined){
+            if (content === undefined) {
                 xhr.send();
             } else {
                 xhr.send(content);
@@ -372,12 +375,28 @@ function createGame({rowCount: rowCount}) {
                 } else {
                     return 0;
                 }
-            }).then(function(points){
+            }).then(function (points) {
                 gameValues.prevBest = points;
                 personalBest.innerHTML = points;
             }).catch(function (reason) {
                 console.log(reason);
             });
+    }
+
+    function getHighscore() {
+        return makeRequest({method: "GET", url: "/game/highscores"})
+            .then(function (res) {
+                let response = JSON.parse(res);
+                if (response && response[0]) {
+                    return response[0].highscore; //todo make sure it is the highest highscore
+                } else {
+                    return 0;
+                }
+            }).then(function (highscore) {
+                overallHighscore.innerHTML = highscore;
+            }).catch(function (reason) {
+                console.log(reason);
+            })
     }
 }
 

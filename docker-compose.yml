@@ -9,12 +9,15 @@ services:
     ports:
       - "8090:8090"
   gateway:
-    image: scg-demo-security-gateway:latest
+    #image: scg-demo-security-gateway:latest
     container_name: gateway
+    build: security-gateway
     expose:
         - "8080"
+        - "8088"
     ports:
         - "8080:8080"
+        - "8088:8088"
     depends_on:
         - highscoreservice11
         - helloworldservice11
@@ -22,6 +25,8 @@ services:
   db:
     container_name: db
     image: postgres
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
     expose:
       - "5432"

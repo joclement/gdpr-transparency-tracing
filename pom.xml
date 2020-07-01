@@ -7,6 +7,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>vue-frontend</module>
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
         <module>security-gateway</module>

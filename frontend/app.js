@@ -89,6 +89,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 
+
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/legal', legalRouter);
@@ -96,6 +97,13 @@ app.use('/legal', legalRouter);
 app.use('/game', gameRouter);
 app.use('/evilButCompliant', evilButCompliantRouter);
 
+function forwardToBackend(req, res) {
+  const targetUrl = "http://" + req.hostname + ":8080" + req.baseUrl
+  res.header("Access-Control-Allow-Origin", "*"); //todo * is insecure
+  res.redirect(targetUrl);
+}
+
+app.use("*", forwardToBackend)
 
 
 console.log("linked Routers");
