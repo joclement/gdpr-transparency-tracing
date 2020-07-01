@@ -8,6 +8,7 @@ services:
       - "8090"
     ports:
       - "8090:8090"
+
   gateway:
     image: scg-demo-security-gateway:latest
     container_name: gateway
@@ -19,6 +20,7 @@ services:
         - highscoreservice11
         - helloworldservice11
         - uaa
+
   db:
     container_name: db
     image: postgres
@@ -29,6 +31,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: example
+
   helloworldservice11:
     container_name: helloworld
     build: helloworldservice11
