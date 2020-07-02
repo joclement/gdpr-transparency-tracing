@@ -71,3 +71,12 @@ services:
       - "14268:14268"
       - "14250:14250"
       - "9411:9411"
+
+  simple-jaeger-extract:
+    build: simple-jaeger-extract
+    ports:
+      - "5000:5000"
+    depends_on:
+      - jaeger
+    environment:
+      - JAEGER_QUERY_HOST=jaeger
