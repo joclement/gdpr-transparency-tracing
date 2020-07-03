@@ -24,5 +24,5 @@
 /**
  * Provides placeholder classes.
  */
-package tu-berlin.peng.group4;
+package berlin.tu.peng.tracingproject.personaldatajaegerclient;
 
