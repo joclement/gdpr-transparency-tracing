@@ -173,6 +173,7 @@
       <mockito.version>3.1.0</mockito.version>
       <log4j.version>2.12.1</log4j.version>
       <slf4j.version>1.7.28</slf4j.version>
+      <jaeger.version>0.35.1</jaeger.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
@@ -249,6 +250,11 @@
          <artifactId>mockito-core</artifactId>
          <version>${mockito.version}</version>
          <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.jaegertracing</groupId>
+        <artifactId>jaeger-client</artifactId>
+         <version>${jaeger.version}</version>
       </dependency>
    </dependencies>
 
