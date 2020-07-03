@@ -22,39 +22,49 @@
  * SOFTWARE.
  */
 
-package berlin.tu.peng.tracingproject.personaldatajaegerclient.test.integration;
+package berlin.tu.peng.tracingproject.personaldatajaegerclient.test.unit;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-import berlin.tu.peng.tracingproject.personaldatajaegerclient.Greeter;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.PersonalDataSpan;
 
 /**
- * Integration tests for {@link Greeter}.
+ * Unit tests for {@link Greeter}.
  * <p>
- * This is actually a placeholder test for the integration tests suite.
+ * This is just a placeholder test for the unit tests suite.
  *
  * @author Joris Clement
  *
  */
 @RunWith(JUnitPlatform.class)
-public final class ITGreeter {
+public final class TestPersonalDataSpan {
 
     /**
      * Default constructor.
      */
-    public ITGreeter() {
+    public TestPersonalDataSpan() {
         super();
     }
 
     /**
-     * Tests that the {@code Greeter} returns a greeting.
+     * Tests the {@code PersonalDataSpan}
      */
     @Test
-    public final void sayHello() {
-        Assertions.assertEquals("Hello World!", new Greeter().sayHello());
+    public final void testSetPersonalInfo() {
+        // FIXME this is not going to work, find a proper tracer
+        PersonalDataSpan span = new NoopTracer().buildSpan("hello world").start();
+        List<String> recipients = List.of("recipient1", "recipient2");
+        Assertions.assertEquals(span,
+                                span.setPersonalInfo("purpose",
+                                                     "data-category",
+                                                     recipients,
+                                                     true,
+                                                     "1h",
+                                                     "origin",
+                                                     false));
     }
 
 }
