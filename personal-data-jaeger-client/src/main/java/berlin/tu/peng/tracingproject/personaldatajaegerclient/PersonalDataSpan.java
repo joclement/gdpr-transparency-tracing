@@ -28,20 +28,16 @@ import io.opentracing.Span;
 import io.opentracing.tag.StringTag;
 import io.opentracing.tag.BooleanTag;
 
-import io.jaegertracing.internal.JaegerSpan;
-import io.jaegertracing.internal.JaegerSpanContext;
-import io.jaegertracing.internal.JaegerTracer;
-import io.jaegertracing.internal.Reference;
-
 import java.util.List;
-import java.util.Map;
+
 
 /**
- * Class to extend the jaeger client to trace the processing of personal data.
+ * {@link PersonalDataSpan} represents an extension of OpenTracing's Span
+ * regarding the tracing of the processing of personal data.
  *
  * @author Joris Clement
  */
-public class PersonalDataSpan extends JaegerSpan {
+public interface PersonalDataSpan extends Span {
 
     public static final StringTag PURPOSE = new StringTag("purpose");
 
@@ -58,73 +54,54 @@ public class PersonalDataSpan extends JaegerSpan {
     public static final BooleanTag AUTOMATED = new BooleanTag("auto");
 
 
-    protected PersonalDataSpan(
-        JaegerTracer tracer,
-        String operationName,
-        JaegerSpanContext context,
-        long startTimeMicroseconds,
-        long startTimeNanoTicks,
-        boolean computeDurationViaNanoTicks,
-        Map<String, Object> tags,
-        List<Reference> references) {
-        super(tracer,
-              operationName,
-              context,
-              startTimeMicroseconds,
-              startTimeNanoTicks,
-              computeDurationViaNanoTicks,
-              tags,
-              references);
-    }
-
-    public Span setPurpose(String purpose) {
-        this.setTag(PURPOSE, purpose);
+    default Span setPurpose(String purpose) {
+        setTag(PURPOSE, purpose);
         return this;
     }
 
-    public Span setRecipients(List<String> recipients) {
-        this.setTag(RECIPIENTS, recipients.toString());
+    default Span setRecipients(List<String> recipients) {
+        setTag(RECIPIENTS, recipients.toString());
         return this;
     }
 
-    public Span setDataCategory(String dataCategory) {
-        this.setTag(DATA_CATEGORY, dataCategory);
+    default Span setDataCategory(String dataCategory) {
+        setTag(DATA_CATEGORY, dataCategory);
         return this;
     }
 
-    public Span setTransferredTo3rdParty(boolean transferredTo3rdParty) {
-        this.setTag(TRANSFERRED_TO_3RDPARTY, transferredTo3rdParty);
+    default Span setTransferredTo3rdParty(boolean transferredTo3rdParty) {
+        setTag(TRANSFERRED_TO_3RDPARTY, transferredTo3rdParty);
         return this;
     }
 
-    public Span setStorageDuration(String storageDuration) {
-        this.setTag(STORAGE_DURATION, storageDuration);
+    default Span setStorageDuration(String storageDuration) {
+        setTag(STORAGE_DURATION, storageDuration);
         return this;
     }
 
-    public Span setOrigin(String origin) {
-        this.setTag(ORIGIN, origin);
+    default Span setOrigin(String origin) {
+        setTag(ORIGIN, origin);
         return this;
     }
 
-    public Span setAutomated(boolean automated) {
-        this.setTag(AUTOMATED, automated);
+    default Span setAutomated(boolean automated) {
+        setTag(AUTOMATED, automated);
         return this;
     }
 
-    public void setPersonalInfo(String purpose,
+    default void setPersonalInfo(String purpose,
                                 String dataCategory,
                                 List<String> recipients,
                                 boolean transferredTo3rdParty,
                                 String storageDuration,
                                 String origin,
                                 boolean automated) {
-        this.setPurpose(purpose);
-        this.setDataCategory(dataCategory);
-        this.setRecipients(recipients);
-        this.setTransferredTo3rdParty(transferredTo3rdParty);
-        this.setStorageDuration(storageDuration);
-        this.setOrigin(origin);
-        this.setAutomated(automated);
+        setPurpose(purpose);
+        setDataCategory(dataCategory);
+        setRecipients(recipients);
+        setTransferredTo3rdParty(transferredTo3rdParty);
+        setStorageDuration(storageDuration);
+        setOrigin(origin);
+        setAutomated(automated);
     }
 }
