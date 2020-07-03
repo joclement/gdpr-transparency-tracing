@@ -24,5 +24,4 @@
 /**
  * Provides placeholder unit tests.
  */
-package tu-berlin.peng.group4.test.unit;
-
+package berlin.tu.peng.tracingproject.personaldatajaegerclient.test.unit;

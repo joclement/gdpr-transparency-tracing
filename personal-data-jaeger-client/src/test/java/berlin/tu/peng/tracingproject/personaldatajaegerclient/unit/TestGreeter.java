@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-package tu-berlin.peng.group4.test.unit;
+package berlin.tu.peng.tracingproject.personaldatajaegerclient.test.unit;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-import tu-berlin.peng.group4.Greeter;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.Greeter;
 
 /**
  * Unit tests for {@link Greeter}.

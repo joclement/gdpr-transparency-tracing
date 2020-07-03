@@ -11,7 +11,7 @@
    </parent>
 
    <groupId>berlin.tu.peng.tracingproject</groupId>
-   <artifactId>personal-data-jaeger-client</artifactId>
+   <artifactId>personaldatajaegerclient</artifactId>
    <version>0.1.0-SNAPSHOT</version>
    <packaging>jar</packaging>
 

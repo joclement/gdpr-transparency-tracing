@@ -24,5 +24,4 @@
 /**
  * Provides placeholder integration tests.
  */
-package tu-berlin.peng.group4.test.integration;
-
+package berlin.tu.peng.tracingproject.personaldatajaegerclient.test.integration;
