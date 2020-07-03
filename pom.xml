@@ -12,4 +12,25 @@
         <module>security-gateway</module>
         <module>personal-data-jaeger-client</module>
     </modules>
+
+   <organization>
+      <name>TU Berlin - Privacy Engineering - Group 4</name>
+      <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+   </organization>
+
+   <developers>
+      <developer>
+         <id>jclement</id>
+         <name>Joris Clement</name>
+         <email>j.clement@campus.tu-berlin.de</email>
+         <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+         <organization>Joris Clement</organization>
+         <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>+1</timezone>
+         <properties />
+      </developer>
+   </developers>
 </project>
