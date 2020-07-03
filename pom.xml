@@ -10,5 +10,6 @@
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
         <module>security-gateway</module>
+        <module>personal-data-jaeger-client</module>
     </modules>
 </project>
