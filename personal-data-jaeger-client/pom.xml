@@ -25,7 +25,7 @@
 
    <name>Personal Data Jaeger Client</name>
    <description>Extension for the Java Jaeger client to trace the processing of personal data</description>
-   <url>https://github.com/None/personal-data-jaeger-client</url>
+   <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
    <inceptionYear>2020</inceptionYear>
 
    <licenses>
@@ -40,6 +40,8 @@
    <!-- ************ RESOURCES AND SERVICES ********** -->
    <!-- ********************************************** -->
 
+
+<!-- TODO Deactivate until we move to Github
    <scm>
       <connection>scm:git:https://github.com/None/personal-data-jaeger-client.git</connection>
       <developerConnection>scm:git:https://github.com/None/personal-data-jaeger-client.git</developerConnection>
@@ -72,6 +74,7 @@
          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
       </snapshotRepository>
    </distributionManagement>
+-->
 
    <!-- ********************************************** -->
    <!-- ****************** PROFILES ****************** -->
@@ -174,12 +177,17 @@
       <log4j.version>2.12.1</log4j.version>
       <slf4j.version>1.7.28</slf4j.version>
       <jaeger.version>0.35.1</jaeger.version>
+
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
+
+<!-- TODO Deactivate until we move to Github
       <site.skin.version>1.4.3</site.skin.version>
       <bintrayURL>https://bintray.com/None/maven/personal-data-jaeger-client/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
+-->
+
    </properties>
 
    <!-- ********************************************** -->
