@@ -36,7 +36,7 @@ public class GatewayApplication {
                 .build();
     }*/
 
-    @GetMapping("/")
+    @GetMapping("/oauth")
     public String index(Model model,
                         @RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient,
                         @AuthenticationPrincipal OAuth2User oauth2User) {
