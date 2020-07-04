@@ -100,4 +100,62 @@ public class PersonalDataSpanHelper {
         setOrigin(span, origin);
         setAutomated(span, automated);
     }
+
+    private Span span;
+
+    public PersonalDataSpanHelper(Span span) {
+        this.span = span;
+    }
+
+    public PersonalDataSpanHelper setPurpose(String purpose) {
+        setPurpose(this.span, purpose);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setRecipients(List<String> recipients) {
+        setRecipients(this.span, recipients);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setDataCategory(String dataCategory) {
+        setDataCategory(this.span, dataCategory);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setTransferredTo3rdParty(
+            boolean transferredTo3rdParty) {
+        setTransferredTo3rdParty(this.span, transferredTo3rdParty);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setStorageDuration(String storageDuration) {
+        setStorageDuration(this.span, storageDuration);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setOrigin(String origin) {
+        setOrigin(this.span, origin);
+        return this;
+    }
+
+    public PersonalDataSpanHelper setAutomated(boolean automated) {
+        setAutomated(this.span, automated);
+        return this;
+    }
+
+    public void setPersonalInfo(String purpose,
+                                String dataCategory,
+                                List<String> recipients,
+                                boolean transferredTo3rdParty,
+                                String storageDuration,
+                                String origin,
+                                boolean automated) {
+        this.setPurpose(purpose);
+        this.setDataCategory(dataCategory);
+        this.setRecipients(recipients);
+        this.setTransferredTo3rdParty(transferredTo3rdParty);
+        this.setStorageDuration(storageDuration);
+        this.setOrigin(origin);
+        this.setAutomated(automated);
+    }
 }
