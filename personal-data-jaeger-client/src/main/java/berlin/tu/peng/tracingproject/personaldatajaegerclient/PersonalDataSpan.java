@@ -89,13 +89,13 @@ public interface PersonalDataSpan extends Span {
         return this;
     }
 
-    default void setPersonalInfo(String purpose,
-                                String dataCategory,
-                                List<String> recipients,
-                                boolean transferredTo3rdParty,
-                                String storageDuration,
-                                String origin,
-                                boolean automated) {
+    default Span setPersonalInfo(String purpose,
+                                 String dataCategory,
+                                 List<String> recipients,
+                                 boolean transferredTo3rdParty,
+                                 String storageDuration,
+                                 String origin,
+                                 boolean automated) {
         setPurpose(purpose);
         setDataCategory(dataCategory);
         setRecipients(recipients);
@@ -103,5 +103,6 @@ public interface PersonalDataSpan extends Span {
         setStorageDuration(storageDuration);
         setOrigin(origin);
         setAutomated(automated);
+        return this;
     }
 }
