@@ -19,7 +19,8 @@ def get_services() -> set:
 
     services = data["data"]
     services = set(services)
-    services.remove("jaeger-query")
+    if "jaeger-query" in services:
+        services.remove("jaeger-query")
     return services
 
 

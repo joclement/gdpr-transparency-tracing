@@ -21,7 +21,8 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry export -f requirements.txt | /venv/bin/pip install -r /dev/stdin
 
 COPY . .
-RUN poetry build && /venv/bin/pip install dist/*.whl
+RUN poetry build
+RUN /venv/bin/pip install dist/simple_jaeger_extract-0.1.1-py3-none-any.whl
 
 
 FROM base as final
