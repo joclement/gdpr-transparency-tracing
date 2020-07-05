@@ -17,5 +17,8 @@
 </script>
 
 <style scoped>
+  ul {
+    display: inline;
+  }
 
 </style>

@@ -12,7 +12,7 @@ import Header from "./components/Header";
 
 export default {
   name: 'App',
-  comments: {Header, Nav}
+  components: {Header, Nav}
 }
 </script>
 

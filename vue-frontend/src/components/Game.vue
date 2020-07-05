@@ -20,44 +20,52 @@
       <div id="endScreen">
         <div>Congratulations! You got {{score}} points
         </div>
-        <button id="restartButton">Restart</button>
-        <button id="saveScoreButton">Save Score</button>
+        <button id="restartButton" @click="resetGame">Restart</button>
+        <button id="saveScoreButton" @click="savePoints">Save Score</button>
       </div>
     </div>
     <div id="pauseScreenTemplate" v-if="showPauseScreen">
       <div id="pauseScreen">
         Congratulations! You got {{score}} points
       </div>
-      <button id="continueButton">Continue</button>
-      <button id="endGameButton">Save Score</button>
+      <button id="continueButton" @click="startGame(gameValues.snake[0])">Continue</button>
+      <button id="endGameButton" @click="endGame">Save Score</button>
     </div>
 
   </div>
 </template>
 
 <script>
-  import Header from "./Header";
-  import Nav from "./Nav";
+  export function GameLostException(message, points) {
+    this.message = message;
+    this.name = "GameLostException";
+    this.points = points;
+  }
+  export function GamePauseException(message, points) {
+    this.message = message;
+    this.name = "GamePauseException";
+    this.points = points;
+  }
 
   export default {
     name: "Game",
-    components: {Nav, Header},
     data() {
       const rowCount = 20;
       const cellWidth = Math.floor(100 / rowCount) + "%";
+
       return {
         score: 0,
         personalBestPoints: 0,
         overallHighscorePoints: 0,
         rowCount: rowCount,
-        startValue: 20,
+        startValue: 10,
         showPauseScreen: false,
         showEndScreen: false,
         container: {},
         gameField: {},
         cellwidth: cellWidth,
         cellheight: cellWidth,
-        gameValues: {
+        startValues: {
           direction: 1,
           snake: [], //contains {x: ..., y:...}
           foodList: [], //contains {x: ..., y:...}
@@ -65,7 +73,8 @@
           points: 0,
           rowCount: rowCount
         },
-        gameValuesCopy: this.gameValues
+        gameValues: {},
+        gameValuesCopy: {}
       }
     },
     mounted() {
@@ -79,8 +88,8 @@
         //let currentScore;
         //let overallHighscore;
 
-        let gameValues = {};
-        gameValues.length = 0;
+        //let gameValues = {};
+        //gameValues.length = 0;
 
         //todo remove after development
         /*document.getElementById("addLength").addEventListener("click", function(){
@@ -96,18 +105,9 @@
 
         this.startGame({x: this.startValue, y: this.startValue});
       },
-      GameLostException(message, points) {
-        this.message = message;
-        this.name = "GameLostException";
-        this.points = points;
-      },
-      GamePauseException(message, points) {
-        this.message = message;
-        this.name = "GamePauseException";
-        this.points = points;
-      },
+
       resetGame() {
-        this.gameValues = this.gameValuesCopy
+        //this.gameValues = this.gameValuesCopy
         this.gameField.innerHTML = "";
         //text.innerHTML = "";
 
@@ -152,26 +152,32 @@
         this.paintCell({x: xValue, y: yValue, color: "red"});
       },
       startGame({x: startValueX, y: startValueY}) {
+        this.gameValues = Object.assign({}, this.startValues);
+
+        this.showEndScreen = false;
+        this.showPauseScreen = false;
         this.createGraphics();
         this.setSnake({x: startValueX, y: startValueY});
         if (this.gameValues.snake.length > 1) {
           this.repaintSnake();
         }
         this.generateFood();
+        let that = this;
         let snakeInterval = setInterval(function () {
           try {
-            this.move();
+            that.move();
           } catch (e) {
-            if (e instanceof this.GameLostException) {
-              this.clearInterval(snakeInterval);
-              this.endGame();
+            if (e instanceof GameLostException) {
+              clearInterval(snakeInterval);
+              that.endGame();
 
             }
-            if (e instanceof this.GamePauseException) {
+            if (e instanceof GamePauseException) {
               clearInterval(snakeInterval);
-              this.pauseGame();
+              that.pauseGame();
             } else {
-              console.log(e.stack);
+              console.log(e);
+              //console.log(e.stack);
             }
           }
         }, 100);
@@ -219,7 +225,7 @@
       checkForGamePauseRequested() {
         if (this.gameValues.gamePauseRequested) {
           this.gameValues.gamePauseRequested = false;
-          throw new this.GamePauseException("GamePauseRequested", this.gameValues.points);
+          throw new GamePauseException("GamePauseRequested", this.gameValues.points);
         }
 
       },
@@ -228,7 +234,7 @@
       },
       checkForBiteItself({x: checkX, y: checkY}) {
         if (this.xAndYAreInArray({x: checkX, y: checkY, array: this.gameValues.snake})) {
-          throw new this.GameLostException("Congratulations! You got " + this.gameValues.points + " points!", this.gameValues.points);
+          throw new GameLostException("Congratulations! You got " + this.gameValues.points + " points!", this.gameValues.points);
         }
       },
       checkForFood({x: checkX, y: checkY}) {
@@ -278,6 +284,7 @@
         this.getElement({x: xValue, y: yValue}).style.backgroundColor = "";
       },
       getElement({x: xValue, y: yValue}) {
+        console.log(xValue,this, this.gameField, this.gameField.childNodes[xValue])
         return this.gameField.childNodes[xValue].childNodes[yValue];
       },
       directionChange(e) {
@@ -309,19 +316,14 @@
         }
       },
       endGame() {
+        if (this.score > this.personalBestPoints){
+          this.personalBestPoints = this.score;
+        }
         this.showEndScreen = true;
-        document.getElementById("restartButton").addEventListener("click", this.resetGame);
-        document.getElementById("saveScoreButton").addEventListener("click", this.savePoints);
         //resetGame();
       },
       pauseGame() {
         this.showPauseScreen = true;
-        document.getElementById("continueButton").addEventListener("click", function () {
-          this.startGame(this.gameValues.snake[0]);
-          this.showPauseScreen = false;
-          //paintCell({ x: gameValues.snake[0].x, y: gameValues.snake[0].y, color: "blue"});
-        });
-        document.getElementById("endGameButton").addEventListener("click", this.endGame);
         //resetGame();
       },
       savePoints() {
@@ -382,13 +384,14 @@
           });
       },
       getHighscore() {
+        let that = this;
         return this.makeRequest({method: "GET", url: "/game/highscores"})
           .then(function (res) {
             let response = JSON.parse(res);
             if (response && response[0]) {
-              this.overallHighscorePoints = (response[0]).highscore; //todo make sure it is the highest highscore
+              that.overallHighscorePoints = (response[0]).highscore; //todo make sure it is the highest highscore
             } else {
-              this.overallHighscorePoints = 0;
+              that.overallHighscorePoints = 0;
             }
           }).catch(function (reason) {
             console.log(reason);
