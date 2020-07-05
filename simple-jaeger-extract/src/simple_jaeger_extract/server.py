@@ -1,5 +1,3 @@
-"""Simple jaeger extract json api server."""
-
 from flask import Flask, redirect, render_template, url_for
 import requests
 

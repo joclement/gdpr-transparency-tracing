@@ -12,7 +12,7 @@ fail_under = 80
 [tool.poetry]
 name = "simple-jaeger-extract"
 version = "0.1.1"
-description = ""
+description = "Simple jaeger extract json api server"
 authors = ["Joris Clement <j.clement@campus.tu-berlin.de>"]
 
 [tool.poetry.scripts]
