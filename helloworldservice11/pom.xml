@@ -60,6 +60,11 @@
       <artifactId>jaeger-client</artifactId>
       <version>0.35.1</version>
     </dependency>
+    <dependency>
+      <groupId>berlin.tu.peng.tracingproject</groupId>
+      <artifactId>personaldatajaegerclient</artifactId>
+      <version>0.1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
