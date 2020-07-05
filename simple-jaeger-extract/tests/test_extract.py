@@ -17,6 +17,19 @@ def mock_requests_get_services(mocker):
 
 
 @pytest.fixture
+def mock_requests_get_services_no_jaeger_query(mocker):
+    mock = mocker.patch("requests.get")
+    mock.return_value.__enter__.return_value.json.return_value = {
+        "data": ["helloworld"],
+        "total": 1,
+        "limit": 0,
+        "offset": 0,
+        "errors": None,
+    }
+    return mock
+
+
+@pytest.fixture
 def mock_requests_get_traces_of_service(mocker):
     mock = mocker.patch("requests.get")
     mock.return_value.__enter__.return_value.json.return_value = {
@@ -83,6 +96,12 @@ def test_services_succeeds(mock_requests_get_services):
 
 
 def test_services_drops_jaegerquery(mock_requests_get_services):
+    result = extract.get_services()
+    assert "jaeger-query" not in result
+    assert "helloworld" in result
+
+
+def test_services_checks_jaeger_query(mock_requests_get_services_no_jaeger_query):
     result = extract.get_services()
     assert "jaeger-query" not in result
     assert "helloworld" in result
