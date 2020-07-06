@@ -70,7 +70,6 @@ def get_all_for_services() -> dict:
     all_transparency_info = dict()
     for service in get_services():
         all_transparency_info[service] = _get_transparency_tags_from_service(service)
-
     return all_transparency_info
 
 
@@ -83,5 +82,4 @@ def get_purposes_for_services() -> dict:
     purposes = dict()
     for service in get_services():
         purposes[service] = _get_purposes_from_service(service)
-
     return purposes
