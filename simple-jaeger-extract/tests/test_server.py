@@ -18,3 +18,9 @@ def test_purposes_succeeds(client):
     response = client.get("/api/purposes")
     assert response.status_code == 200
     assert response.is_json is True
+
+
+def test_all_succeeds(client):
+    response = client.get("/api/all")
+    assert response.status_code == 200
+    assert response.is_json is True

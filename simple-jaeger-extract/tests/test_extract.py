@@ -47,6 +47,11 @@ def mock_requests_get_traces_of_service(mocker):
                         "duration": 5603,
                         "tags": [
                             {"key": "purpose", "type": "string", "value": "fun"},
+                            {
+                                "key": "category",
+                                "type": "string",
+                                "value": "dummy category",
+                            },
                             {"key": "sampler.type", "type": "string", "value": "const"},
                             {"key": "sampler.param", "type": "bool", "value": True},
                             {
@@ -113,9 +118,26 @@ def test_services_succeeds_in_production():
     assert type(result) is set
 
 
+def test_get_traces_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_traces_from_service("helloworld")
+    assert type(result) is dict
+
+
+def test_get_transparency_tags_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_transparency_tags_from_service("helloworld")
+    assert result["purpose"] == ["fun"]
+    assert result["category"] == ["dummy category"]
+
+
 def test_get_purpose_from_service_succeeds(mock_requests_get_traces_of_service):
     result = extract._get_purposes_from_service("helloworld")
-    assert result == {"fun"}
+    assert result == ["fun"]
+
+
+@pytest.mark.e2e
+def test_get_all_for_services_succeeds_in_production():
+    result = extract.get_all_for_services()
+    assert type(result) is dict
 
 
 @pytest.mark.e2e
