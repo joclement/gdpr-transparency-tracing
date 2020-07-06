@@ -101,7 +101,7 @@ public class PersonalDataSpanHelper {
         setAutomated(span, automated);
     }
 
-    private Span span;
+    private final Span span;
 
     public PersonalDataSpanHelper(Span span) {
         this.span = span;
