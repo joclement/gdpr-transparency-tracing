@@ -4,10 +4,7 @@ import berlin.tu.peng.tracingproject.savescoreservice11.model.ScoreModel;
 import berlin.tu.peng.tracingproject.savescoreservice11.service.SaveScoreService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -18,14 +15,18 @@ public class saveScoreController {
     private final SaveScoreService saveScoreService;
 
     final static String PATH = "/game/savescore";
+    final static String PATH_WITH_SCORE = PATH + "/{score}";
 
     public saveScoreController(SaveScoreService saveScoreService) {
         this.saveScoreService = saveScoreService;
     }
 
-    @PutMapping(value = PATH, consumes = APPLICATION_JSON_VALUE)
-    public void saveUserScore(@AuthenticationPrincipal Jwt jwt, @RequestBody ScoreModel scoreModel) {
+    @GetMapping(value = PATH_WITH_SCORE)
+    public void saveUserScore(@AuthenticationPrincipal Jwt jwt, @PathVariable String score) {
+        final ScoreModel scoreModel = new ScoreModel();
+        scoreModel.setScore(Integer.parseInt(score));
         scoreModel.setUserName(jwt.getClaims().get("user_name").toString());
+
         saveScoreService.saveScore(scoreModel);
     }
 

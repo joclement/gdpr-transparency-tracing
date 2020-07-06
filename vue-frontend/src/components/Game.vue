@@ -325,13 +325,12 @@
         this.showPauseScreen = true;
         //resetGame();
       },
-      savePoints() {
-        console.log("trying to save points");
-        this.makeRequest({
-          method: "POST",
-          url: "/game/savescore",
-          contentType: "application/json",
-          content: JSON.stringify({score: this.gameValues.points})
+      async savePoints() {
+          this.makeRequest({
+          method: "GET",
+          url: "/game/savescore/" + this.gameValues.points,
+          //contentType: "application/json",
+          //content: JSON.stringify({score: this.gameValues.points})
         }).catch(function (reason) {
           console.log(reason);
         }).then(this.getSavedPoints);

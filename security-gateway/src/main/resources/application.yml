@@ -54,7 +54,7 @@ spring:
         - id: savescore
           uri: http://savescore:8083
           predicates:
-            - Path=/game/savescore
+            - Path=/game/savescore,/game/savescore/**
           filters:
             - TokenRelay=
             - RemoveRequestHeader=Cookie
