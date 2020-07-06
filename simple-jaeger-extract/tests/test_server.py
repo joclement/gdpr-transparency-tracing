@@ -14,6 +14,10 @@ def test_index_succeeds(client):
     assert client.get("/").status_code == 200
 
 
+def test_api_redirect_succeeds(client):
+    assert client.get("/api").status_code == 302
+
+
 def test_purposes_succeeds(client):
     response = client.get("/api/purposes")
     assert response.status_code == 200
