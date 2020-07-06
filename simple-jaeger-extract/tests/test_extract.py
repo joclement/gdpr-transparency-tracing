@@ -268,6 +268,7 @@ def test_get_transparency_tags_from_service(mock_requests_get_traces_of_service)
     result = extract._get_transparency_tags_from_service("helloworld")
     assert result["purpose"] == ["dummy purpose"]
     assert result["category"] == ["dummy data category"]
+    assert sorted(result["recipients"]) == ["recipient1", "recipient2"]
 
 
 def test_get_purpose_from_service_succeeds(mock_requests_get_traces_of_service):
