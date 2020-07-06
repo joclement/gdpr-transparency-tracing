@@ -112,13 +112,13 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper setRecipients(List<String> recipients) {
-        setRecipients(this.span, recipients);
+    public PersonalDataSpanHelper setDataCategory(String dataCategory) {
+        setDataCategory(this.span, dataCategory);
         return this;
     }
 
-    public PersonalDataSpanHelper setDataCategory(String dataCategory) {
-        setDataCategory(this.span, dataCategory);
+    public PersonalDataSpanHelper setRecipients(List<String> recipients) {
+        setRecipients(this.span, recipients);
         return this;
     }
 
