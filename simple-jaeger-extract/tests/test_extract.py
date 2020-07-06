@@ -35,20 +35,38 @@ def mock_requests_get_traces_of_service(mocker):
     mock.return_value.__enter__.return_value.json.return_value = {
         "data": [
             {
-                "traceID": "fb7de556e3deca1b",
+                "traceID": "f37aa340e7461d7f",
                 "spans": [
                     {
-                        "traceID": "fb7de556e3deca1b",
-                        "spanID": "fb7de556e3deca1b",
+                        "traceID": "f37aa340e7461d7f",
+                        "spanID": "f37aa340e7461d7f",
                         "flags": 1,
                         "operationName": "hello world",
                         "references": [],
-                        "startTime": 1593611666086000,
-                        "duration": 5603,
+                        "startTime": 1594058149000000,
+                        "duration": 9713,
                         "tags": [
-                            {"key": "purpose", "type": "string", "value": "fun"},
+                            {"key": "duration", "type": "string", "value": "1h"},
+                            {"key": "auto", "type": "bool", "value": False},
+                            {
+                                "key": "purpose",
+                                "type": "string",
+                                "value": "dummy purpose",
+                            },
                             {"key": "sampler.type", "type": "string", "value": "const"},
+                            {
+                                "key": "recipients",
+                                "type": "string",
+                                "value": "recipient1, recipient2",
+                            },
                             {"key": "sampler.param", "type": "bool", "value": True},
+                            {"key": "origin", "type": "string", "value": "world"},
+                            {
+                                "key": "category",
+                                "type": "string",
+                                "value": "dummy data category",
+                            },
+                            {"key": "3rdparty", "type": "bool", "value": False},
                             {
                                 "key": "internal.span.format",
                                 "type": "string",
@@ -67,7 +85,7 @@ def mock_requests_get_traces_of_service(mocker):
                             {
                                 "key": "hostname",
                                 "type": "string",
-                                "value": "e567dc2149fd",
+                                "value": "43932b2a616b",
                             },
                             {"key": "ip", "type": "string", "value": "172.18.0.6"},
                             {
@@ -79,7 +97,135 @@ def mock_requests_get_traces_of_service(mocker):
                     }
                 },
                 "warnings": None,
-            }
+            },
+            {
+                "traceID": "1d52717b07840539",
+                "spans": [
+                    {
+                        "traceID": "1d52717b07840539",
+                        "spanID": "1d52717b07840539",
+                        "flags": 1,
+                        "operationName": "hello world",
+                        "references": [],
+                        "startTime": 1594058151931000,
+                        "duration": 43,
+                        "tags": [
+                            {"key": "duration", "type": "string", "value": "1h"},
+                            {"key": "auto", "type": "bool", "value": False},
+                            {
+                                "key": "purpose",
+                                "type": "string",
+                                "value": "dummy purpose",
+                            },
+                            {"key": "sampler.type", "type": "string", "value": "const"},
+                            {
+                                "key": "recipients",
+                                "type": "string",
+                                "value": "recipient1, recipient2",
+                            },
+                            {"key": "sampler.param", "type": "bool", "value": True},
+                            {"key": "origin", "type": "string", "value": "world"},
+                            {
+                                "key": "category",
+                                "type": "string",
+                                "value": "dummy data category",
+                            },
+                            {"key": "3rdparty", "type": "bool", "value": False},
+                            {
+                                "key": "internal.span.format",
+                                "type": "string",
+                                "value": "proto",
+                            },
+                        ],
+                        "logs": [],
+                        "processID": "p1",
+                        "warnings": None,
+                    }
+                ],
+                "processes": {
+                    "p1": {
+                        "serviceName": "helloworld",
+                        "tags": [
+                            {
+                                "key": "hostname",
+                                "type": "string",
+                                "value": "43932b2a616b",
+                            },
+                            {"key": "ip", "type": "string", "value": "172.18.0.6"},
+                            {
+                                "key": "jaeger.version",
+                                "type": "string",
+                                "value": "Java-0.35.1",
+                            },
+                        ],
+                    }
+                },
+                "warnings": None,
+            },
+            {
+                "traceID": "9616ad0001d2ec4c",
+                "spans": [
+                    {
+                        "traceID": "9616ad0001d2ec4c",
+                        "spanID": "9616ad0001d2ec4c",
+                        "flags": 1,
+                        "operationName": "hello world",
+                        "references": [],
+                        "startTime": 1594058158556000,
+                        "duration": 54,
+                        "tags": [
+                            {"key": "duration", "type": "string", "value": "1h"},
+                            {"key": "auto", "type": "bool", "value": False},
+                            {
+                                "key": "purpose",
+                                "type": "string",
+                                "value": "dummy purpose",
+                            },
+                            {"key": "sampler.type", "type": "string", "value": "const"},
+                            {
+                                "key": "recipients",
+                                "type": "string",
+                                "value": "recipient1, recipient2",
+                            },
+                            {"key": "sampler.param", "type": "bool", "value": True},
+                            {"key": "origin", "type": "string", "value": "world"},
+                            {
+                                "key": "category",
+                                "type": "string",
+                                "value": "dummy data category",
+                            },
+                            {"key": "3rdparty", "type": "bool", "value": False},
+                            {
+                                "key": "internal.span.format",
+                                "type": "string",
+                                "value": "proto",
+                            },
+                        ],
+                        "logs": [],
+                        "processID": "p1",
+                        "warnings": None,
+                    }
+                ],
+                "processes": {
+                    "p1": {
+                        "serviceName": "helloworld",
+                        "tags": [
+                            {
+                                "key": "hostname",
+                                "type": "string",
+                                "value": "43932b2a616b",
+                            },
+                            {"key": "ip", "type": "string", "value": "172.18.0.6"},
+                            {
+                                "key": "jaeger.version",
+                                "type": "string",
+                                "value": "Java-0.35.1",
+                            },
+                        ],
+                    }
+                },
+                "warnings": None,
+            },
         ],
         "total": 0,
         "limit": 0,
@@ -113,9 +259,27 @@ def test_services_succeeds_in_production():
     assert type(result) is set
 
 
+def test_get_traces_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_traces_from_service("helloworld")
+    assert type(result) is dict
+
+
+def test_get_transparency_tags_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_transparency_tags_from_service("helloworld")
+    assert result["purpose"] == ["dummy purpose"]
+    assert result["category"] == ["dummy data category"]
+    assert sorted(result["recipients"]) == ["recipient1", "recipient2"]
+
+
 def test_get_purpose_from_service_succeeds(mock_requests_get_traces_of_service):
     result = extract._get_purposes_from_service("helloworld")
-    assert result == {"fun"}
+    assert result == ["dummy purpose"]
+
+
+@pytest.mark.e2e
+def test_get_all_for_services_succeeds_in_production():
+    result = extract.get_all_for_services()
+    assert type(result) is dict
 
 
 @pytest.mark.e2e
