@@ -13,23 +13,23 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Helloworldservice11Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Helloworldservice11Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Helloworldservice11Application.class, args);
+    }
 
-	@Bean
-	public static JaegerTracer getTracer() {
-		SamplerConfiguration samplerConfig = SamplerConfiguration.fromEnv()
-				.withType(ConstSampler.TYPE)
-				.withParam(1);
+    @Bean
+    public static JaegerTracer getTracer() {
+        SamplerConfiguration samplerConfig = SamplerConfiguration.fromEnv()
+                .withType(ConstSampler.TYPE)
+                .withParam(1);
 
-		ReporterConfiguration reporterConfig = ReporterConfiguration.fromEnv()
-				.withLogSpans(true);
+        ReporterConfiguration reporterConfig = ReporterConfiguration.fromEnv()
+                .withLogSpans(true);
 
-		Configuration config = new Configuration("helloworld")
-				.withSampler(samplerConfig)
-				.withReporter(reporterConfig);
+        Configuration config = new Configuration("helloworld")
+                .withSampler(samplerConfig)
+                .withReporter(reporterConfig);
 
-		return config.getTracer();
-	}
+        return config.getTracer();
+    }
 }
