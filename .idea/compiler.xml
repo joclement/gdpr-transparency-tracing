@@ -9,6 +9,7 @@
         <module name="helloworldservice11" />
         <module name="highscoreservice11" />
         <module name="securitygateway" />
+        <module name="savescoreservice11" />
         <module name="frontend" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="highscoreservice11" target="11" />
       <module name="parent" target="1.5" />
       <module name="peng-project" target="1.5" />
+      <module name="savescoreservice11" target="11" />
       <module name="securitygateway" target="1.8" />
       <module name="userservice11" target="1.5" />
     </bytecodeTargetLevel>
@@ -27,6 +29,7 @@
       <module name="frontend" options="-parameters" />
       <module name="helloworldservice11" options="-parameters" />
       <module name="highscoreservice11" options="-parameters" />
+      <module name="savescoreservice11" options="-parameters" />
       <module name="securitygateway" options="-parameters" />
       <module name="userservice11" options="-parameters" />
     </option>

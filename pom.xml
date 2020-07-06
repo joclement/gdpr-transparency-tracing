@@ -10,6 +10,7 @@
         <module>vue-frontend</module>
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
+        <module>savescoreservice11</module>
         <module>security-gateway</module>
     </modules>
 </project>

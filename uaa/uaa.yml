@@ -22,7 +22,7 @@ oauth:
       name: gateway
       secret: secret
       authorized-grant-types: authorization_code
-      scope: openid,profile,email,resource.read
+      scope: openid,profile,email,resource.read,resource.write
       authorities: uaa.resource
       redirect-uri: http://localhost:8080/login/oauth2/code/gateway
 
@@ -30,8 +30,10 @@ scim:
   groups:
     email: Access your email address
     resource.read: Allow access with 'resource.read'
+    resource.write: Allow access with 'resource.write'
   users:
     - user1|password|user1@provider.com|first1|last1|uaa.user,profile,email,resource.read
+    - user2|password|user1@provider.com|first1|last1|uaa.user,profile,email,resource.read,resource.write
 
 jwt:
   token:

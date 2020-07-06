@@ -40,7 +40,7 @@ spring:
         - id: highscores
           uri: http://highscores:8082
           predicates:
-            - Path=/game/highscores
+            - Path=/game/highscores/top,/game/highscores
           filters:
             - TokenRelay=
             - RemoveRequestHeader=Cookie
@@ -48,6 +48,13 @@ spring:
           uri: http://helloworld:8081
           predicates:
             - Path=/helloworld
+          filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
+        - id: savescore
+          uri: http://savescore:8083
+          predicates:
+            - Path=/game/savescore
           filters:
             - TokenRelay=
             - RemoveRequestHeader=Cookie

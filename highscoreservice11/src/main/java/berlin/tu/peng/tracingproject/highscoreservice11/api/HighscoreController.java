@@ -26,6 +26,11 @@ public class HighscoreController {
         this.tracer = tracer;
     }
 
+    @GetMapping(value = "/game/highscores/top", produces = APPLICATION_JSON_VALUE)
+    public HighscoreModel getTopHighscore(){
+        return highscoreService.getTopHighscore();
+    }
+
     @GetMapping(value = "/game/highscores", produces = APPLICATION_JSON_VALUE)
     public List<HighscoreModel> getHighscores(@AuthenticationPrincipal Jwt jwt ){
         Span span = tracer.buildSpan("get highscore").start();
@@ -33,6 +38,7 @@ public class HighscoreController {
         span.finish();
 
 
+        System.out.print(jwt.getClaims());
         System.out.println(jwt.getClaims().get("user_name"));
 
         final List<HighscoreModel> result = highscoreService.getHighscores();

@@ -61,6 +61,20 @@ services:
       - JAEGER_AGENT_PORT=6831
       - DATABASE_HOST=postgres
 
+  savescoreservice11:
+    container_name: savescore
+    build: savescoreservice11
+    ports:
+      - "8083:8083"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - DATABASE_HOST=postgres
+
   jaeger:
     container_name: jaeger
     image: jaegertracing/all-in-one:1.18

@@ -105,7 +105,6 @@
 
         this.startGame({x: this.startValue, y: this.startValue});
       },
-
       resetGame() {
         //this.gameValues = this.gameValuesCopy
         this.gameField.innerHTML = "";
@@ -330,9 +329,9 @@
         console.log("trying to save points");
         this.makeRequest({
           method: "POST",
-          url: "/game/saveScore",
+          url: "/game/savescore",
           contentType: "application/json",
-          content: JSON.stringify({points: this.gameValues.points})
+          content: JSON.stringify({score: this.gameValues.points})
         }).catch(function (reason) {
           console.log(reason);
         }).then(this.getSavedPoints);
@@ -369,11 +368,11 @@
         });
       },
       getSavedPoints() {
-        return this.makeRequest({method: "GET", url: "/game/saveScore"})
+        return this.makeRequest({method: "GET", url: "/game/savescore"})
           .then(function (res) {
             let response = JSON.parse(res);
             if (response.points) {
-              this.personalBestPoints = response.points;
+              this.personalBestPoints = response.score;
             } else {
               this.personalBestPoints = 0;
             }
@@ -385,11 +384,11 @@
       },
       getHighscore() {
         let that = this;
-        return this.makeRequest({method: "GET", url: "/game/highscores"})
+        return this.makeRequest({method: "GET", url: "/game/highscores/top"})
           .then(function (res) {
             let response = JSON.parse(res);
-            if (response && response[0]) {
-              that.overallHighscorePoints = (response[0]).highscore; //todo make sure it is the highest highscore
+            if (response) {
+              that.overallHighscorePoints = response.highscore; //todo make sure it is the highest highscore
             } else {
               that.overallHighscorePoints = 0;
             }

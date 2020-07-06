@@ -20,5 +20,8 @@
   ul {
     display: inline;
   }
+  li {
+    display: inline;
+  }
 
 </style>
