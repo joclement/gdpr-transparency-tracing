@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/helloworldservice11/helloworldservice11.iml" filepath="$PROJECT_DIR$/helloworldservice11/helloworldservice11.iml" />
       <module fileurl="file://$PROJECT_DIR$/highscoreservice11/highscoreservice11.iml" filepath="$PROJECT_DIR$/highscoreservice11/highscoreservice11.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/personal-data-jaeger-client/personaldatajaegerclient.iml" filepath="$PROJECT_DIR$/personal-data-jaeger-client/personaldatajaegerclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/savescoreservice11/savescoreservice11.iml" filepath="$PROJECT_DIR$/savescoreservice11/savescoreservice11.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/securitygateway.iml" filepath="$PROJECT_DIR$/gateway/securitygateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/uaa/uaa.iml" filepath="$PROJECT_DIR$/uaa/uaa.iml" />

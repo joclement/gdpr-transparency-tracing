@@ -73,79 +73,39 @@
    <!-- ********************************************** -->
 
    <profiles>
-      <profile>
-         <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered goals
-            errors -->
-         <!-- It will be activated automatically on Eclipse if this has the m2e plugin,
-            by detecting the version property -->
-         <id>eclipse-maven</id>
-         <activation>
-            <property>
-               <name>m2e.version</name>
-            </property>
-         </activation>
-         <build>
-            <pluginManagement>
-               <plugins>
-                  <plugin>
-                     <!-- m2e lifecycle mapping -->
-                     <!-- This is used to configure the Maven plugin for Eclipse. -->
-                     <!-- Among other things, it allows registering goals, which
-                        Eclipse would otherwise reject. -->
-                     <!-- It has no real effect on Maven. -->
-                     <groupId>org.eclipse.m2e</groupId>
-                     <artifactId>lifecycle-mapping</artifactId>
-                     <version>${plugin.lifecycle.version}</version>
-                     <configuration>
-                        <!-- Sample fix for plugin executions. -->
-                        <!-- This is to be used in case a Maven plugin gives problems
-                           in Eclipse -->
-                        <!-- <lifecycleMappingMetadata> <pluginExecutions> <pluginExecution>
-                           <pluginExecutionFilter> <groupId>org.jacoco</groupId> <artifactId>jacoco-maven-plugin</artifactId>
-                           <versionRange>[0.5,)</versionRange> <goals> <goal>prepare-agent</goal> </goals> </pluginExecutionFilter>
-                           <action> <ignore /> </action> </pluginExecution> </pluginExecutions> </lifecycleMappingMetadata> -->
-                        <downloadSources>true</downloadSources>
-                        <downloadJavadocs>true</downloadJavadocs>
-                     </configuration>
-                  </plugin>
-               </plugins>
-            </pluginManagement>
-         </build>
-      </profile>
       <!-- ============================================== -->
       <!-- ============ DEPLOYMENT PROFILES ============= -->
       <!-- ============================================== -->
-      <profile>
-         <!-- Release deployment profile. -->
-         <!-- Sets the site repository to point to the releases repo. -->
-         <id>deployment-release</id>
-         <activation>
-            <!-- Active by default so the repository appears in the reports. -->
-            <activeByDefault>true</activeByDefault>
-         </activation>
-         <distributionManagement>
-            <site>
-               <id>site</id>
-               <name>Project Documentation Site</name>
-               <!-- The URL should be set externally -->
-               <url>${site.release.url}</url>
-            </site>
-         </distributionManagement>
-      </profile>
-      <profile>
-         <!-- Development deployment profile. -->
-         <!-- Sets the site repository to point to the development repo. -->
-         <id>deployment-development</id>
-         <distributionManagement>
-            <site>
-               <id>site-development</id>
-               <name>Project Development Documentation Site</name>
-               <!-- The URL should be set externally -->
-               <url>${site.develop.url}</url>
-            </site>
-         </distributionManagement>
-      </profile>
+<!--      <profile>-->
+<!--         &lt;!&ndash; Release deployment profile. &ndash;&gt;-->
+<!--         &lt;!&ndash; Sets the site repository to point to the releases repo. &ndash;&gt;-->
+<!--         <id>deployment-release</id>-->
+<!--         <activation>-->
+<!--            &lt;!&ndash; Active by default so the repository appears in the reports. &ndash;&gt;-->
+<!--            <activeByDefault>true</activeByDefault>-->
+<!--         </activation>-->
+<!--&lt;!&ndash;         <distributionManagement>&ndash;&gt;-->
+<!--&lt;!&ndash;            <site>&ndash;&gt;-->
+<!--&lt;!&ndash;               <id>site</id>&ndash;&gt;-->
+<!--&lt;!&ndash;               <name>Project Documentation Site</name>&ndash;&gt;-->
+<!--&lt;!&ndash;               &lt;!&ndash; The URL should be set externally &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;               <url>${site.release.url}</url>&ndash;&gt;-->
+<!--&lt;!&ndash;            </site>&ndash;&gt;-->
+<!--&lt;!&ndash;         </distributionManagement>&ndash;&gt;-->
+<!--      </profile>-->
+<!--      <profile>-->
+<!--         &lt;!&ndash; Development deployment profile. &ndash;&gt;-->
+<!--         &lt;!&ndash; Sets the site repository to point to the development repo. &ndash;&gt;-->
+<!--         <id>deployment-development</id>-->
+<!--         <distributionManagement>-->
+<!--            <site>-->
+<!--               <id>site-development</id>-->
+<!--               <name>Project Development Documentation Site</name>-->
+<!--               &lt;!&ndash; The URL should be set externally &ndash;&gt;-->
+<!--               <url>${site.develop.url}</url>-->
+<!--            </site>-->
+<!--         </distributionManagement>-->
+<!--      </profile>-->
       <profile>
          <!-- Deployment profile. -->
          <!-- Sets ups the environment for deployment. -->
@@ -313,60 +273,60 @@
    <!-- ****************** REPORTS ******************* -->
    <!-- ********************************************** -->
 
-   <reporting>
-      <plugins>
-         <plugin>
-            <!-- Checkstyle -->
-            <!-- Checks that the source files comply with style standards -->
-            <!-- It is using a customized rules file -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <configuration>
-               <!-- The customized rules file -->
-               <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>
-               <!-- Excludes generated code -->
-               <excludes>**/generated/**/*</excludes>
-            </configuration>
-         </plugin>
-         <plugin>
-             <!-- FindBugs -->
-             <!-- Checks for patterns which are prone to errors -->
-             <groupId>org.codehaus.mojo</groupId>
-             <artifactId>findbugs-maven-plugin</artifactId>
-             <configuration>
-                 <!-- Exclusion patterns -->
-                 <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>
-             </configuration>
-         </plugin>
-         <plugin>
-            <!-- Javadoc -->
-            <!-- Generates the javadocs -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-               <sourceFileExcludes>
-                  <!-- Excludes generated code -->
-                  <exclude>**/generated/**/*</exclude>
-               </sourceFileExcludes>
-            </configuration>
-         </plugin>
-         <plugin>
-            <!-- PMD -->
-            <!-- Checks that the code complies with a series of code quality rules -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pmd-plugin</artifactId>
-            <configuration>
-               <rulesets>
-                  <!-- The customized rules file -->
-                  <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>
-               </rulesets>
-               <excludes>
-                  <!-- Excludes generated code -->
-                  <exclude>**/generated/**/*</exclude>
-               </excludes>
-            </configuration>
-         </plugin>
-      </plugins>
-   </reporting>
+<!--   <reporting>-->
+<!--      <plugins>-->
+<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; Checkstyle &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; Checks that the source files comply with style standards &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; It is using a customized rules file &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>maven-checkstyle-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;               &lt;!&ndash; The customized rules file &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;               <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>&ndash;&gt;-->
+<!--&lt;!&ndash;               &lt;!&ndash; Excludes generated code &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;               <excludes>**/generated/**/*</excludes>&ndash;&gt;-->
+<!--&lt;!&ndash;            </configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;             &lt;!&ndash; FindBugs &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;             &lt;!&ndash; Checks for patterns which are prone to errors &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;             <groupId>org.codehaus.mojo</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;             <artifactId>findbugs-maven-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;             <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;                 &lt;!&ndash; Exclusion patterns &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                 <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>&ndash;&gt;-->
+<!--&lt;!&ndash;             </configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; Javadoc &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; Generates the javadocs &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>maven-javadoc-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;               <sourceFileExcludes>&ndash;&gt;-->
+<!--&lt;!&ndash;                  &lt;!&ndash; Excludes generated code &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                  <exclude>**/generated/**/*</exclude>&ndash;&gt;-->
+<!--&lt;!&ndash;               </sourceFileExcludes>&ndash;&gt;-->
+<!--&lt;!&ndash;            </configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
+<!--         <plugin>-->
+<!--            &lt;!&ndash; PMD &ndash;&gt;-->
+<!--            &lt;!&ndash; Checks that the code complies with a series of code quality rules &ndash;&gt;-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-pmd-plugin</artifactId>-->
+<!--            <configuration>-->
+<!--               <rulesets>-->
+<!--                  &lt;!&ndash; The customized rules file &ndash;&gt;-->
+<!--                  <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>-->
+<!--               </rulesets>-->
+<!--               <excludes>-->
+<!--                  &lt;!&ndash; Excludes generated code &ndash;&gt;-->
+<!--                  <exclude>**/generated/**/*</exclude>-->
+<!--               </excludes>-->
+<!--            </configuration>-->
+<!--         </plugin>-->
+<!--      </plugins>-->
+<!--   </reporting>-->
 
 </project>
