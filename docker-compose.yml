@@ -1,17 +1,9 @@
 version: '3'
 
 services:
-  uaa:
-    image: scg-demo-uaa:latest
-    container_name: uaa
-    expose:
-      - "8090"
-    ports:
-      - "8090:8090"
   gateway:
-    #image: scg-demo-security-gateway:latest
     container_name: gateway
-    build: security-gateway
+    build: gateway
     expose:
         - "8080"
         - "8088"
@@ -21,7 +13,6 @@ services:
     depends_on:
         - highscoreservice11
         - helloworldservice11
-        - uaa
   db:
     container_name: db
     image: postgres
@@ -68,6 +59,7 @@ services:
       - "8083:8083"
     depends_on:
       - db
+      - highscoreservice11
     links:
       - db
     environment:

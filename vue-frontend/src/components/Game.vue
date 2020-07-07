@@ -54,6 +54,7 @@
       const cellWidth = Math.floor(100 / rowCount) + "%";
 
       return {
+        username: "user1",
         score: 0,
         personalBestPoints: 0,
         overallHighscorePoints: 0,
@@ -126,7 +127,7 @@
         this.gameField.style.bottom = "0";
 
 
-        //getSavedPoints(); todo add when spring boot backend is ready
+        this.getSavedPoints();
         this.getHighscore();
 
 
@@ -327,10 +328,10 @@
       },
       async savePoints() {
           this.makeRequest({
-          method: "GET",
-          url: "/game/savescore/" + this.gameValues.points,
-          //contentType: "application/json",
-          //content: JSON.stringify({score: this.gameValues.points})
+          method: "PUT",
+          url: "/game/savescore/" + this.username,
+          contentType: "application/json",
+          content: JSON.stringify({score: this.gameValues.points})
         }).catch(function (reason) {
           console.log(reason);
         }).then(this.getSavedPoints);
@@ -367,16 +368,16 @@
         });
       },
       getSavedPoints() {
-        return this.makeRequest({method: "GET", url: "/game/savescore"})
+        const that = this;
+        return this.makeRequest({method: "GET", url: "/game/savescore/" + this.username })
           .then(function (res) {
             let response = JSON.parse(res);
-            if (response.points) {
-              this.personalBestPoints = response.score;
+            console.log(response);
+            if (response.score) {
+              that.personalBestPoints = response.score;
             } else {
-              this.personalBestPoints = 0;
+              that.personalBestPoints = 0;
             }
-          }).then(function (points) {
-            this.gameValues.prevBest = points;
           }).catch(function (reason) {
             console.log(reason);
           });

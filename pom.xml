@@ -11,6 +11,6 @@
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
         <module>savescoreservice11</module>
-        <module>security-gateway</module>
+        <module>gateway</module>
     </modules>
 </project>

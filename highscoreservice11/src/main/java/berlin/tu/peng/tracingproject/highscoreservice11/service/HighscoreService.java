@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class HighscoreService {
@@ -25,5 +26,11 @@ public class HighscoreService {
     @Transactional(readOnly = true)
     public HighscoreModel getTopHighscore() {
         return highscoreRepository.findFirstByOrderByHighscoreDesc();
+    }
+
+    @Transactional
+    public void addHigshcore(final HighscoreModel highscoreModel){
+        highscoreModel.setId(UUID.randomUUID());
+        highscoreRepository.save(highscoreModel); //todo only save in special occasions?
     }
 }

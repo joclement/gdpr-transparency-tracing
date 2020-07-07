@@ -16,15 +16,17 @@ public class ScoreModel {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public ScoreModel setUserName(String userName) {
         this.userName = userName;
+        return this;
     }
 
     public Integer getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public ScoreModel setScore(Integer score) {
         this.score = score;
+        return this;
     }
 }

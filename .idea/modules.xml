@@ -7,7 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/highscoreservice11/highscoreservice11.iml" filepath="$PROJECT_DIR$/highscoreservice11/highscoreservice11.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/savescoreservice11/savescoreservice11.iml" filepath="$PROJECT_DIR$/savescoreservice11/savescoreservice11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security-gateway/securitygateway.iml" filepath="$PROJECT_DIR$/security-gateway/securitygateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/securitygateway.iml" filepath="$PROJECT_DIR$/gateway/securitygateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/uaa/uaa.iml" filepath="$PROJECT_DIR$/uaa/uaa.iml" />
       <module fileurl="file://$PROJECT_DIR$/userservice11.iml" filepath="$PROJECT_DIR$/userservice11.iml" />
     </modules>
