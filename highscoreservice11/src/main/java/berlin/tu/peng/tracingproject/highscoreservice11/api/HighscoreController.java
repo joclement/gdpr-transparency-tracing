@@ -2,6 +2,7 @@ package berlin.tu.peng.tracingproject.highscoreservice11.api;
 
 import berlin.tu.peng.tracingproject.highscoreservice11.model.HighscoreModel;
 import berlin.tu.peng.tracingproject.highscoreservice11.service.HighscoreService;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.PersonalDataSpanHelper;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,14 +27,26 @@ public class HighscoreController {
     }
 
     @GetMapping(value = "/game/highscores/top", produces = APPLICATION_JSON_VALUE)
-    public HighscoreModel getTopHighscore(){
+    public HighscoreModel getTopHighscore() {
+        Span span = tracer.buildSpan("get highscores").start();
+        new PersonalDataSpanHelper(span)
+                .setPurpose("sevice fullfilment")
+                .setDataCategory("Logging Information")
+                .setStorageDuration("forever")
+                .setTransferredTo3rdParty(false);
+        span.finish();
+
         return highscoreService.getTopHighscore();
     }
 
     @GetMapping(value = "/game/highscores", produces = APPLICATION_JSON_VALUE)
-    public List<HighscoreModel> getHighscores(){
-        Span span = tracer.buildSpan("get highscore").start();
-        span.setTag("purpose", "service fullfilment");
+    public List<HighscoreModel> getHighscores() {
+        Span span = tracer.buildSpan("get highscores").start();
+        new PersonalDataSpanHelper(span)
+                .setPurpose("sevice fullfilment")
+                .setDataCategory("Logging Information")
+                .setStorageDuration("forever")
+                .setTransferredTo3rdParty(false);
         span.finish();
 
         final List<HighscoreModel> result = highscoreService.getHighscores();
@@ -43,7 +56,22 @@ public class HighscoreController {
     }
 
     @PostMapping(value = "/game/highscores", consumes = APPLICATION_JSON_VALUE)
-    public void addHighscore(@RequestBody final HighscoreModel highscoreModel){
+    public void addHighscore(@RequestBody final HighscoreModel highscoreModel) {
+        Span span = tracer.buildSpan("get highscores").start();
+        new PersonalDataSpanHelper(span)
+                .setPurpose("sevice fullfilment")
+                .setDataCategory("Player Performance Data")
+                .setAutomated(true) //used to determine Players for Snake World Champuionchips
+                .setStorageDuration("forever")
+                .setTransferredTo3rdParty(false);
+        span.finish();
+
         highscoreService.addHigshcore(highscoreModel);
+    }
+
+    //todo span.finsih??
+    private PersonalDataSpanHelper getPersonalDataSpanHelper(String spanName) {
+        Span span = tracer.buildSpan(spanName).start();
+        return new PersonalDataSpanHelper(span);
     }
 }
