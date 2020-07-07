@@ -13,6 +13,7 @@ services:
     depends_on:
         - highscoreservice11
         - helloworldservice11
+
   db:
     container_name: db
     image: postgres
@@ -25,6 +26,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: example
+
   helloworldservice11:
     container_name: helloworld
     build: helloworldservice11
@@ -79,3 +81,12 @@ services:
       - "14268:14268"
       - "14250:14250"
       - "9411:9411"
+
+  simple-jaeger-extract:
+    build: simple-jaeger-extract
+    ports:
+      - "5000:5000"
+    depends_on:
+      - jaeger
+    environment:
+      - JAEGER_QUERY_HOST=jaeger

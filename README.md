@@ -6,4 +6,24 @@ Our techreport will be written [here](https://www.overleaf.com/project/5eaff92be
 
 This Project includes the secure gateway of spring.io, which can be accessed at https://github.com/benwilcock/spring-cloud-gateway-demo/tree/master/security-gateway , and which is licensed under the Apache 2.0 License
 
-start with `./build.sh`
+## Get started
+
+You need the following dependencies to build and run the programs contained in
+this repository:
+* maven
+* docker
+* docker-compose
+* python
+* pip
+* curl or alterantives
+
+The project has been tested for Ubuntu18.04. It will most likely run on other
+Linux distributions and also on MacOS. We don't know about Windows.
+
+### Quickstart
+
+Run these commands:
+```
+maven package
+docker-compose up --build
+```

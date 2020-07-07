@@ -8,9 +8,51 @@
 
     <modules>
         <module>vue-frontend</module>
+        <module>personal-data-jaeger-client</module>
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
         <module>savescoreservice11</module>
         <module>gateway</module>
     </modules>
+
+   <organization>
+      <name>TU Berlin - Privacy Engineering - Group 4</name>
+      <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+   </organization>
+
+   <developers>
+      <developer>
+         <id>jclement</id>
+         <name>Joris Clement</name>
+         <email>j.clement@campus.tu-berlin.de</email>
+         <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+         <organization>Joris Clement</organization>
+         <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+         <roles>
+            <role>Developer</role>
+         </roles>
+         <timezone>+1</timezone>
+         <properties />
+      </developer>
+       <developer>
+           <id>welz</id>
+           <name>Juri Welz</name>
+           <email>welz@campus.tu-berlin.de</email>
+           <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+           <organization>Juri Welz</organization>
+           <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+           <roles>
+               <role>Developer</role>
+           </roles>
+           <timezone>+1</timezone>
+           <properties />
+       </developer>
+   </developers>
+
+   <repositories>
+     <repository>
+       <id>personal-data-jaeger-client</id>
+       <url>file://${project.basedir}/personal-data-jaeger-client</url>
+     </repository>
+   </repositories>
 </project>
