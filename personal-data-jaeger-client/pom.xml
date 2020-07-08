@@ -28,84 +28,7 @@
       </license>
    </licenses>
 
-   <!-- ********************************************** -->
-   <!-- ************ RESOURCES AND SERVICES ********** -->
-   <!-- ********************************************** -->
-
-
-<!-- TODO Deactivate until we move to Github
-   <scm>
-      <connection>scm:git:https://github.com/None/personal-data-jaeger-client.git</connection>
-      <developerConnection>scm:git:https://github.com/None/personal-data-jaeger-client.git</developerConnection>
-      <tag>head</tag>
-      <url>https://www.github.com/None/personal-data-jaeger-client</url>
-   </scm>
-
-   <issueManagement>
-      <system>GitHub</system>
-      <url>https://www.github.com/None/personal-data-jaeger-client/issues</url>
-   </issueManagement>
-
-   <ciManagement>
-      <system>Travis CI</system>
-      <url>https://travis-ci.org/None/personal-data-jaeger-client</url>
-      <notifiers />
-   </ciManagement>
-
-   <distributionManagement>
-      <repository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>releases</id>
-         <name>Releases Repository</name>
-         <url>https://api.bintray.com/maven/None/maven/personal-data-jaeger-client</url>
-      </repository>
-      <snapshotRepository>
-         <uniqueVersion>false</uniqueVersion>
-         <id>snapshots</id>
-         <name>Snapshots Repository</name>
-         <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      </snapshotRepository>
-   </distributionManagement>
--->
-
-   <!-- ********************************************** -->
-   <!-- ****************** PROFILES ****************** -->
-   <!-- ********************************************** -->
-
    <profiles>
-      <!-- ============================================== -->
-      <!-- ============ DEPLOYMENT PROFILES ============= -->
-      <!-- ============================================== -->
-<!--      <profile>-->
-<!--         &lt;!&ndash; Release deployment profile. &ndash;&gt;-->
-<!--         &lt;!&ndash; Sets the site repository to point to the releases repo. &ndash;&gt;-->
-<!--         <id>deployment-release</id>-->
-<!--         <activation>-->
-<!--            &lt;!&ndash; Active by default so the repository appears in the reports. &ndash;&gt;-->
-<!--            <activeByDefault>true</activeByDefault>-->
-<!--         </activation>-->
-<!--&lt;!&ndash;         <distributionManagement>&ndash;&gt;-->
-<!--&lt;!&ndash;            <site>&ndash;&gt;-->
-<!--&lt;!&ndash;               <id>site</id>&ndash;&gt;-->
-<!--&lt;!&ndash;               <name>Project Documentation Site</name>&ndash;&gt;-->
-<!--&lt;!&ndash;               &lt;!&ndash; The URL should be set externally &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;               <url>${site.release.url}</url>&ndash;&gt;-->
-<!--&lt;!&ndash;            </site>&ndash;&gt;-->
-<!--&lt;!&ndash;         </distributionManagement>&ndash;&gt;-->
-<!--      </profile>-->
-<!--      <profile>-->
-<!--         &lt;!&ndash; Development deployment profile. &ndash;&gt;-->
-<!--         &lt;!&ndash; Sets the site repository to point to the development repo. &ndash;&gt;-->
-<!--         <id>deployment-development</id>-->
-<!--         <distributionManagement>-->
-<!--            <site>-->
-<!--               <id>site-development</id>-->
-<!--               <name>Project Development Documentation Site</name>-->
-<!--               &lt;!&ndash; The URL should be set externally &ndash;&gt;-->
-<!--               <url>${site.develop.url}</url>-->
-<!--            </site>-->
-<!--         </distributionManagement>-->
-<!--      </profile>-->
       <profile>
          <!-- Deployment profile. -->
          <!-- Sets ups the environment for deployment. -->
@@ -129,16 +52,6 @@
       <log4j.version>2.12.1</log4j.version>
       <slf4j.version>1.7.28</slf4j.version>
       <jaeger.version>0.35.1</jaeger.version>
-
-      <!-- ============================================== -->
-      <!-- ================= MAVEN SITE ================= -->
-      <!-- ============================================== -->
-
-<!-- TODO Deactivate until we move to Github
-      <site.skin.version>1.4.3</site.skin.version>
-      <bintrayURL>https://bintray.com/None/maven/personal-data-jaeger-client/view</bintrayURL>
-      <mavenURL>http://mvnrepository.com/artifact/${project.groupId}/${project.artifactId}</mavenURL>
--->
 
    </properties>
 
@@ -235,65 +148,4 @@
           </plugin>
       </plugins>
    </build>
-
-   <!-- ********************************************** -->
-   <!-- ****************** REPORTS ******************* -->
-   <!-- ********************************************** -->
-
-<!--   <reporting>-->
-<!--      <plugins>-->
-<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash; Checkstyle &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash; Checks that the source files comply with style standards &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash; It is using a customized rules file &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <artifactId>maven-checkstyle-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;               &lt;!&ndash; The customized rules file &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;               <configLocation>${project.basedir}/src/config/checkstyle/checkstyle-rules.xml</configLocation>&ndash;&gt;-->
-<!--&lt;!&ndash;               &lt;!&ndash; Excludes generated code &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;               <excludes>**/generated/**/*</excludes>&ndash;&gt;-->
-<!--&lt;!&ndash;            </configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;             &lt;!&ndash; FindBugs &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;             &lt;!&ndash; Checks for patterns which are prone to errors &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;             <groupId>org.codehaus.mojo</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;             <artifactId>findbugs-maven-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;             <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;                 &lt;!&ndash; Exclusion patterns &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                 <excludeFilterFile>${project.basedir}/src/config/findbugs/findbugs-exclude.xml</excludeFilterFile>&ndash;&gt;-->
-<!--&lt;!&ndash;             </configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;         <plugin>&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash; Javadoc &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            &lt;!&ndash; Generates the javadocs &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;            <groupId>org.apache.maven.plugins</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <artifactId>maven-javadoc-plugin</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;            <configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;               <sourceFileExcludes>&ndash;&gt;-->
-<!--&lt;!&ndash;                  &lt;!&ndash; Excludes generated code &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                  <exclude>**/generated/**/*</exclude>&ndash;&gt;-->
-<!--&lt;!&ndash;               </sourceFileExcludes>&ndash;&gt;-->
-<!--&lt;!&ndash;            </configuration>&ndash;&gt;-->
-<!--&lt;!&ndash;         </plugin>&ndash;&gt;-->
-<!--         <plugin>-->
-<!--            &lt;!&ndash; PMD &ndash;&gt;-->
-<!--            &lt;!&ndash; Checks that the code complies with a series of code quality rules &ndash;&gt;-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-pmd-plugin</artifactId>-->
-<!--            <configuration>-->
-<!--               <rulesets>-->
-<!--                  &lt;!&ndash; The customized rules file &ndash;&gt;-->
-<!--                  <ruleset>${project.basedir}/src/config/pmd/pmd-rules.xml</ruleset>-->
-<!--               </rulesets>-->
-<!--               <excludes>-->
-<!--                  &lt;!&ndash; Excludes generated code &ndash;&gt;-->
-<!--                  <exclude>**/generated/**/*</exclude>-->
-<!--               </excludes>-->
-<!--            </configuration>-->
-<!--         </plugin>-->
-<!--      </plugins>-->
-<!--   </reporting>-->
-
 </project>
