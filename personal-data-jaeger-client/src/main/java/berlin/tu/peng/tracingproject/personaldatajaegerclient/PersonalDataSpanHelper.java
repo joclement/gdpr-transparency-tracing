@@ -174,7 +174,6 @@ public class PersonalDataSpanHelper {
     }
 
     public PersonalDataSpanHelper collectPurposes(){
-
         setPurposes(this.span, this.recipients);
         return this;
     }
