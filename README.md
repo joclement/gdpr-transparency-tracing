@@ -16,14 +16,11 @@ this repository:
 * python
 * pip
 * curl or alterantives
+* optional: make
 
 The project has been tested for Ubuntu18.04. It will most likely run on other
 Linux distributions and also on MacOS. We don't know about Windows.
 
 ### Quickstart
 
-Run these commands:
-```
-maven package
-docker-compose up --build
-```
+Run the command `make` or `make up`.
