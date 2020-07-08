@@ -22,7 +22,7 @@
    <!-- ********************************************** -->
 
    <!-- Checks that a package-info.java file exists for each package -->
-   <module name="JavadocPackage" />
+<!--   <module name="JavadocPackage" />-->
 
    <!-- Checks whether files end with a new line -->
    <module name="NewlineAtEndOfFile" />
@@ -40,22 +40,22 @@
 
    <module name="TreeWalker">
 
-      <!-- Checks for Javadoc comments -->
-      <module name="JavadocMethod" />
-      <module name="JavadocType" />
-      <module name="JavadocVariable" />
-      <module name="JavadocStyle" />
-      <module name="AtclauseOrder">
-         <property name="tagOrder" value="@param, @return, @throws, @deprecated" />
-         <property name="target"
-            value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF" />
-      </module>
-      <module name="NonEmptyAtclauseDescription" />
-      <module name="SummaryJavadocCheck" />
-      <!-- Not yet supported -->
-      <!--<module name="JavadocParagraph"> <property name="allowNewlineParagraph" 
-         value="true" /> </module> -->
-      <module name="CommentsIndentation" />
+<!--      &lt;!&ndash; Checks for Javadoc comments &ndash;&gt;-->
+<!--      <module name="JavadocMethod" />-->
+<!--      <module name="JavadocType" />-->
+<!--      <module name="JavadocVariable" />-->
+<!--      <module name="JavadocStyle" />-->
+<!--      <module name="AtclauseOrder">-->
+<!--         <property name="tagOrder" value="@param, @return, @throws, @deprecated" />-->
+<!--         <property name="target"-->
+<!--            value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF" />-->
+<!--      </module>-->
+<!--      <module name="NonEmptyAtclauseDescription" />-->
+<!--      <module name="SummaryJavadocCheck" />-->
+<!--      &lt;!&ndash; Not yet supported &ndash;&gt;-->
+<!--      &lt;!&ndash;<module name="JavadocParagraph"> <property name="allowNewlineParagraph" -->
+<!--         value="true" /> </module> &ndash;&gt;-->
+<!--      <module name="CommentsIndentation" />-->
 
       <!-- Checks for texts -->
       <module name="IllegalTokenText">

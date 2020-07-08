@@ -7,10 +7,12 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>vue-frontend</module>
         <module>personal-data-jaeger-client</module>
         <module>helloworldservice11</module>
         <module>highscoreservice11</module>
-        <module>security-gateway</module>
+        <module>savescoreservice11</module>
+        <module>gateway</module>
     </modules>
 
    <organization>
@@ -32,6 +34,19 @@
          <timezone>+1</timezone>
          <properties />
       </developer>
+       <developer>
+           <id>welz</id>
+           <name>Juri Welz</name>
+           <email>welz@campus.tu-berlin.de</email>
+           <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+           <organization>Juri Welz</organization>
+           <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+           <roles>
+               <role>Developer</role>
+           </roles>
+           <timezone>+1</timezone>
+           <properties />
+       </developer>
    </developers>
 
    <repositories>

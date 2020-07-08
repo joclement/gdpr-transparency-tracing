@@ -1,29 +1,24 @@
 version: '3'
 
 services:
-  uaa:
-    build: uaa
-    container_name: uaa
-    expose:
-      - "8090"
-    ports:
-      - "8090:8090"
-
   gateway:
-    build: security-gateway
     container_name: gateway
+    build: gateway
     expose:
         - "8080"
+        - "8088"
     ports:
         - "8080:8080"
+        - "8088:8088"
     depends_on:
         - highscoreservice11
         - helloworldservice11
-        - uaa
 
   db:
     container_name: db
     image: postgres
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     restart: always
     expose:
       - "5432"
@@ -52,6 +47,21 @@ services:
       - "8082:8082"
     depends_on:
       - db
+    links:
+      - db
+    environment:
+      - JAEGER_AGENT_HOST=jaeger
+      - JAEGER_AGENT_PORT=6831
+      - DATABASE_HOST=postgres
+
+  savescoreservice11:
+    container_name: savescore
+    build: savescoreservice11
+    ports:
+      - "8083:8083"
+    depends_on:
+      - db
+      - highscoreservice11
     links:
       - db
     environment:

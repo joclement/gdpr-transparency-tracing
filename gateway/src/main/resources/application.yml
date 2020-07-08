@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  cloud:
+    gateway:
+      routes:
+        - id: highscores
+          uri: http://highscores:8082
+          predicates:
+            - Path=/game/highscores/top,/game/highscores
+        - id: helloworld
+          uri: http://helloworld:8081
+          predicates:
+            - Path=/helloworld
+        - id: savescore
+          uri: http://savescore:8083
+          predicates:
+            - Path=/game/savescore,/game/savescore/**

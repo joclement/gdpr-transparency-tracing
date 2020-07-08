@@ -2,11 +2,6 @@ server:
   port: 8082
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://uaa:8090/uaa/token_keys
   datasource:
     url: jdbc:postgresql://db:5432/postgres
     driver-class-name: org.postgresql.Driver
@@ -23,5 +18,3 @@ logging:
     com.scg.service: TRACE
     org.springframework.web: INFO
     org.springframework.web.HttpLogging: DEBUG
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
