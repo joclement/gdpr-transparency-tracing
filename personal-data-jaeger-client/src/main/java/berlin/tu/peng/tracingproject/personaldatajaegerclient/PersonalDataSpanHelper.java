@@ -179,7 +179,7 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper addCategory(String dataCategory){
+    public PersonalDataSpanHelper addDataCategory(String dataCategory){
         dataCategories.add(dataCategory);
         return this;
     }
@@ -206,6 +206,11 @@ public class PersonalDataSpanHelper {
         collectRecipients();
         collectOrigins();
         return this;
+    }
+
+    public void collectListsAndFinishSpan(){
+        collectAllLists();
+        span.finish();
     }
 
 }

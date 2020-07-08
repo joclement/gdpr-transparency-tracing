@@ -29,12 +29,12 @@ public class saveScoreController {
     public void saveUserScore(@PathVariable String username, @RequestBody ScoreModel score) {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .setPurpose("sevice fullfilment")
-                .setDataCategory("Player Performance Data")
+                .addPurpose("sevice fullfilment")
+                .addDataCategory("Player Performance Data")
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
                 .setStorageDuration("forever")
-                .setTransferredTo3rdParty(false);
-        span.finish();
+                .setTransferredTo3rdParty(false)
+                .collectListsAndFinishSpan();
 
         final ScoreModel scoreModel = new ScoreModel().setUserName(username).setScore(score.getScore());
         saveScoreService.saveScore(scoreModel);
@@ -45,11 +45,12 @@ public class saveScoreController {
     public ScoreModel getUserScore(@PathVariable String username){
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .setPurpose("sevice fullfilment")
-                .setDataCategory("Logging Information")
+                .addPurpose("sevice fullfilment")
+                .addDataCategory("Logging Information")
+                .collectAllLists()
                 .setStorageDuration("forever")
-                .setTransferredTo3rdParty(false);
-        span.finish();
+                .setTransferredTo3rdParty(false)
+                .collectListsAndFinishSpan();
 
 
         return saveScoreService.getScore(username);

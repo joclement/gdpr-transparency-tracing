@@ -30,11 +30,11 @@ public class HighscoreController {
     public HighscoreModel getTopHighscore() {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .setPurpose("sevice fullfilment")
-                .setDataCategory("Logging Information")
+                .addPurpose("sevice fullfilment")
+                .addDataCategory("Logging Information")
                 .setStorageDuration("forever")
-                .setTransferredTo3rdParty(false);
-        span.finish();
+                .setTransferredTo3rdParty(false)
+                .collectListsAndFinishSpan();
 
         return highscoreService.getTopHighscore();
     }
@@ -43,11 +43,11 @@ public class HighscoreController {
     public List<HighscoreModel> getHighscores() {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .setPurpose("sevice fullfilment")
-                .setDataCategory("Logging Information")
+                .addPurpose("sevice fullfilment")
+                .addDataCategory("Logging Information")
                 .setStorageDuration("forever")
-                .setTransferredTo3rdParty(false);
-        span.finish();
+                .setTransferredTo3rdParty(false)
+                .collectListsAndFinishSpan();
 
         final List<HighscoreModel> result = highscoreService.getHighscores();
         result.forEach(item -> System.out.println(item.getId()));
@@ -59,12 +59,12 @@ public class HighscoreController {
     public void addHighscore(@RequestBody final HighscoreModel highscoreModel) {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .setPurpose("sevice fullfilment")
-                .setDataCategory("Player Performance Data")
+                .addPurpose("sevice fullfilment")
+                .addDataCategory("Player Performance Data")
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
                 .setStorageDuration("forever")
-                .setTransferredTo3rdParty(false);
-        span.finish();
+                .setTransferredTo3rdParty(false)
+                .collectListsAndFinishSpan();
 
         highscoreService.addHigshcore(highscoreModel);
     }
