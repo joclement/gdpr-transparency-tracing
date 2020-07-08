@@ -225,47 +225,6 @@
    <build>
       <defaultGoal>clean package install</defaultGoal>
       <plugins>
-         <plugin>
-            <!-- Changes -->
-            <!-- Takes care of the changes log -->
-            <!-- It is set to also validate the changes log file -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-changes-plugin</artifactId>
-            <executions>
-               <!-- Changes plugin is bound to the pre-site phase -->
-               <execution>
-                  <id>check-changes</id>
-                  <phase>pre-site</phase>
-                  <goals>
-                     <goal>changes-check</goal>
-                  </goals>
-               </execution>
-               <execution>
-                  <id>validate-changes</id>
-                  <phase>pre-site</phase>
-                  <goals>
-                     <goal>changes-validate</goal>
-                  </goals>
-                  <configuration>
-                     <failOnError>true</failOnError>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <!-- Site -->
-            <!-- Generates the Maven Site -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <dependencies>
-               <dependency>
-                  <!-- Docs Maven Skin -->
-                  <groupId>com.bernardomg.maven.skins</groupId>
-                  <artifactId>docs-maven-skin</artifactId>
-                  <version>${site.skin.version}</version>
-               </dependency>
-            </dependencies>
-         </plugin>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
