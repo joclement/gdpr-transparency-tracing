@@ -23,7 +23,7 @@ public class Savescoreservice11Application {
 		Configuration.ReporterConfiguration reporterConfig = Configuration.ReporterConfiguration.fromEnv()
 				.withLogSpans(true);
 
-		Configuration config = new Configuration("highscore")
+		Configuration config = new Configuration("savescore")
 				.withSampler(samplerConfig)
 				.withReporter(reporterConfig);
 
