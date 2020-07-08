@@ -45,25 +45,32 @@ def _get_traces_from_service(service: str):
     return data
 
 
-def _get_transparency_tags_from_service(service: str) -> dict:
+def _remove_duplicate_dicts_from_list(input_list: list) -> list:
+    return [
+        dict(tupl) for tupl in set(tuple(sorted(dic.items())) for dic in input_list)
+    ]
+
+
+def _get_transparency_tags_from_service(service: str) -> list:
     data = _get_traces_from_service(service)
 
-    transparency_tags = dict()
-    for tag_name in TRANSPARENCY_CATEGORIES:
-        tags = set()
-        for trace in data["data"]:
-            for span in trace["spans"]:
-                for tag in span["tags"]:
-                    if tag["key"] == tag_name:
-                        if (
-                            tag_name in TRANSPARENCY_LIST_CATEGORIES
-                            and "," in tag["value"]
-                        ):
-                            tags.update([t.strip() for t in tag["value"].split(",")])
-                        else:
-                            tags.add(tag["value"])
-        transparency_tags[tag_name] = list(tags)
-    return transparency_tags
+    all_transparency_tags = list()
+    for trace in data["data"]:
+        for span in trace["spans"]:
+            transparency_tags = dict()
+            for tag in span["tags"]:
+                if tag["key"] in TRANSPARENCY_CATEGORIES:
+                    if (
+                        tag["key"] in TRANSPARENCY_LIST_CATEGORIES
+                        and "," in tag["value"]
+                    ):
+                        transparency_tags[tag["key"]] = tuple(
+                            [t.strip() for t in tag["value"].split(",")]
+                        )
+                    else:
+                        transparency_tags[tag["key"]] = tag["value"]
+            all_transparency_tags.append(transparency_tags)
+    return _remove_duplicate_dicts_from_list(all_transparency_tags)
 
 
 def get_all_for_services() -> dict:
@@ -74,8 +81,11 @@ def get_all_for_services() -> dict:
 
 
 def _get_purposes_from_service(service: str) -> list:
-    transparency_tags = _get_transparency_tags_from_service(service)
-    return transparency_tags["purpose"]
+    transparency_tags_list = _get_transparency_tags_from_service(service)
+    purposes = list()
+    for transparency_tags in transparency_tags_list:
+        purposes.append(transparency_tags["purpose"])
+    return purposes
 
 
 def get_purposes_for_services() -> dict:
