@@ -28,6 +28,7 @@ import io.opentracing.tag.StringTag;
 import io.opentracing.tag.BooleanTag;
 import io.opentracing.tag.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -41,33 +42,39 @@ import java.util.List;
 public class PersonalDataSpanHelper {
 
     public static final StringTag PURPOSE = new StringTag("purpose");
-
     public static final StringTag DATA_CATEGORY = new StringTag("category");
-
     public static final StringTag RECIPIENTS = new StringTag("recipients");
-
     public static final BooleanTag TRANSFERRED_TO_3RDPARTY = new BooleanTag("3rdparty");
-
     public static final StringTag STORAGE_DURATION = new StringTag("duration");
-
     public static final StringTag ORIGIN = new StringTag("origin");
-
     public static final BooleanTag AUTOMATED = new BooleanTag("auto");
+
+    private final Span span;
+
+    private final List<String> recipients = new ArrayList<>();
+    private final List<String> purposes = new ArrayList<>();
+    private final List<String> dataCategories = new ArrayList<>();
+    private final List<String> origins = new ArrayList<>();
+
 
     public PersonalDataSpanHelper(Span span) {
         this.span = span;
     }
 
-    public static void setPurpose(Span span, String purpose) {
-        PURPOSE.set(span, purpose);
+    public static void setPurposes(Span span, List<String> purposes) {
+        PURPOSE.set(span, String.join(",", purposes));
     }
 
     public static void setRecipients(Span span, List<String> recipients) {
         RECIPIENTS.set(span, String.join(", ", recipients));
     }
 
-    public static void setDataCategory(Span span, String dataCategory) {
-        DATA_CATEGORY.set(span, dataCategory);
+    public static void setDataCategories(Span span, List<String> dataCategories) {
+        DATA_CATEGORY.set(span, String.join(",", dataCategories));
+    }
+
+    public static void setOrigins(Span span, List<String> origins) {
+        ORIGIN.set(span, String.join(",", origins));
     }
 
     public static void setTransferredTo3rdParty(Span span,
@@ -79,45 +86,35 @@ public class PersonalDataSpanHelper {
         STORAGE_DURATION.set(span, storageDuration);
     }
 
-    public static void setOrigin(Span span, String origin) {
-        ORIGIN.set(span, origin);
-    }
 
     public static void setAutomated(Span span, boolean automated) {
         AUTOMATED.set(span, automated);
     }
 
     public static void setPersonalInfo(Span span,
-                                       String purpose,
-                                       String dataCategory,
+                                       List<String> purposes,
+                                       List<String> dataCategories,
                                        List<String> recipients,
                                        boolean transferredTo3rdParty,
                                        String storageDuration,
-                                       String origin,
+                                       List<String> origins,
                                        boolean automated) {
-        setPurpose(span, purpose);
-        setDataCategory(span, dataCategory);
+        setPurposes(span, purposes);
+        setDataCategories(span, dataCategories);
         setRecipients(span, recipients);
         setTransferredTo3rdParty(span, transferredTo3rdParty);
         setStorageDuration(span, storageDuration);
-        setOrigin(span, origin);
+        setOrigins(span, origins);
         setAutomated(span, automated);
     }
 
-    private final Span span;
-
-    public PersonalDataSpanHelper setPurpose(String purpose) {
-        setPurpose(this.span, purpose);
+    public PersonalDataSpanHelper setPurposes(List<String> purposes) {
+        setPurposes(this.span, purposes);
         return this;
     }
 
-    public PersonalDataSpanHelper setDataCategory(String dataCategory) {
-        setDataCategory(this.span, dataCategory);
-        return this;
-    }
-
-    public PersonalDataSpanHelper setRecipients(List<String> recipients) {
-        setRecipients(this.span, recipients);
+    public PersonalDataSpanHelper setDataCategories(List<String> dataCategories) {
+        setDataCategories(this.span, dataCategories);
         return this;
     }
 
@@ -132,8 +129,8 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper setOrigin(String origin) {
-        setOrigin(this.span, origin);
+    public PersonalDataSpanHelper setOrigins(List<String> origins) {
+        setOrigins(this.span, origins);
         return this;
     }
 
@@ -142,19 +139,73 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public void setPersonalInfo(String purpose,
-                                String dataCategory,
+    public void setPersonalInfo(List<String> purposes,
+                                List<String> dataCategories,
                                 List<String> recipients,
                                 boolean transferredTo3rdParty,
                                 String storageDuration,
-                                String origin,
+                                List<String> origins,
                                 boolean automated) {
-        this.setPurpose(purpose);
-        this.setDataCategory(dataCategory);
-        this.setRecipients(recipients);
+        this.setPurposes(purposes);
+        this.setDataCategories(dataCategories);
+
+        recipients.forEach(this::addRecipient);
+        collectRecipients();
+
         this.setTransferredTo3rdParty(transferredTo3rdParty);
         this.setStorageDuration(storageDuration);
-        this.setOrigin(origin);
+        this.setOrigins(origins);
         this.setAutomated(automated);
     }
+
+    public PersonalDataSpanHelper addRecipient(String recipient){
+        recipients.add(recipient);
+        return this;
+    }
+
+    public PersonalDataSpanHelper collectRecipients(){
+        setPurposes(this.span, this.purposes);
+        return this;
+    }
+
+    public PersonalDataSpanHelper addPurpose(String purpose){
+        purposes.add(purpose);
+        return this;
+    }
+
+    public PersonalDataSpanHelper collectPurposes(){
+
+        setPurposes(this.span, this.recipients);
+        return this;
+    }
+
+    public PersonalDataSpanHelper addCategory(String dataCategory){
+        dataCategories.add(dataCategory);
+        return this;
+    }
+
+    public PersonalDataSpanHelper collectDataCategories(){
+
+        setDataCategories(this.span, this.dataCategories);
+        return this;
+    }
+
+    public PersonalDataSpanHelper addOrigin(String origin){
+        origins.add(origin);
+        return this;
+    }
+
+    public PersonalDataSpanHelper collectOrigins(){
+        setOrigins(this.span, this.origins);
+        return this;
+    }
+
+    public PersonalDataSpanHelper collectAllLists(){
+        collectPurposes();
+        collectDataCategories();
+        collectRecipients();
+        collectOrigins();
+        return this;
+    }
+
 }
