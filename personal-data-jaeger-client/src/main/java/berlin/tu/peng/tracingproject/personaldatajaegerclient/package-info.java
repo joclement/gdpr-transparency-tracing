@@ -1,4 +1,4 @@
-/**
+/*
  * The MIT License (MIT)
  * <p>
  * Copyright (c) 2020 the original author or authors.

@@ -1,4 +1,4 @@
-/**
+/*
  * The MIT License (MIT)
  * <p>
  * Copyright (c) 2020 the original author or authors.
@@ -21,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 package berlin.tu.peng.tracingproject.personaldatajaegerclient;
 
 import io.opentracing.Span;
@@ -37,6 +36,7 @@ import java.util.List;
  * regarding the tracing of the processing of personal data.
  *
  * @author Joris Clement
+ * @author Juri Welz
  */
 public class PersonalDataSpanHelper {
 
@@ -54,6 +54,9 @@ public class PersonalDataSpanHelper {
 
     public static final BooleanTag AUTOMATED = new BooleanTag("auto");
 
+    public PersonalDataSpanHelper(Span span) {
+        this.span = span;
+    }
 
     public static void setPurpose(Span span, String purpose) {
         PURPOSE.set(span, purpose);
@@ -102,10 +105,6 @@ public class PersonalDataSpanHelper {
     }
 
     private final Span span;
-
-    public PersonalDataSpanHelper(Span span) {
-        this.span = span;
-    }
 
     public PersonalDataSpanHelper setPurpose(String purpose) {
         setPurpose(this.span, purpose);
