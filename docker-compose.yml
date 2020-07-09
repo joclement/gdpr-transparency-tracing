@@ -41,7 +41,7 @@ services:
       - JAEGER_AGENT_PORT=6831
 
   highscoreservice11:
-    container_name: highscores
+    container_name: highscore
     build: highscoreservice11
     ports:
       - "8082:8082"
