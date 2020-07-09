@@ -7,4 +7,4 @@ clean:
 	docker-compose down
 	docker-compose rm --force
 
-.PHONY: dummy install black test clean
+.PHONY: up clean
