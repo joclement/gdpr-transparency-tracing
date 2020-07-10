@@ -4,6 +4,7 @@ services:
   gateway:
     container_name: gateway
     build: gateway
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/gateway
     expose:
         - "8080"
         - "8088"
@@ -30,6 +31,7 @@ services:
   helloworldservice11:
     container_name: helloworld
     build: helloworldservice11
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/helloworld
     ports:
       - "8081:8081"
     depends_on:
@@ -43,6 +45,7 @@ services:
   highscoreservice11:
     container_name: highscore
     build: highscoreservice11
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/highscore
     ports:
       - "8082:8082"
     depends_on:
@@ -57,6 +60,7 @@ services:
   savescoreservice11:
     container_name: savescore
     build: savescoreservice11
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/savescore
     ports:
       - "8083:8083"
     depends_on:
@@ -84,6 +88,7 @@ services:
 
   simple-jaeger-extract:
     build: simple-jaeger-extract
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/simple-jaeger-extract
     ports:
       - "5000:5000"
     depends_on:
