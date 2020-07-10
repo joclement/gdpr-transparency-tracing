@@ -7,6 +7,14 @@ aws:
 	docker-compose pull
 	docker-compose start
 
+deploy:
+	mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true
+	docker-compose down
+	docker-compose rm
+	docker-compose build
+	docker login gitlab-registry.tubit.tu-berlin.de
+	docker-compose push
+
 install-aws:
 	# TODO some install commands may miss here
 	sudo yum update -y
