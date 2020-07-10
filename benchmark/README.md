@@ -26,3 +26,20 @@ Perform benchmark for case 1 by doing this on the instance/AWS:
 git checkout master
 make aws
 ```
+
+
+## Case 2
+
+### Prepare
+Do the same as for case 1, if images are not there:
+```
+git checkout benchmark-no-jaeger
+make deploy
+```
+
+### Perform
+Perform benchmark for case 2 by doing this on the instance/AWS:
+```
+git checkout benchmark-no-jaeger
+make aws
+```
