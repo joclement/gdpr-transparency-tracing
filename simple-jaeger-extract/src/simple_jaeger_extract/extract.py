@@ -2,7 +2,6 @@ import os
 
 import requests
 
-
 if os.getenv("JAEGER_QUERY_HOST") is None:
     jaeger_query_host = "localhost"
 else:
@@ -42,33 +41,51 @@ def _get_traces_from_service(service: str):
     return data
 
 
+def _generate_new_group() -> dict:
+    transparency_tags = dict()
+    for tag_name in TRANSPARENCY_CATEGORIES:
+        transparency_tags[tag_name] = list()
+    return transparency_tags
+
+
 def _get_transparency_groups_from_service(service: str) -> dict:
     data = _get_traces_from_service(service)
+
+    print(data)
 
     groups = dict()
     group_count = 0
     for trace in data["data"]:
         for span in trace["spans"]:
-            transparency_tags = dict()
-            for tag_name in TRANSPARENCY_CATEGORIES:
-                transparency_tags[tag_name] = list()
-
+            span_groups = list()
+            span_groups.append(_generate_new_group())
+            seen_groups = [0]
             for tag in span["tags"]:
-
                 tag_name_parts = tag["key"].split("_")
-                tag_key = tag_name_parts[0]
-                tag_number = int(tag_name_parts[1]) if len(tag_name_parts) == 2 else 0
+
+                if len(tag_name_parts) not in [2, 3]:
+                    continue
+
+                group_number = int(tag_name_parts[0])
+                tag_key = tag_name_parts[1]
+                tag_number = int(tag_name_parts[2]) if len(tag_name_parts) == 3 else 0
+
                 if tag_key not in TRANSPARENCY_CATEGORIES:
                     continue
 
-                if not tag["value"]:
-                    continue
+                if group_number not in seen_groups:
+                    for i in range(group_number+1):
+                        if i not in seen_groups:
+                            span_groups.append(_generate_new_group())
+                            seen_groups.append(i)
 
-                transparency_tags[tag_key].insert(tag_number, tag["value"])
+                print(tag["value"])
+                span_groups[group_number][tag_key].insert(tag_number, tag["value"])
 
-            if transparency_tags:
-                groups[group_count] = transparency_tags
-                group_count += 1
+            for g in seen_groups:
+                if span_groups[g]:
+                    groups[group_count] = span_groups[g]
+                    group_count += 1
     return groups
 
 
