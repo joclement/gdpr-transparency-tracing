@@ -34,7 +34,7 @@ public class HighscoreController {
                 .addDataCategory("Logging Information")
                 .setStorageDuration("forever")
                 .setTransferredTo3rdParty(false)
-                .collectListsAndFinishSpan();
+                .finishSpan();
 
         return highscoreService.getTopHighscore();
     }
@@ -47,7 +47,7 @@ public class HighscoreController {
                 .addDataCategory("Logging Information")
                 .setStorageDuration("forever")
                 .setTransferredTo3rdParty(false)
-                .collectListsAndFinishSpan();
+                .finishSpan();
 
         final List<HighscoreModel> result = highscoreService.getHighscores();
         result.forEach(item -> System.out.println(item.getId()));
@@ -64,7 +64,7 @@ public class HighscoreController {
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
                 .setStorageDuration("forever")
                 .setTransferredTo3rdParty(false)
-                .collectListsAndFinishSpan();
+                .finishSpan();
 
         highscoreService.addHigshcore(highscoreModel);
     }

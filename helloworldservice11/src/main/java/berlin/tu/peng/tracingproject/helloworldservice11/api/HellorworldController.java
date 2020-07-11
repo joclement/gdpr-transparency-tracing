@@ -27,7 +27,7 @@ public class HellorworldController {
                 .addRecipient("recipient2")
                 .setTransferredTo3rdParty(false)
                 .setAutomated(false)
-                .setStorageDuration("1h").addOrigin("world").collectListsAndFinishSpan();
+                .setStorageDuration("1h").addOrigin("world").finishSpan();
         return "Hello World";
     }
 }

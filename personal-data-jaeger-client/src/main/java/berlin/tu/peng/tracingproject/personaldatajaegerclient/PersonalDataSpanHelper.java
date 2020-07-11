@@ -26,55 +26,66 @@ package berlin.tu.peng.tracingproject.personaldatajaegerclient;
 import io.opentracing.Span;
 import io.opentracing.tag.StringTag;
 import io.opentracing.tag.BooleanTag;
-import io.opentracing.tag.Tag;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 /**
  * {@link PersonalDataSpan} represents an extension of OpenTracing's Span
  * regarding the tracing of the processing of personal data.
+ * <p> Please note: the static methods and the non-static methods should not be mixed
  *
  * @author Joris Clement
  * @author Juri Welz
  */
 public class PersonalDataSpanHelper {
 
-    public static final StringTag PURPOSE = new StringTag("purpose");
-    public static final StringTag DATA_CATEGORY = new StringTag("category");
-    public static final StringTag RECIPIENTS = new StringTag("recipients");
+    private Integer recipientCount = 0;
+    private Integer purposeCount = 0;
+    private Integer dataCategoryCount = 0;
+    private Integer originCount = 0;
+
+    public static final String PURPOSE_KEY = "purpose";
+    public static final String DATA_CATEGORY_KEY = "category";
+    public static final String RECIPIENTS_KEY = "recipients";
+    public static final String ORIGIN_KEY = "origin";
+
     public static final BooleanTag TRANSFERRED_TO_3RDPARTY = new BooleanTag("3rdparty");
     public static final StringTag STORAGE_DURATION = new StringTag("duration");
-    public static final StringTag ORIGIN = new StringTag("origin");
     public static final BooleanTag AUTOMATED = new BooleanTag("auto");
 
     private final Span span;
-
-    private final List<String> recipients = new ArrayList<>();
-    private final List<String> purposes = new ArrayList<>();
-    private final List<String> dataCategories = new ArrayList<>();
-    private final List<String> origins = new ArrayList<>();
-
 
     public PersonalDataSpanHelper(Span span) {
         this.span = span;
     }
 
     public static void setPurposes(Span span, List<String> purposes) {
-        PURPOSE.set(span, String.join(",", purposes));
+        int staticCount = 0;
+        for (String purpose : purposes) {
+            setCountedStringTag(span, PURPOSE_KEY, staticCount++, purpose);
+        }
     }
 
     public static void setRecipients(Span span, List<String> recipients) {
-        RECIPIENTS.set(span, String.join(", ", recipients));
+        int staticCount = 0;
+        for (String recipient : recipients) {
+            setCountedStringTag(span, RECIPIENTS_KEY, staticCount++, recipient);
+        }
     }
 
     public static void setDataCategories(Span span, List<String> dataCategories) {
-        DATA_CATEGORY.set(span, String.join(",", dataCategories));
+        int staticCount = 0;
+        for (String dataCategory : dataCategories) {
+            setCountedStringTag(span, DATA_CATEGORY_KEY, staticCount++, dataCategory);
+        }
     }
 
     public static void setOrigins(Span span, List<String> origins) {
-        ORIGIN.set(span, String.join(",", origins));
+        int staticCount = 0;
+        for (String origin : origins) {
+            setCountedStringTag(span, ORIGIN_KEY, staticCount++, origin);
+        }
     }
 
     public static void setTransferredTo3rdParty(Span span,
@@ -108,13 +119,19 @@ public class PersonalDataSpanHelper {
         setAutomated(span, automated);
     }
 
-    public PersonalDataSpanHelper setPurposes(List<String> purposes) {
-        setPurposes(this.span, purposes);
+
+    public PersonalDataSpanHelper addPurposes(List<String> purposes) {
+        purposes.forEach(this::addPurpose);
         return this;
     }
 
-    public PersonalDataSpanHelper setDataCategories(List<String> dataCategories) {
-        setDataCategories(this.span, dataCategories);
+    public PersonalDataSpanHelper addDataCategories(List<String> dataCategories) {
+        dataCategories.forEach(this::addDataCategory);
+        return this;
+    }
+
+    public PersonalDataSpanHelper addRecipients(List<String> recipients) {
+        recipients.forEach(this::addRecipient);
         return this;
     }
 
@@ -129,8 +146,8 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper setOrigins(List<String> origins) {
-        setOrigins(this.span, origins);
+    public PersonalDataSpanHelper addOrigins(List<String> origins) {
+        origins.forEach(this::addOrigin);
         return this;
     }
 
@@ -146,69 +163,41 @@ public class PersonalDataSpanHelper {
                                 String storageDuration,
                                 List<String> origins,
                                 boolean automated) {
-        this.setPurposes(purposes);
-        this.setDataCategories(dataCategories);
-
-        recipients.forEach(this::addRecipient);
-        collectRecipients();
-
+        this.addPurposes(purposes);
+        this.addDataCategories(dataCategories);
+        this.addRecipients(recipients);
         this.setTransferredTo3rdParty(transferredTo3rdParty);
         this.setStorageDuration(storageDuration);
-        this.setOrigins(origins);
+        this.addOrigins(origins);
         this.setAutomated(automated);
     }
 
-    public PersonalDataSpanHelper addRecipient(String recipient){
-        recipients.add(recipient);
+    public PersonalDataSpanHelper addRecipient(String recipient) {
+        setCountedStringTag(this.span, RECIPIENTS_KEY, recipientCount++, recipient);
         return this;
     }
 
-    public PersonalDataSpanHelper collectRecipients(){
-        setPurposes(this.span, this.purposes);
+    public PersonalDataSpanHelper addPurpose(String purpose) {
+        setCountedStringTag(this.span, PURPOSE_KEY, purposeCount++, purpose);
         return this;
     }
 
-    public PersonalDataSpanHelper addPurpose(String purpose){
-        purposes.add(purpose);
+    public PersonalDataSpanHelper addDataCategory(String dataCategory) {
+        setCountedStringTag(this.span, DATA_CATEGORY_KEY, dataCategoryCount++, dataCategory);
         return this;
     }
 
-    public PersonalDataSpanHelper collectPurposes(){
-        setPurposes(this.span, this.recipients);
+    public PersonalDataSpanHelper addOrigin(String origin) {
+        setCountedStringTag(this.span, ORIGIN_KEY, originCount++, origin);
         return this;
     }
 
-    public PersonalDataSpanHelper addDataCategory(String dataCategory){
-        dataCategories.add(dataCategory);
-        return this;
+    public static void setCountedStringTag(Span span, String key, Integer count, String value) {
+        final StringTag newTag = new StringTag(key + "_" + count.toString());
+        newTag.set(span, value);
     }
 
-    public PersonalDataSpanHelper collectDataCategories(){
-
-        setDataCategories(this.span, this.dataCategories);
-        return this;
-    }
-
-    public PersonalDataSpanHelper addOrigin(String origin){
-        origins.add(origin);
-        return this;
-    }
-
-    public PersonalDataSpanHelper collectOrigins(){
-        setOrigins(this.span, this.origins);
-        return this;
-    }
-
-    public PersonalDataSpanHelper collectAllLists(){
-        collectPurposes();
-        collectDataCategories();
-        collectRecipients();
-        collectOrigins();
-        return this;
-    }
-
-    public void collectListsAndFinishSpan(){
-        collectAllLists();
+    public void finishSpan() {
         span.finish();
     }
 

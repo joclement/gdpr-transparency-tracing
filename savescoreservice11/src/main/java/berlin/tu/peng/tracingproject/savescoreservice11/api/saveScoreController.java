@@ -34,7 +34,7 @@ public class saveScoreController {
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
                 .setStorageDuration("forever")
                 .setTransferredTo3rdParty(false)
-                .collectListsAndFinishSpan();
+                .finishSpan();
 
         final ScoreModel scoreModel = new ScoreModel().setUserName(username).setScore(score.getScore());
         saveScoreService.saveScore(scoreModel);
@@ -47,10 +47,9 @@ public class saveScoreController {
         new PersonalDataSpanHelper(span)
                 .addPurpose("sevice fullfilment")
                 .addDataCategory("Logging Information")
-                .collectAllLists()
                 .setStorageDuration("forever")
                 .setTransferredTo3rdParty(false)
-                .collectListsAndFinishSpan();
+                .finishSpan();
 
 
         return saveScoreService.getScore(username);
