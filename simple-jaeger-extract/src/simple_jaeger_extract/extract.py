@@ -10,9 +10,6 @@ else:
 
 JAEGER_QUERY_ADDRESS = "http://" + jaeger_query_host + ":16686/api/"
 
-TRANSPARENCY_LIST_CATEGORIES = [
-    "recipients",
-]
 TRANSPARENCY_CATEGORIES = [
     "purpose",
     "category",
@@ -20,8 +17,8 @@ TRANSPARENCY_CATEGORIES = [
     "duration",
     "origin",
     "auto",
+    "recipient"
 ]
-TRANSPARENCY_CATEGORIES.extend(TRANSPARENCY_LIST_CATEGORIES)
 
 
 def get_services() -> set:
@@ -45,37 +42,51 @@ def _get_traces_from_service(service: str):
     return data
 
 
-def _get_transparency_tags_from_service(service: str) -> dict:
+def _get_transparency_groups_from_service(service: str) -> dict:
     data = _get_traces_from_service(service)
 
-    transparency_tags = dict()
-    for tag_name in TRANSPARENCY_CATEGORIES:
-        tags = set()
-        for trace in data["data"]:
-            for span in trace["spans"]:
-                for tag in span["tags"]:
-                    if tag["key"] == tag_name:
-                        if (
-                            tag_name in TRANSPARENCY_LIST_CATEGORIES
-                            and "," in tag["value"]
-                        ):
-                            tags.update([t.strip() for t in tag["value"].split(",")])
-                        else:
-                            tags.add(tag["value"])
-        transparency_tags[tag_name] = list(tags)
-    return transparency_tags
+    groups = dict()
+    group_count = 0
+    for trace in data["data"]:
+        for span in trace["spans"]:
+            transparency_tags = dict()
+            for tag_name in TRANSPARENCY_CATEGORIES:
+                transparency_tags[tag_name] = list()
+
+            for tag in span["tags"]:
+
+                tag_name_parts = tag["key"].split("_")
+                tag_key = tag_name_parts[0]
+                tag_number = int(tag_name_parts[1]) if len(tag_name_parts) == 2 else 0
+                if tag_key not in TRANSPARENCY_CATEGORIES:
+                    continue
+
+                if not tag["value"]:
+                    continue
+
+                transparency_tags[tag_key].insert(tag_number, tag["value"])
+
+            if transparency_tags:
+                groups[group_count] = transparency_tags
+                group_count += 1
+    return groups
 
 
 def get_all_for_services() -> dict:
     all_transparency_info = dict()
     for service in get_services():
-        all_transparency_info[service] = _get_transparency_tags_from_service(service)
+        all_transparency_info[service] = _get_transparency_groups_from_service(service)
     return all_transparency_info
 
 
 def _get_purposes_from_service(service: str) -> list:
-    transparency_tags = _get_transparency_tags_from_service(service)
-    return transparency_tags["purpose"]
+    transparency_groups = _get_transparency_groups_from_service(service)
+    purposes = list()
+    for group in transparency_groups:
+        if transparency_groups[group]["purpose"] and transparency_groups[group]["purpose"] not in purposes:
+            purposes.append(transparency_groups[group]["purpose"])
+
+    return purposes
 
 
 def get_purposes_for_services() -> dict:
@@ -83,3 +94,25 @@ def get_purposes_for_services() -> dict:
     for service in get_services():
         purposes[service] = _get_purposes_from_service(service)
     return purposes
+
+
+def get_groups_for_services() -> dict:
+    groups = dict()
+    for service in get_services():
+        groups[service] = _get_transparency_groups_from_service(service)
+    return groups
+
+
+def _get_list_without_duplicates_from_dict(dic: dict) -> list:
+    list_without_duplicates = list()
+    for i in dic:
+        if dic[i] not in list_without_duplicates:
+            list_without_duplicates.append(dic[i])
+    return list_without_duplicates
+
+
+def get_groups_for_services_without_duplicates() -> dict:
+    lists = dict()
+    for service in get_services():
+        lists[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
+    return lists
