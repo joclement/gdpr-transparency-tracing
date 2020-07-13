@@ -6,33 +6,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="savescoreservice11" />
-        <module name="helloworldservice11" />
-        <module name="securitygateway" />
-        <module name="highscoreservice11" />
+        <module name="gateway" />
+        <module name="personal-data-opentracing-helper" />
+        <module name="save-score-service" />
+        <module name="highscore-service" />
         <module name="frontend" />
-        <module name="personaldatajaegerclient" />
+        <module name="helloworld-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="frontend" target="1.8" />
-      <module name="helloworldservice11" target="11" />
-      <module name="highscoreservice11" target="11" />
+      <module name="gateway" target="1.8" />
+      <module name="helloworld-service" target="11" />
+      <module name="highscore-service" target="11" />
       <module name="parent" target="1.5" />
       <module name="peng-project" target="1.5" />
-      <module name="personaldatajaegerclient" target="11" />
-      <module name="savescoreservice11" target="11" />
-      <module name="securitygateway" target="1.8" />
+      <module name="personal-data-opentracing-helper" target="8" />
+      <module name="save-score-service" target="11" />
       <module name="userservice11" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="frontend" options="-parameters" />
-      <module name="helloworldservice11" options="-parameters" />
-      <module name="highscoreservice11" options="-parameters" />
-      <module name="savescoreservice11" options="-parameters" />
-      <module name="securitygateway" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="helloworld-service" options="-parameters" />
+      <module name="highscore-service" options="-parameters" />
+      <module name="save-score-service" options="-parameters" />
       <module name="userservice11" options="-parameters" />
     </option>
   </component>
