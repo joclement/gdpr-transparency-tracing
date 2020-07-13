@@ -3,7 +3,7 @@
 We want to compare 3 different states:
 1. The current state on master, meaning our developed application
 2. Our application without Jaeger at all
-3. Our application with Jaeger but with the Transparency Tags
+3. Our application with Jaeger but without the transparency tags
 
 ## Procedure
 
