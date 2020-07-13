@@ -2,10 +2,10 @@ package berlin.tu.peng.tracingproject.highscoreService.api;
 
 import berlin.tu.peng.tracingproject.highscoreService.model.HighscoreModel;
 import berlin.tu.peng.tracingproject.highscoreService.service.HighscoreService;
-import berlin.tu.peng.tracingproject.personaldatajaegerclient.Category;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.Category;
 import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.PersonalDataSpanHelper;
-import berlin.tu.peng.tracingproject.personaldatajaegerclient.Purpose;
-import berlin.tu.peng.tracingproject.personaldatajaegerclient.StorageDuration;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.Purpose;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.StorageDuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
