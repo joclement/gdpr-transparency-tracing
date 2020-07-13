@@ -2,7 +2,10 @@ package berlin.tu.peng.tracingproject.highscoreservice11.api;
 
 import berlin.tu.peng.tracingproject.highscoreservice11.model.HighscoreModel;
 import berlin.tu.peng.tracingproject.highscoreservice11.service.HighscoreService;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.Category;
 import berlin.tu.peng.tracingproject.personaldatajaegerclient.PersonalDataSpanHelper;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.Purpose;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.StorageDuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,9 +33,9 @@ public class HighscoreController {
     public HighscoreModel getTopHighscore() {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .addPurpose("sevice fullfilment")
-                .addDataCategory("Logging Information")
-                .setStorageDuration("forever")
+                .addPurpose(Purpose.SERVICE_FULLFILMENT)
+                .addDataCategory(Category.IP)
+                .setStorageDuration(StorageDuration.END_OF_UNIVERSE)
                 .setTransferredTo3rdParty(false)
                 .finishSpan();
 
@@ -43,9 +46,9 @@ public class HighscoreController {
     public List<HighscoreModel> getHighscores() {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .addPurpose("sevice fullfilment")
-                .addDataCategory("Logging Information")
-                .setStorageDuration("forever")
+                .addPurpose(Purpose.SERVICE_FULLFILMENT)
+                .addDataCategory(Category.IP)
+                .setStorageDuration(StorageDuration.ONE_DECADE)
                 .setTransferredTo3rdParty(false)
                 .finishSpan();
 
@@ -59,10 +62,10 @@ public class HighscoreController {
     public void addHighscore(@RequestBody final HighscoreModel highscoreModel) {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .addPurpose("sevice fullfilment")
-                .addDataCategory("Player Performance Data")
+                .addPurpose(Purpose.SERVICE_FULLFILMENT)
+                .addDataCategory(Category.PLAYER_PERFORMANCE)
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
-                .setStorageDuration("forever")
+                .setStorageDuration(StorageDuration.END_OF_UNIVERSE)
                 .setTransferredTo3rdParty(false)
                 .finishSpan();
 

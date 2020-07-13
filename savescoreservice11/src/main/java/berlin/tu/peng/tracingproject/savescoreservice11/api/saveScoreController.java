@@ -1,6 +1,6 @@
 package berlin.tu.peng.tracingproject.savescoreservice11.api;
 
-import berlin.tu.peng.tracingproject.personaldatajaegerclient.PersonalDataSpanHelper;
+import berlin.tu.peng.tracingproject.personaldatajaegerclient.*;
 import berlin.tu.peng.tracingproject.savescoreservice11.model.ScoreModel;
 import berlin.tu.peng.tracingproject.savescoreservice11.service.SaveScoreService;
 
@@ -29,17 +29,18 @@ public class saveScoreController {
     public void saveUserScore(@PathVariable String username, @RequestBody ScoreModel score) {
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .addPurpose("sevice fullfilment")
-                .addDataCategory("Player Performance Data")
+                .addPurpose(Purpose.SERVICE_FULLFILMENT)
+                .addDataCategory(Category.PLAYER_PERFORMANCE)
                 .setAutomated(true) //used to determine Players for Snake World Champuionchips
-                .setStorageDuration("forever")
+                .setStorageDuration(StorageDuration.END_OF_UNIVERSE)
                 .setTransferredTo3rdParty(false)
                 .newGroup()
-                .addPurpose("more fullfilment")
-                .addDataCategory("Your skill")
+                .addPurpose(Purpose.COMMERCIAL)
+                .addDataCategory(Category.GENDER)
                 .setAutomated(false)
-                .setStorageDuration("2 days")
+                .setStorageDuration(StorageDuration.ONE_MONTH)
                 .setTransferredTo3rdParty(true)
+                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC)
                 .finishSpan();
 
         final ScoreModel scoreModel = new ScoreModel().setUserName(username).setScore(score.getScore());
@@ -51,9 +52,9 @@ public class saveScoreController {
     public ScoreModel getUserScore(@PathVariable String username){
         Span span = tracer.buildSpan("get highscores").start();
         new PersonalDataSpanHelper(span)
-                .addPurpose("sevice fullfilment")
-                .addDataCategory("Logging Information")
-                .setStorageDuration("forever")
+                .addPurpose(Purpose.ADMINISTRATION)
+                .addDataCategory(Category.IP)
+                .setStorageDuration(StorageDuration.ONE_YEAR)
                 .setTransferredTo3rdParty(false)
                 .finishSpan();
 

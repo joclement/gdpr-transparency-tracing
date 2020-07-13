@@ -62,31 +62,31 @@ public class PersonalDataSpanHelper {
         this.span = span;
     }
 
-    public static void setPurposes(Span span, List<String> purposes) {
+    public static void setPurposes(Span span, List<Purpose> purposes) {
         int staticCount = 0;
-        for (String purpose : purposes) {
-            setCountedStringTagWithGroup(span, PURPOSE_KEY, staticCount++, purpose);
+        for (Purpose purpose : purposes) {
+            setCountedStringTagWithGroup(span, PURPOSE_KEY, staticCount++, purpose.name());
         }
     }
 
-    public static void setRecipients(Span span, List<String> recipients) {
+    public static void setRecipients(Span span, List<Recipient> recipients) {
         int staticCount = 0;
-        for (String recipient : recipients) {
-            setCountedStringTagWithGroup(span, RECIPIENTS_KEY, staticCount++, recipient);
+        for (Recipient recipient : recipients) {
+            setCountedStringTagWithGroup(span, RECIPIENTS_KEY, staticCount++, recipient.name());
         }
     }
 
-    public static void setDataCategories(Span span, List<String> dataCategories) {
+    public static void setDataCategories(Span span, List<Category> dataCategories) {
         int staticCount = 0;
-        for (String dataCategory : dataCategories) {
-            setCountedStringTagWithGroup(span, DATA_CATEGORY_KEY, staticCount++, dataCategory);
+        for (Category dataCategory : dataCategories) {
+            setCountedStringTagWithGroup(span, DATA_CATEGORY_KEY, staticCount++, dataCategory.name());
         }
     }
 
-    public static void setOrigins(Span span, List<String> origins) {
+    public static void setOrigins(Span span, List<Origin> origins) {
         int staticCount = 0;
-        for (String origin : origins) {
-            setCountedStringTagWithGroup(span, ORIGIN_KEY, staticCount++, origin);
+        for (Origin origin : origins) {
+            setCountedStringTagWithGroup(span, ORIGIN_KEY, staticCount++, origin.name());
         }
     }
 
@@ -95,8 +95,8 @@ public class PersonalDataSpanHelper {
         setBooleanTagWithGroup(span, TRANSFERRED_TO_3RDPARTY, transferredTo3rdParty);
     }
 
-    public static void setStorageDuration(Span span, String storageDuration) {
-        setStringTagWithGroup(span, STORAGE_DURATION, storageDuration);
+    public static void setStorageDuration(Span span, StorageDuration storageDuration) {
+        setStringTagWithGroup(span, STORAGE_DURATION, storageDuration.name());
     }
 
 
@@ -105,12 +105,12 @@ public class PersonalDataSpanHelper {
     }
 
     public static void setPersonalInfo(Span span,
-                                       List<String> purposes,
-                                       List<String> dataCategories,
-                                       List<String> recipients,
+                                       List<Purpose> purposes,
+                                       List<Category> dataCategories,
+                                       List<Recipient> recipients,
                                        boolean transferredTo3rdParty,
-                                       String storageDuration,
-                                       List<String> origins,
+                                       StorageDuration storageDuration,
+                                       List<Origin> origins,
                                        boolean automated) {
         setPurposes(span, purposes);
         setDataCategories(span, dataCategories);
@@ -130,17 +130,17 @@ public class PersonalDataSpanHelper {
         span.finish();
     }
 
-    public PersonalDataSpanHelper addPurposes(List<String> purposes) {
+    public PersonalDataSpanHelper addPurposes(List<Purpose> purposes) {
         purposes.forEach(this::addPurpose);
         return this;
     }
 
-    public PersonalDataSpanHelper addDataCategories(List<String> dataCategories) {
+    public PersonalDataSpanHelper addDataCategories(List<Category> dataCategories) {
         dataCategories.forEach(this::addDataCategory);
         return this;
     }
 
-    public PersonalDataSpanHelper addRecipients(List<String> recipients) {
+    public PersonalDataSpanHelper addRecipients(List<Recipient> recipients) {
         recipients.forEach(this::addRecipient);
         return this;
     }
@@ -151,12 +151,12 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper setStorageDuration(String storageDuration) {
-        setStringTagWithGroup(span, groupCount, STORAGE_DURATION, storageDuration);
+    public PersonalDataSpanHelper setStorageDuration(StorageDuration storageDuration) {
+        setStringTagWithGroup(span, groupCount, STORAGE_DURATION, storageDuration.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addOrigins(List<String> origins) {
+    public PersonalDataSpanHelper addOrigins(List<Origin> origins) {
         origins.forEach(this::addOrigin);
         return this;
     }
@@ -166,12 +166,12 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public void setPersonalInfo(List<String> purposes,
-                                List<String> dataCategories,
-                                List<String> recipients,
+    public void setPersonalInfo(List<Purpose> purposes,
+                                List<Category> dataCategories,
+                                List<Recipient> recipients,
                                 boolean transferredTo3rdParty,
-                                String storageDuration,
-                                List<String> origins,
+                                StorageDuration storageDuration,
+                                List<Origin> origins,
                                 boolean automated) {
         this.addPurposes(purposes);
         this.addDataCategories(dataCategories);
@@ -182,23 +182,23 @@ public class PersonalDataSpanHelper {
         this.setAutomated(automated);
     }
 
-    public PersonalDataSpanHelper addRecipient(String recipient) {
-        setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient);
+    public PersonalDataSpanHelper addRecipient(Recipient recipient) {
+        setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addPurpose(String purpose) {
-        setCountedStringTagWithGroup(PURPOSE_KEY, purposeCount++, purpose);
+    public PersonalDataSpanHelper addPurpose(Purpose purpose) {
+        setCountedStringTagWithGroup(PURPOSE_KEY, purposeCount++, purpose.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addDataCategory(String dataCategory) {
-        setCountedStringTagWithGroup(DATA_CATEGORY_KEY, dataCategoryCount++, dataCategory);
+    public PersonalDataSpanHelper addDataCategory(Category dataCategory) {
+        setCountedStringTagWithGroup(DATA_CATEGORY_KEY, dataCategoryCount++, dataCategory.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addOrigin(String origin) {
-        setCountedStringTagWithGroup(ORIGIN_KEY, originCount++, origin);
+    public PersonalDataSpanHelper addOrigin(Origin origin) {
+        setCountedStringTagWithGroup(ORIGIN_KEY, originCount++, origin.name());
         return this;
     }
 
