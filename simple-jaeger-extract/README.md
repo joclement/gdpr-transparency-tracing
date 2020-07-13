@@ -34,5 +34,6 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 4. Activate python 3.8, e.g. `pyenv local 3.8.3`
 5. Install poetry, e.g. `pip install poetry`
 6. Activate project with poetry, `poetry install`
-7. Run tests `poetry run pytest --cov`
+7. Run tests `poetry run pytest --cov -m "not e2e"`
+7. To run tests when other components are running: `poetry run pytest --cov`
 8. Run application `poetry run simple-jaeger-extract`
