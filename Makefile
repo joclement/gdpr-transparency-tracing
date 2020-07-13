@@ -30,4 +30,4 @@ clean:
 	docker-compose down
 	docker-compose rm --force
 
-.PHONY: up aws clean
+.PHONY: up deploy install-aws aws clean
