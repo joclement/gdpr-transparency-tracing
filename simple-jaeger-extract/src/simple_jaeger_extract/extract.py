@@ -51,8 +51,6 @@ def _generate_new_group() -> dict:
 def _get_transparency_groups_from_service(service: str) -> dict:
     data = _get_traces_from_service(service)
 
-    print(data)
-
     groups = dict()
     group_count = 0
     for trace in data["data"]:
@@ -79,7 +77,6 @@ def _get_transparency_groups_from_service(service: str) -> dict:
                             span_groups.append(_generate_new_group())
                             seen_groups.append(i)
 
-                print(tag["value"])
                 span_groups[group_number][tag_key].insert(tag_number, tag["value"])
 
             for g in seen_groups:
