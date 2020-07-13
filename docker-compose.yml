@@ -12,8 +12,8 @@ services:
         - "8080:8080"
         - "8088:8088"
     depends_on:
-        - highscoreservice11
-        - helloworldservice11
+        - highscore-service
+        - helloworld-service
 
   db:
     container_name: db
@@ -28,9 +28,9 @@ services:
     environment:
       POSTGRES_PASSWORD: example
 
-  helloworldservice11:
+  helloworld-service:
     container_name: helloworld
-    build: helloworldservice11
+    build: helloworld-service
     image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/helloworld
     ports:
       - "8081:8081"
@@ -42,9 +42,9 @@ services:
       - JAEGER_AGENT_HOST=jaeger
       - JAEGER_AGENT_PORT=6831
 
-  highscoreservice11:
-    container_name: highscore
-    build: highscoreservice11
+  highscore-service:
+    container_name: highscores #name is important for forwarding in gateway
+    build: highscore-service
     image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/highscore
     ports:
       - "8082:8082"
@@ -57,15 +57,15 @@ services:
       - JAEGER_AGENT_PORT=6831
       - DATABASE_HOST=postgres
 
-  savescoreservice11:
+  score-service:
     container_name: savescore
-    build: savescoreservice11
+    build: score-service
     image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/savescore
     ports:
       - "8083:8083"
     depends_on:
       - db
-      - highscoreservice11
+      - highscore-service
     links:
       - db
     environment:
@@ -86,9 +86,9 @@ services:
       - "14250:14250"
       - "9411:9411"
 
-  simple-jaeger-extract:
-    build: simple-jaeger-extract
-    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/simple-jaeger-extract
+  transparency-opentracing-jaeger-extract:
+    build: transparency-opentracing-jaeger-extract
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/transparency-opentracing-jaeger-extract
     ports:
       - "5000:5000"
     depends_on:

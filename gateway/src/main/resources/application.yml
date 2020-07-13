@@ -9,8 +9,6 @@ logging:
     org.springframework.cloud.gateway: DEBUG
 
 spring:
-  thymeleaf:
-    cache: false
   cloud:
     gateway:
       routes:
