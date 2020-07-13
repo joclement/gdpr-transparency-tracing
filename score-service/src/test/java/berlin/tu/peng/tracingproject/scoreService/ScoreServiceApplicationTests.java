@@ -1,10 +1,10 @@
-package berlin.tu.peng.tracingproject.saveScoreService;
+package berlin.tu.peng.tracingproject.scoreService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SaveScoreServiceApplicationTests {
+class ScoreServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

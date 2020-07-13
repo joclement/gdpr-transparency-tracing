@@ -1,8 +1,8 @@
-package berlin.tu.peng.tracingproject.saveScoreService.api;
+package berlin.tu.peng.tracingproject.scoreService.api;
 
 import berlin.tu.peng.tracingproject.personalDataOpentracingHelper.*;
-import berlin.tu.peng.tracingproject.saveScoreService.model.ScoreModel;
-import berlin.tu.peng.tracingproject.saveScoreService.service.SaveScoreService;
+import berlin.tu.peng.tracingproject.scoreService.model.ScoreModel;
+import berlin.tu.peng.tracingproject.scoreService.service.SaveScoreService;
 
 import io.opentracing.Span;
 import io.opentracing.Tracer;
@@ -12,7 +12,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 
 @RestController
-public class saveScoreController {
+public class ScoreController {
 
     private final SaveScoreService saveScoreService;
     private final Tracer tracer;
@@ -20,7 +20,7 @@ public class saveScoreController {
     final static String PATH = "/game/savescore";
     final static String PATH_WITH_USERNAME = PATH + "/{username}";
 
-    public saveScoreController(SaveScoreService saveScoreService, Tracer tracer) {
+    public ScoreController(SaveScoreService saveScoreService, Tracer tracer) {
         this.saveScoreService = saveScoreService;
         this.tracer = tracer;
     }

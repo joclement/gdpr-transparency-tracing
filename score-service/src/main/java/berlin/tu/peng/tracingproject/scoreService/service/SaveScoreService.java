@@ -1,8 +1,8 @@
-package berlin.tu.peng.tracingproject.saveScoreService.service;
+package berlin.tu.peng.tracingproject.scoreService.service;
 
-import berlin.tu.peng.tracingproject.saveScoreService.model.HighscoreModel;
-import berlin.tu.peng.tracingproject.saveScoreService.model.ScoreModel;
-import berlin.tu.peng.tracingproject.saveScoreService.model.ScoreRespository;
+import berlin.tu.peng.tracingproject.scoreService.model.HighscoreModel;
+import berlin.tu.peng.tracingproject.scoreService.model.ScoreModel;
+import berlin.tu.peng.tracingproject.scoreService.model.ScoreRespository;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;

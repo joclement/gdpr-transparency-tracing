@@ -1,4 +1,4 @@
-package berlin.tu.peng.tracingproject.saveScoreService.service;
+package berlin.tu.peng.tracingproject.scoreService.service;
 
 import java.io.Serializable;
 

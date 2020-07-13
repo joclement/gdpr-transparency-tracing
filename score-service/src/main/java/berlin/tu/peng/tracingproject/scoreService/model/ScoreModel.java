@@ -1,4 +1,4 @@
-package berlin.tu.peng.tracingproject.saveScoreService.model;
+package berlin.tu.peng.tracingproject.scoreService.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

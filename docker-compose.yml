@@ -43,7 +43,7 @@ services:
       - JAEGER_AGENT_PORT=6831
 
   highscore-service:
-    container_name: highscore
+    container_name: highscores #name is important for forwarding in gateway
     build: highscore-service
     image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/highscore
     ports:
@@ -57,9 +57,9 @@ services:
       - JAEGER_AGENT_PORT=6831
       - DATABASE_HOST=postgres
 
-  save-score-service:
+  score-service:
     container_name: savescore
-    build: save-score-service
+    build: score-service
     image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/savescore
     ports:
       - "8083:8083"

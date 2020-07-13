@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>berlin.tu.peng.tracingproject</groupId>
-    <artifactId>save-score-service</artifactId>
+    <artifactId>score-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>save-score-service</name>
+    <name>score-service</name>
     <description>Saving User Scores</description>
 
     <properties>

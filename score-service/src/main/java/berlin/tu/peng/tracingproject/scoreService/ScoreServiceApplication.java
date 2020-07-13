@@ -1,4 +1,4 @@
-package berlin.tu.peng.tracingproject.saveScoreService;
+package berlin.tu.peng.tracingproject.scoreService;
 
 import io.jaegertracing.Configuration;
 import io.jaegertracing.internal.JaegerTracer;
@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class SaveScoreServiceApplication {
+public class ScoreServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SaveScoreServiceApplication.class, args);
+        SpringApplication.run(ScoreServiceApplication.class, args);
     }
 
     @Bean

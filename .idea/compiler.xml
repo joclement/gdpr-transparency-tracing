@@ -8,10 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gateway" />
         <module name="personal-data-opentracing-helper" />
-        <module name="save-score-service" />
         <module name="highscore-service" />
         <module name="frontend" />
         <module name="helloworld-service" />
+        <module name="score-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,7 +22,7 @@
       <module name="parent" target="1.5" />
       <module name="peng-project" target="1.5" />
       <module name="personal-data-opentracing-helper" target="8" />
-      <module name="save-score-service" target="11" />
+      <module name="score-service" target="11" />
       <module name="userservice11" target="1.5" />
     </bytecodeTargetLevel>
   </component>
@@ -32,7 +32,7 @@
       <module name="gateway" options="-parameters" />
       <module name="helloworld-service" options="-parameters" />
       <module name="highscore-service" options="-parameters" />
-      <module name="save-score-service" options="-parameters" />
+      <module name="score-service" options="-parameters" />
       <module name="userservice11" options="-parameters" />
     </option>
   </component>

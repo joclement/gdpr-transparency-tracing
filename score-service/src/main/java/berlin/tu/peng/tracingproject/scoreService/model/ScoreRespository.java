@@ -1,4 +1,4 @@
-package berlin.tu.peng.tracingproject.saveScoreService.model;
+package berlin.tu.peng.tracingproject.scoreService.model;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
