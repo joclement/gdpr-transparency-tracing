@@ -86,9 +86,9 @@ services:
       - "14250:14250"
       - "9411:9411"
 
-  personal-data-jaeger-extract:
-    build: personal-data-jaeger-extract
-    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/personal-data-jaeger-extract
+  transparency-opentracing-jaeger-extract:
+    build: transparency-opentracing-jaeger-extract
+    image: gitlab-registry.tubit.tu-berlin.de/peng/peng-project/transparency-opentracing-jaeger-extract
     ports:
       - "5000:5000"
     depends_on:

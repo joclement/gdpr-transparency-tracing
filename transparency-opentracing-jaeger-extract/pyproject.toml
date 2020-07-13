@@ -3,20 +3,20 @@ source = ["src", "*/site-packages"]
 
 [tool.coverage.run]
 branch = true
-source = ["personal_data_jaeger_extract"]
+source = ["transparency_opentracing_jaeger_extract"]
 
 [tool.coverage.report]
 show_missing = true
 fail_under = 80
 
 [tool.poetry]
-name = "personal-data-jaeger-extract"
+name = "transparency-opentracing-jaeger-extract"
 version = "0.1.1"
 description = "Simple jaeger extract json api server"
 authors = ["Joris Clement <j.clement@campus.tu-berlin.de>"]
 
 [tool.poetry.scripts]
-personal-data-jaeger-extract = "personal_data_jaeger_extract.server:main"
+transparency-opentracing-jaeger-extract = "transparency_opentracing_jaeger_extract.server:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"

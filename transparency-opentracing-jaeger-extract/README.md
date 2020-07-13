@@ -7,7 +7,7 @@ This folder contains our simple jaeger extract. It is written in Python.
 In order to run this service accessible on [localhost:5000](http://localhost:5000)
 you should only have to run `docker-compose up --build` or more specifically to
 just start this service and its dependency Jaeger `docker-compose up --build
-personal-data-jaeger-extract`.
+transparency-opentracing-jaeger-extract`.
 
 
 ## How to develop/contribute
@@ -36,4 +36,4 @@ libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 6. Activate project with poetry, `poetry install`
 7. Run tests `poetry run pytest --cov -m "not e2e"`
 7. To run tests when other components are running: `poetry run pytest --cov`
-8. Run application `poetry run personal-data-jaeger-extract`
+8. Run application `poetry run transparency-opentracing-jaeger-extract`

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package berlin.tu.peng.tracingproject.personalDataOpentracingHelper;
+package berlin.tu.peng.tracingproject.transparencyOpentracingHelper;
 
 import io.opentracing.Span;
 import io.opentracing.tag.StringTag;

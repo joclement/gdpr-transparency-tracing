@@ -11,8 +11,8 @@
    </parent>
 
    <groupId>berlin.tu.peng.tracingproject</groupId>
-<!--   <artifactId>personal-data-opentracing-helper</artifactId>-->
-   <artifactId>personal-data-opentracing-helper</artifactId>
+<!--   <artifactId>transparency-opentracing-helper</artifactId>-->
+   <artifactId>transparency-opentracing-helper</artifactId>
    <version>0.1.0</version>
    <packaging>jar</packaging>
 

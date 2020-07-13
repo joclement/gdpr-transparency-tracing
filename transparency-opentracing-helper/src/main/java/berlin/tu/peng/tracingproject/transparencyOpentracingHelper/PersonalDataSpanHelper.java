@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package berlin.tu.peng.tracingproject.personalDataOpentracingHelper;
+package berlin.tu.peng.tracingproject.transparencyOpentracingHelper;
 
 import io.opentracing.Span;
 import io.opentracing.tag.StringTag;

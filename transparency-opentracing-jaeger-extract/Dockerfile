@@ -22,7 +22,7 @@ RUN poetry export -f requirements.txt | /venv/bin/pip install -r /dev/stdin
 
 COPY . .
 RUN poetry build
-RUN /venv/bin/pip install dist/personal_data_jaeger_extract-0.1.1-py3-none-any.whl
+RUN /venv/bin/pip install dist/transparency_opentracing_jaeger_extract-0.1.1-py3-none-any.whl
 
 
 FROM base as final

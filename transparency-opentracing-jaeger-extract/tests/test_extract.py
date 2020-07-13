@@ -1,6 +1,6 @@
 import pytest
 
-from personal_data_jaeger_extract import extract
+from transparency_opentracing_jaeger_extract import extract
 
 
 @pytest.fixture
