@@ -7,6 +7,7 @@ We want to compare 3 different states:
 
 ## Procedure
 
+
 ## Case 1
 
 ### Prepare
