@@ -5,7 +5,7 @@ up:
 aws:
 	docker login -u ${DOCKER_LOGIN_USER} -p ${DOCKER_LOGIN_PASSWORD} gitlab-registry.tubit.tu-berlin.de
 	docker-compose pull
-	docker-compose start
+	docker-compose up --no-build -d
 
 deploy:
 	mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true
