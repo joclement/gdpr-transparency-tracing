@@ -33,14 +33,14 @@ make aws
 ### Prepare
 Do the same as for case 1, if images are not there:
 ```
-git checkout -t origin/benchmark-no-jaeger
+git checkout -t origin/no-jaeger-juri
 make deploy
 ```
 
 ### Perform
 Perform benchmark for case 2 by doing this on the instance/AWS:
 ```
-git checkout -t origin/benchmark-no-jaeger
+git checkout -t origin/no-jaeger-juri
 make aws
 ```
 
@@ -50,13 +50,13 @@ make aws
 ### Prepare
 Do the same as for case 1, if images are not there:
 ```
-git checkout -t origin/benchmark-no-tags
+git checkout -t origin/no-personal-data-juri
 make deploy
 ```
 
 ### Perform
 Perform benchmark for case 2 by doing this on the instance/AWS:
 ```
-git checkout -t origin/benchmark-no-tags
+git checkout -t origin/no-personal-data-juri
 make aws
 ```
