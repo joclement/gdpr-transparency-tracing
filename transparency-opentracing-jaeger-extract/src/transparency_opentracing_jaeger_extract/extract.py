@@ -26,8 +26,10 @@ def get_services() -> set:
         response.raise_for_status()
         data = response.json()
 
-    services = data["data"]
-    services = set(services)
+    if data["data"] is None:
+        services = set()
+    else:
+        services = data["data"]
     if "jaeger-query" in services:
         services.remove("jaeger-query")
     return services
