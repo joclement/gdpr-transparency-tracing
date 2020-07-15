@@ -3,6 +3,7 @@ up:
 	docker-compose up --build
 
 aws:
+	docker-compose down
 	docker login -u ${DOCKER_LOGIN_USER} -p ${DOCKER_LOGIN_PASSWORD} gitlab-registry.tubit.tu-berlin.de
 	docker-compose pull
 	docker-compose up --no-build -d
