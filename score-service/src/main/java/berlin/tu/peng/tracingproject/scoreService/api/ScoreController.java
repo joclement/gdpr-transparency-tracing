@@ -27,7 +27,7 @@ public class ScoreController {
 
     @PutMapping(value = PATH_WITH_USERNAME)
     public void saveUserScore(@PathVariable String username, @RequestBody ScoreModel score) {
-        Span span = tracer.buildSpan("get highscores").start();
+        Span span = tracer.buildSpan("save score").start();
         new PersonalDataSpanHelper(span)
                 .addPurpose(Purpose.SERVICE_FULLFILMENT)
                 .addDataCategory(Category.PLAYER_PERFORMANCE)
@@ -50,7 +50,7 @@ public class ScoreController {
 
     @GetMapping(value = PATH_WITH_USERNAME, produces = APPLICATION_JSON_VALUE)
     public ScoreModel getUserScore(@PathVariable String username){
-        Span span = tracer.buildSpan("get highscores").start();
+        Span span = tracer.buildSpan("get score").start();
         new PersonalDataSpanHelper(span)
                 .addPurpose(Purpose.ADMINISTRATION)
                 .addDataCategory(Category.IP)
