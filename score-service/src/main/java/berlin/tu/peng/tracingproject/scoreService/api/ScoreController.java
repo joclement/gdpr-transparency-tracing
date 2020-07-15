@@ -53,6 +53,7 @@ public class ScoreController {
         Span span = tracer.buildSpan("get score").start();
         new PersonalDataSpanHelper(span)
                 .addPurpose(Purpose.ADMINISTRATION)
+                .addPurpose(Purpose.DEVELOPMENT)
                 .addDataCategory(Category.IP)
                 .setStorageDuration(StorageDuration.ONE_YEAR)
                 .setTransferredTo3rdParty(false)
