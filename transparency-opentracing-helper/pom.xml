@@ -15,8 +15,8 @@
    <version>0.1.0</version>
    <packaging>jar</packaging>
 
-   <name>Personal Data Opentracing Helper</name>
-   <description>Extension for the Java Jaeger client to trace the processing of personal data</description>
+   <name>Transparency Opentracing Helper</name>
+   <description>A helper to specify transparency information in Opentracing's Span</description>
    <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
    <inceptionYear>2020</inceptionYear>
 
