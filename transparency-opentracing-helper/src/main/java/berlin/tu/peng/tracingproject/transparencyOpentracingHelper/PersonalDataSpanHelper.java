@@ -104,23 +104,6 @@ public class PersonalDataSpanHelper {
         setBooleanTagWithGroup(span, AUTOMATED, automated);
     }
 
-    public static void setPersonalInfo(Span span,
-                                       List<Purpose> purposes,
-                                       List<Category> dataCategories,
-                                       List<Recipient> recipients,
-                                       boolean transferredTo3rdParty,
-                                       StorageDuration storageDuration,
-                                       List<Origin> origins,
-                                       boolean automated) {
-        setPurposes(span, purposes);
-        setDataCategories(span, dataCategories);
-        setRecipients(span, recipients);
-        setTransferredTo3rdParty(span, transferredTo3rdParty);
-        setStorageDuration(span, storageDuration);
-        setOrigins(span, origins);
-        setAutomated(span, automated);
-    }
-
     public PersonalDataSpanHelper newGroup() {
         groupCount++;
         return this;
