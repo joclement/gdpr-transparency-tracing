@@ -166,22 +166,6 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public void setPersonalInfo(List<Purpose> purposes,
-                                List<Category> dataCategories,
-                                List<Recipient> recipients,
-                                boolean transferredTo3rdParty,
-                                StorageDuration storageDuration,
-                                List<Origin> origins,
-                                boolean automated) {
-        this.addPurposes(purposes);
-        this.addDataCategories(dataCategories);
-        this.addRecipients(recipients);
-        this.setTransferredTo3rdParty(transferredTo3rdParty);
-        this.setStorageDuration(storageDuration);
-        this.addOrigins(origins);
-        this.setAutomated(automated);
-    }
-
     public PersonalDataSpanHelper addRecipient(Recipient recipient) {
         setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient.name());
         return this;
