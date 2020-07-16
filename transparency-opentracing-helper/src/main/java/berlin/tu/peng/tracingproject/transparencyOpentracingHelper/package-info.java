@@ -25,4 +25,3 @@
  * Provides placeholder classes.
  */
 package berlin.tu.peng.tracingproject.transparencyOpentracingHelper;
-
