@@ -3,13 +3,6 @@
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
 
-   <parent>
-      <groupId>com.bernardomg.maven</groupId>
-      <artifactId>base-pom</artifactId>
-      <version>1.2.4</version>
-      <relativePath/> <!-- lookup parent from repository -->
-   </parent>
-
    <groupId>berlin.tu.peng.tracingproject</groupId>
    <artifactId>transparency-opentracing-helper</artifactId>
    <version>0.1.0</version>
@@ -28,81 +21,11 @@
       </license>
    </licenses>
 
-   <profiles>
-      <profile>
-         <!-- Deployment profile. -->
-         <!-- Sets ups the environment for deployment. -->
-         <id>deployment</id>
-         <properties>
-            <!-- Tests are skipped. -->
-            <maven.test.skip>true</maven.test.skip>
-         </properties>
-      </profile>
-   </profiles>
-
-   <properties>
-      <java.version>11</java.version>
-
-      <!-- ============================================== -->
-      <!-- =========== DEPENDENCIES VERSIONS ============ -->
-      <!-- ============================================== -->
-      <guava.version>28.1-jre</guava.version>
-      <junit.jupiter.version>5.4.0</junit.jupiter.version>
-      <mockito.version>3.1.0</mockito.version>
-      <jaeger.version>0.35.1</jaeger.version>
-
-   </properties>
-
-   <!-- ********************************************** -->
-   <!-- *************** DEPENDENCIES ***************** -->
-   <!-- ********************************************** -->
-
-   <dependencyManagement>
-      <dependencies>
-         <dependency>
-            <!-- JUnit BOM -->
-            <groupId>org.junit</groupId>
-            <artifactId>junit-bom</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-         </dependency>
-      </dependencies>
-   </dependencyManagement>
-
    <dependencies>
-      <dependency>
-         <!-- Guava -->
-         <groupId>com.google.guava</groupId>
-         <artifactId>guava</artifactId>
-         <version>${guava.version}</version>
-      </dependency>
-      <!-- ============================================== -->
-      <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
-      <!-- ============================================== -->
-      <dependency>
-         <!-- JUnit Jupiter Engine -->
-         <groupId>org.junit.jupiter</groupId>
-         <artifactId>junit-jupiter-engine</artifactId>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- JUnit Jupiter Platform -->
-         <groupId>org.junit.platform</groupId>
-         <artifactId>junit-platform-runner</artifactId>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <!-- Mockito -->
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-core</artifactId>
-         <version>${mockito.version}</version>
-         <scope>test</scope>
-      </dependency>
       <dependency>
         <groupId>io.jaegertracing</groupId>
         <artifactId>jaeger-client</artifactId>
-         <version>${jaeger.version}</version>
+        <version>0.35.1</version>
       </dependency>
    </dependencies>
 
@@ -111,6 +34,7 @@
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.8.1</version>
               <configuration>
                   <source>8</source>
                   <target>8</target>
