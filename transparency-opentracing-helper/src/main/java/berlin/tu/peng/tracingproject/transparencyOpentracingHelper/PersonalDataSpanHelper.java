@@ -31,10 +31,11 @@ import java.util.List;
 
 
 /**
- * {@link PersonalDataSpan} represents an extension of OpenTracing's Span
- * regarding the tracing of the processing of personal data.
- * <p> Please note: the static methods and the non-static methods should not be mixed. Also, the non-static methods are
- * not able for multiple groups in one span.
+ * {@link PersonalDataSpanHelper} represents a helper to add transparency
+ * information to OpenTracing's Span.
+ * <p> Please note: the static methods and the non-static methods should not be
+ * mixed.
+ * Also, the non-static methods are not able for multiple groups in one span.
  *
  * @author Joris Clement
  * @author Juri Welz
