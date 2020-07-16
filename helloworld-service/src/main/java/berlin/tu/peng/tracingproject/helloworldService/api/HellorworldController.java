@@ -1,6 +1,7 @@
 package berlin.tu.peng.tracingproject.helloworldService.api;
 
-import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.*;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.PersonalDataSpanHelper;
+import berlin.tu.peng.tracingproject.evilcorpTransparencyConfig.*;
 import io.opentracing.Span;
 import io.opentracing.Tracer;
 import org.springframework.web.bind.annotation.GetMapping;

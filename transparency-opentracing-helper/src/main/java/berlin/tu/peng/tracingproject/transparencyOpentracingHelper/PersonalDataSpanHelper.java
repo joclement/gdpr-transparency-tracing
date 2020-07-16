@@ -63,30 +63,30 @@ public class PersonalDataSpanHelper {
         this.span = span;
     }
 
-    public static void setPurposes(Span span, List<Purpose> purposes) {
+    public static <P extends Enum<P>> void setPurposes(Span span, List<P> purposes) {
         int staticCount = 0;
-        for (Purpose purpose : purposes) {
+        for (P purpose : purposes) {
             setCountedStringTagWithGroup(span, PURPOSE_KEY, staticCount++, purpose.name());
         }
     }
 
-    public static void setRecipients(Span span, List<Recipient> recipients) {
+    public static <R extends Enum<R>> void setRecipients(Span span, List<R> recipients) {
         int staticCount = 0;
-        for (Recipient recipient : recipients) {
+        for (R recipient : recipients) {
             setCountedStringTagWithGroup(span, RECIPIENTS_KEY, staticCount++, recipient.name());
         }
     }
 
-    public static void setDataCategories(Span span, List<Category> dataCategories) {
+    public static <C extends Enum<C>> void setDataCategories(Span span, List<C> dataCategories) {
         int staticCount = 0;
-        for (Category dataCategory : dataCategories) {
+        for (C dataCategory : dataCategories) {
             setCountedStringTagWithGroup(span, DATA_CATEGORY_KEY, staticCount++, dataCategory.name());
         }
     }
 
-    public static void setOrigins(Span span, List<Origin> origins) {
+    public static <O extends Enum<O>> void setOrigins(Span span, List<O> origins) {
         int staticCount = 0;
-        for (Origin origin : origins) {
+        for (O origin : origins) {
             setCountedStringTagWithGroup(span, ORIGIN_KEY, staticCount++, origin.name());
         }
     }
@@ -96,7 +96,7 @@ public class PersonalDataSpanHelper {
         setBooleanTagWithGroup(span, TRANSFERRED_TO_3RDPARTY, transferredTo3rdParty);
     }
 
-    public static void setStorageDuration(Span span, StorageDuration storageDuration) {
+    public static  <S extends Enum<S>> void setStorageDuration(Span span, S storageDuration) {
         setStringTagWithGroup(span, STORAGE_DURATION, storageDuration.name());
     }
 
@@ -114,17 +114,17 @@ public class PersonalDataSpanHelper {
         span.finish();
     }
 
-    public PersonalDataSpanHelper addPurposes(List<Purpose> purposes) {
+    public <P extends Enum<P>> PersonalDataSpanHelper addPurposes(List<P> purposes) {
         purposes.forEach(this::addPurpose);
         return this;
     }
 
-    public PersonalDataSpanHelper addDataCategories(List<Category> dataCategories) {
+    public <C extends Enum<C>> PersonalDataSpanHelper addDataCategories(List<C> dataCategories) {
         dataCategories.forEach(this::addDataCategory);
         return this;
     }
 
-    public PersonalDataSpanHelper addRecipients(List<Recipient> recipients) {
+    public <R extends Enum<R>> PersonalDataSpanHelper addRecipients(List<R> recipients) {
         recipients.forEach(this::addRecipient);
         return this;
     }
@@ -135,12 +135,12 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper setStorageDuration(StorageDuration storageDuration) {
+    public <S extends Enum<S>> PersonalDataSpanHelper setStorageDuration(S storageDuration) {
         setStringTagWithGroup(span, groupCount, STORAGE_DURATION, storageDuration.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addOrigins(List<Origin> origins) {
+    public <O extends Enum<O>> PersonalDataSpanHelper addOrigins(List<O> origins) {
         origins.forEach(this::addOrigin);
         return this;
     }
@@ -150,22 +150,22 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public PersonalDataSpanHelper addRecipient(Recipient recipient) {
+    public <R extends Enum<R>> PersonalDataSpanHelper addRecipient(R recipient) {
         setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addPurpose(Purpose purpose) {
+    public <P extends Enum<P>> PersonalDataSpanHelper addPurpose(P purpose) {
         setCountedStringTagWithGroup(PURPOSE_KEY, purposeCount++, purpose.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addDataCategory(Category dataCategory) {
+    public <C extends Enum<C>> PersonalDataSpanHelper addDataCategory(C dataCategory) {
         setCountedStringTagWithGroup(DATA_CATEGORY_KEY, dataCategoryCount++, dataCategory.name());
         return this;
     }
 
-    public PersonalDataSpanHelper addOrigin(Origin origin) {
+    public <O extends Enum<O>> PersonalDataSpanHelper addOrigin(O origin) {
         setCountedStringTagWithGroup(ORIGIN_KEY, originCount++, origin.name());
         return this;
     }

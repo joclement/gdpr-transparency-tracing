@@ -1,6 +1,7 @@
 package berlin.tu.peng.tracingproject.scoreService.api;
 
-import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.*;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.PersonalDataSpanHelper;
+import berlin.tu.peng.tracingproject.evilcorpTransparencyConfig.*;
 import berlin.tu.peng.tracingproject.scoreService.model.ScoreModel;
 import berlin.tu.peng.tracingproject.scoreService.service.SaveScoreService;
 
