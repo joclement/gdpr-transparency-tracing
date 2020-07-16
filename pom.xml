@@ -48,11 +48,4 @@
            <properties />
        </developer>
    </developers>
-
-   <repositories>
-     <repository>
-       <id>personal-data-jaeger-client</id>
-       <url>file://${project.basedir}/personal-data-jaeger-client</url>
-     </repository>
-   </repositories>
 </project>
