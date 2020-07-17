@@ -21,7 +21,6 @@ TRANSPARENCY_CATEGORIES = [
 
 
 def get_services() -> set:
-    """Simple jaeger extract json api server."""
     with requests.get(f"{JAEGER_QUERY_ADDRESS}services") as response:
         response.raise_for_status()
         data = response.json()
