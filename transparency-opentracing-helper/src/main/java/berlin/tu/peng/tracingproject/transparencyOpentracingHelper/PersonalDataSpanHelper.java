@@ -51,7 +51,7 @@ public class PersonalDataSpanHelper {
 
     public static final String PURPOSE_KEY = "purpose";
     public static final String DATA_CATEGORY_KEY = "category";
-    public static final String RECIPIENTS_KEY = "recipients";
+    public static final String RECIPIENTS_KEY = "recipient";
     public static final String ORIGIN_KEY = "origin";
     public static final String TRANSFERRED_TO_3RDPARTY = "3rdparty";
     public static final String STORAGE_DURATION = "duration";
