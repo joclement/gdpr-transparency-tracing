@@ -70,10 +70,10 @@ public class PersonalDataSpanHelper {
         }
     }
 
-    public static <R extends Enum<R>> void setRecipients(Span span, List<R> recipients) {
+    public static void setRecipients(Span span, List<String> recipients) {
         int staticCount = 0;
-        for (R recipient : recipients) {
-            setCountedStringTagWithGroup(span, RECIPIENTS_KEY, staticCount++, recipient.name());
+        for (String recipient : recipients) {
+            setCountedStringTagWithGroup(span, RECIPIENTS_KEY, staticCount++, recipient);
         }
     }
 
@@ -84,10 +84,10 @@ public class PersonalDataSpanHelper {
         }
     }
 
-    public static <O extends Enum<O>> void setOrigins(Span span, List<O> origins) {
+    public static void setOrigins(Span span, List<String> origins) {
         int staticCount = 0;
-        for (O origin : origins) {
-            setCountedStringTagWithGroup(span, ORIGIN_KEY, staticCount++, origin.name());
+        for (String origin : origins) {
+            setCountedStringTagWithGroup(span, ORIGIN_KEY, staticCount++, origin);
         }
     }
 
@@ -124,7 +124,7 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public <R extends Enum<R>> PersonalDataSpanHelper addRecipients(List<R> recipients) {
+    public PersonalDataSpanHelper addRecipients(List<String> recipients) {
         recipients.forEach(this::addRecipient);
         return this;
     }
@@ -140,7 +140,7 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public <O extends Enum<O>> PersonalDataSpanHelper addOrigins(List<O> origins) {
+    public PersonalDataSpanHelper addOrigins(List<String> origins) {
         origins.forEach(this::addOrigin);
         return this;
     }
@@ -150,8 +150,8 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public <R extends Enum<R>> PersonalDataSpanHelper addRecipient(R recipient) {
-        setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient.name());
+    public PersonalDataSpanHelper addRecipient(String recipient) {
+        setCountedStringTagWithGroup(RECIPIENTS_KEY, recipientCount++, recipient);
         return this;
     }
 
@@ -165,8 +165,8 @@ public class PersonalDataSpanHelper {
         return this;
     }
 
-    public <O extends Enum<O>> PersonalDataSpanHelper addOrigin(O origin) {
-        setCountedStringTagWithGroup(ORIGIN_KEY, originCount++, origin.name());
+    public PersonalDataSpanHelper addOrigin(String origin) {
+        setCountedStringTagWithGroup(ORIGIN_KEY, originCount++, origin);
         return this;
     }
 

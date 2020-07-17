@@ -23,12 +23,12 @@ public class HellorworldController {
         new PersonalDataSpanHelper(span)
                 .addPurpose(Purpose.DEVELOPMENT)
                 .addDataCategory(Category.BIRTHDAY)
-                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC)
-                .addRecipient(Recipient.OWCA)
+                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC.name())
+                .addRecipient(Recipient.OWCA.name())
                 .setTransferredTo3rdParty(false)
                 .setAutomated(false)
                 .setStorageDuration(StorageDuration.NO_RETENTION)
-                .addOrigin(Origin.PERRY_THE_PLATYPUS)
+                .addOrigin(Origin.PERRY_THE_PLATYPUS.name())
                 .finishSpan();
         return "Hello World";
     }

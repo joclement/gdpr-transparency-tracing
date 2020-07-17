@@ -41,7 +41,7 @@ public class ScoreController {
                 .setAutomated(false)
                 .setStorageDuration(StorageDuration.ONE_MONTH)
                 .setTransferredTo3rdParty(true)
-                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC)
+                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC.name())
                 .finishSpan();
 
         final ScoreModel scoreModel = new ScoreModel().setUserName(username).setScore(score.getScore());
