@@ -9,6 +9,7 @@
     <modules>
         <module>frontend</module>
         <module>transparency-opentracing-helper</module>
+        <module>evilcorp-transparency-config</module>
         <module>helloworld-service</module>
         <module>highscore-service</module>
         <module>score-service</module>

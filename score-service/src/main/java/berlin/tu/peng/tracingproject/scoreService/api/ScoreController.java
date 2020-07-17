@@ -1,6 +1,7 @@
 package berlin.tu.peng.tracingproject.scoreService.api;
 
-import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.*;
+import berlin.tu.peng.tracingproject.transparencyOpentracingHelper.PersonalDataSpanHelper;
+import berlin.tu.peng.tracingproject.evilcorpTransparencyConfig.*;
 import berlin.tu.peng.tracingproject.scoreService.model.ScoreModel;
 import berlin.tu.peng.tracingproject.scoreService.service.SaveScoreService;
 
@@ -40,7 +41,7 @@ public class ScoreController {
                 .setAutomated(false)
                 .setStorageDuration(StorageDuration.ONE_MONTH)
                 .setTransferredTo3rdParty(true)
-                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC)
+                .addRecipient(Recipient.DOOFENSCHMIRTZ_EVIL_INC.name())
                 .finishSpan();
 
         final ScoreModel scoreModel = new ScoreModel().setUserName(username).setScore(score.getScore());
