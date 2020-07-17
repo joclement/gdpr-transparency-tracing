@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>berlin.tu.peng.tracingproject</groupId>
-    <artifactId>parent</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>berlin.tu.peng.tracingproject</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
 
-    <modules>
-        <module>frontend</module>
-        <module>transparency-opentracing-helper</module>
-        <module>evilcorp-transparency-config</module>
-        <module>helloworld-service</module>
-        <module>highscore-service</module>
-        <module>score-service</module>
-        <module>gateway</module>
-    </modules>
+  <modules>
+    <module>frontend</module>
+    <module>transparency-opentracing-helper</module>
+    <module>evilcorp-transparency-config</module>
+    <module>helloworld-service</module>
+    <module>highscore-service</module>
+    <module>score-service</module>
+    <module>gateway</module>
+  </modules>
 
-   <organization>
-      <name>TU Berlin - Privacy Engineering - Group 4</name>
+  <organization>
+    <name>TU Berlin - Privacy Engineering - Group 4</name>
+    <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>jclement</id>
+      <name>Joris Clement</name>
+      <email>j.clement@campus.tu-berlin.de</email>
       <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
-   </organization>
-
-   <developers>
-      <developer>
-         <id>jclement</id>
-         <name>Joris Clement</name>
-         <email>j.clement@campus.tu-berlin.de</email>
-         <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
-         <organization>Joris Clement</organization>
-         <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
-         <roles>
-            <role>Developer</role>
-         </roles>
-         <timezone>+1</timezone>
-         <properties />
-      </developer>
-       <developer>
-           <id>welz</id>
-           <name>Juri Welz</name>
-           <email>welz@campus.tu-berlin.de</email>
-           <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
-           <organization>Juri Welz</organization>
-           <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
-           <roles>
-               <role>Developer</role>
-           </roles>
-           <timezone>+1</timezone>
-           <properties />
-       </developer>
-   </developers>
+      <organization>Joris Clement</organization>
+      <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+      <properties />
+    </developer>
+    <developer>
+      <id>welz</id>
+      <name>Juri Welz</name>
+      <email>welz@campus.tu-berlin.de</email>
+      <url>https://gitlab.tubit.tu-berlin.de/peng/peng-project</url>
+      <organization>Juri Welz</organization>
+      <organizationUrl>https://gitlab.tubit.tu-berlin.de/peng/peng-project</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+      <properties />
+    </developer>
+  </developers>
 </project>
