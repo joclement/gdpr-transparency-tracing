@@ -28,6 +28,11 @@ git checkout master
 make aws
 ```
 
+and this on the benchmark server:
+1. check IP of you server instance
+1. edit IP address in the Makefile
+1. run`make benchmark1`, `make benchmark2`, `make benchmark3`, `make benchmark4`   
+
 
 ## Case 2
 
@@ -45,6 +50,11 @@ git checkout -t origin/no-jaeger-juri
 make aws
 ```
 
+and this on the benchmark server:
+1. check IP of you server instance
+1. edit IP address in the Makefile
+1. run`make benchmark1`, `make benchmark2`, `make benchmark3`, `make benchmark4`   
+
 
 ## Case 3
 
@@ -56,8 +66,13 @@ make deploy
 ```
 
 ### Perform
-Perform benchmark for case 2 by doing this on the instance/AWS:
+Perform benchmark for case 3 by doing this on the instance/AWS:
 ```
 git checkout -t origin/no-personal-data-juri
 make aws
 ```
+
+and this on the benchmark server:
+1. check IP of you server instance
+1. edit IP address in the Makefile
+1. run`make benchmark1`, `make benchmark2`, `make benchmark3`, `make benchmark4`   
