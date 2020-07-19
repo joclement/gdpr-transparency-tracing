@@ -1,5 +1,9 @@
-up:
+fastup:
 	mvn package -DskipTests=true -Dmaven.javadoc.skip=true
+	docker-compose up --build
+
+up:
+	mvn package
 	docker-compose up --build
 
 aws:
