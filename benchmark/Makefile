@@ -9,3 +9,6 @@ benchmark3:
 
 benchmark4:
 	ab -n 100000 -T "application/json" -u savescorecontent.txt  http://172.31.59.188/game/savescore/user1
+
+
+.PHONY: benchmark1 benchmark2 benchmark3 benchmark4
