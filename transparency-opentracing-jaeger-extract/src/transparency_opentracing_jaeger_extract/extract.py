@@ -94,6 +94,7 @@ def get_all_for_services() -> dict:
     return all_transparency_info
 
 
+#legacy method, remove when _get_value_from_service_with_key is tested thoroughly
 def _get_purposes_from_service(service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
     purposes = list()
@@ -103,12 +104,57 @@ def _get_purposes_from_service(service: str) -> list:
 
     return purposes
 
+def _get_value_from_service_with_key(key: str, service: str) -> list:
+    transparency_groups = _get_transparency_groups_from_service(service)
+    values = list()
+    for group in transparency_groups:
+        if transparency_groups[group][key] and transparency_groups[group][key] not in values:
+            values.append(transparency_groups[group][key])
+
+    return values
+
 
 def get_purposes_for_services() -> dict:
     purposes = dict()
     for service in get_services():
         purposes[service] = _get_purposes_from_service(service)
     return purposes
+
+def get_categories_for_services() -> dict:
+    categories = dict()
+    for service in get_services():
+        categories[service] = _get_value_from_service_with_key("category", service)
+    return categories
+
+def get_recipients_for_services() -> dict:
+    recipients = dict()
+    for service in get_services():
+        recipients[service] = _get_value_from_service_with_key("recipient", service)
+    return recipients
+
+def get_origins_for_services() -> dict:
+    origins = dict()
+    for service in get_services():
+        origins[service] = _get_value_from_service_with_key("origin", service)
+    return origins
+
+def get_durations_for_services() -> dict:
+    duration = dict()
+    for service in get_services():
+        duration[service] = _get_value_from_service_with_key("duration", service)
+    return duration
+
+def get_3rdparty_for_services() -> dict:
+    thirdparty = dict()
+    for service in get_services():
+        thirdparty[service] = _get_value_from_service_with_key("3rdparty", service)
+    return thirdparty
+
+def get_autos_for_services() -> dict:
+    autos = dict()
+    for service in get_services():
+        autos[service] = _get_value_from_service_with_key("auto", service)
+    return autos
 
 
 def get_groups_for_services() -> dict:

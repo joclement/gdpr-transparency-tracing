@@ -45,6 +45,50 @@ def purposes():
     return purposes
 
 
+@app.route("/api/categories", methods=["GET"])
+def categories():
+    try:
+        categories = extract.get_categories_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return categories
+
+
+@app.route("/api/origins", methods=["GET"])
+def origins():
+    try:
+        origins = extract.get_origins_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return origins
+
+
+@app.route("/api/durations", methods=["GET"])
+def durations():
+    try:
+        durations = extract.get_durations_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return durations
+
+
+@app.route("/api/automated", methods=["GET"])
+def autos():
+    try:
+        autos = extract.get_autos_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return autos
+
+@app.route("/api/3rdparty", methods=["GET"])
+def thirdparties():
+    try:
+        thirdparties = extract.get_3rdparty_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return thirdparties
+
+
 @app.route("/api", methods=["GET"])
 def apihelp():
     return redirect(url_for("index"))
