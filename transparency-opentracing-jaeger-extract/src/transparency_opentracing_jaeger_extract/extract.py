@@ -9,15 +9,18 @@ else:
 
 JAEGER_QUERY_ADDRESS = "http://" + jaeger_query_host + ":16686/api/"
 
-TRANSPARENCY_CATEGORIES = [
+TRANSPARENCY_LIST_CATEGORIES = [
     "purpose",
     "category",
+    "origin",
+    "recipient",
+]
+TRANSPARENCY_CATEGORIES = [
     "3rdparty",
     "duration",
-    "origin",
     "auto",
-    "recipient"
 ]
+TRANSPARENCY_CATEGORIES.extend(TRANSPARENCY_LIST_CATEGORIES)
 
 
 def get_services() -> set:
@@ -44,7 +47,7 @@ def _get_traces_from_service(service: str):
 
 def _generate_new_group() -> dict:
     transparency_tags = dict()
-    for tag_name in TRANSPARENCY_CATEGORIES:
+    for tag_name in TRANSPARENCY_LIST_CATEGORIES:
         transparency_tags[tag_name] = list()
     return transparency_tags
 
@@ -78,7 +81,10 @@ def _get_transparency_groups_from_service(service: str) -> dict:
                             span_groups.append(_generate_new_group())
                             seen_groups.append(i)
 
-                span_groups[group_number][tag_key].insert(tag_number, tag["value"])
+                if tag_key in TRANSPARENCY_LIST_CATEGORIES:
+                    span_groups[group_number][tag_key].insert(tag_number, tag["value"])
+                else:
+                    span_groups[group_number][tag_key] = tag["value"]
 
             for g in seen_groups:
                 if span_groups[g]:
