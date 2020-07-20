@@ -93,12 +93,6 @@ def _get_transparency_groups_from_service(service: str) -> dict:
     return groups
 
 
-def get_all_for_services() -> dict:
-    all_transparency_info = dict()
-    for service in get_services():
-        all_transparency_info[service] = _get_transparency_groups_from_service(service)
-    return all_transparency_info
-
 
 def _get_value_from_service_with_key(key: str, service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
@@ -152,14 +146,6 @@ def get_autos_for_services() -> dict:
         autos[service] = _get_value_from_service_with_key("auto", service)
     return autos
 
-
-def get_groups_for_services() -> dict:
-    groups = dict()
-    for service in get_services():
-        groups[service] = _get_transparency_groups_from_service(service)
-    return groups
-
-
 def _get_list_without_duplicates_from_dict(dic: dict) -> list:
     list_without_duplicates = list()
     for i in dic:
@@ -168,8 +154,8 @@ def _get_list_without_duplicates_from_dict(dic: dict) -> list:
     return list_without_duplicates
 
 
-def get_groups_for_services_without_duplicates() -> dict:
-    lists = dict()
+def get_all_for_services() -> dict:
+    all_transparency_info = dict()
     for service in get_services():
-        lists[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
-    return lists
+        all_transparency_info[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
+    return all_transparency_info
