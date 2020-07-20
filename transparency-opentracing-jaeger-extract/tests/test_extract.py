@@ -264,44 +264,16 @@ def test_get_traces_from_service(mock_requests_get_traces_of_service):
     assert type(result) is dict
 
 
-def test_remove_duplicate_dicts_from_list_empty():
-    result = extract._remove_duplicate_dicts_from_list(list())
-    assert type(result) is list
-    assert len(result) == 0
-
-
-def test_remove_duplicate_dicts_from_list():
-    input_list = [{"a": 123, "b": 1234}, {"a": 3222, "b": 1234}, {"a": 123, "b": 1234}]
-    result = extract._remove_duplicate_dicts_from_list(input_list)
-    assert type(result) is list
-    assert len(result) == len(input_list) - 1
-    assert dict({"a": 3222, "b": 1234}) in result
-    assert dict({"a": 123, "b": 1234}) in result
-
-
-def test_remove_duplicate_dicts_from_list_containing_lists():
-    input_list = [
-        {"a": 123, "b": 1234, "c": ("1", "2")},
-        {"a": 3222, "b": 1234, "c": ("1", "2")},
-        {"a": 123, "b": 1234, "c": ("1", "2")},
-    ]
-    result = extract._remove_duplicate_dicts_from_list(input_list)
-    assert type(result) is list
-    assert len(result) == len(input_list) - 1
-    assert dict({"a": 3222, "b": 1234, "c": ("1", "2")}) in result
-    assert dict({"a": 123, "b": 1234, "c": ("1", "2")}) in result
-
-
-def test_get_transparency_tags_from_service(mock_requests_get_traces_of_service):
-    result = extract._get_transparency_tags_from_service("helloworld")
+def test_get_transparency_groups_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_transparency_groups_from_service("helloworld")
     assert len(result) == 1
     assert result[0]["purpose"] == "dummy purpose"
     assert result[0]["category"] == "dummy data category"
     assert result[0]["recipients"] == ("recipient1", "recipient2")
 
 
-def test_get_purpose_from_service_succeeds(mock_requests_get_traces_of_service):
-    result = extract._get_purposes_from_service("helloworld")
+def test_get_value_from_service_with_key_succeeds(mock_requests_get_traces_of_service):
+    result = extract._get_value_from_service_with_key("purpose", "helloworld")
     assert result == ["dummy purpose"]
 
 
