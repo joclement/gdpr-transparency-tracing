@@ -35,4 +35,8 @@ clean:
 	docker-compose down
 	docker-compose rm --force
 
+test:
+	mvn test
+	cd transparency-opentracing-jaeger-extract && poetry run pytest --cov -m "not e2e"
+
 .PHONY: up deploy install-aws aws clean
