@@ -76,7 +76,7 @@ def _get_transparency_groups_from_service(service: str) -> dict:
                     continue
 
                 if group_number not in seen_groups:
-                    for i in range(group_number+1):
+                    for i in range(group_number + 1):
                         if i not in seen_groups:
                             span_groups.append(_generate_new_group())
                             seen_groups.append(i)
@@ -93,12 +93,14 @@ def _get_transparency_groups_from_service(service: str) -> dict:
     return groups
 
 
-
 def _get_value_from_service_with_key(key: str, service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
     values = list()
     for group in transparency_groups:
-        if key in transparency_groups[group] and transparency_groups[group][key] not in values:
+        if (
+            key in transparency_groups[group]
+            and transparency_groups[group][key] not in values
+        ):
             values.append(transparency_groups[group][key])
 
     return values
@@ -110,11 +112,13 @@ def get_purposes_for_services() -> dict:
         purposes[service] = _get_value_from_service_with_key("purpose", service)
     return purposes
 
+
 def get_categories_for_services() -> dict:
     categories = dict()
     for service in get_services():
         categories[service] = _get_value_from_service_with_key("category", service)
     return categories
+
 
 def get_recipients_for_services() -> dict:
     recipients = dict()
@@ -122,11 +126,13 @@ def get_recipients_for_services() -> dict:
         recipients[service] = _get_value_from_service_with_key("recipient", service)
     return recipients
 
+
 def get_origins_for_services() -> dict:
     origins = dict()
     for service in get_services():
         origins[service] = _get_value_from_service_with_key("origin", service)
     return origins
+
 
 def get_durations_for_services() -> dict:
     duration = dict()
@@ -134,17 +140,20 @@ def get_durations_for_services() -> dict:
         duration[service] = _get_value_from_service_with_key("duration", service)
     return duration
 
+
 def get_3rdparty_for_services() -> dict:
     thirdparty = dict()
     for service in get_services():
         thirdparty[service] = _get_value_from_service_with_key("3rdparty", service)
     return thirdparty
 
+
 def get_autos_for_services() -> dict:
     autos = dict()
     for service in get_services():
         autos[service] = _get_value_from_service_with_key("auto", service)
     return autos
+
 
 def _get_list_without_duplicates_from_dict(dic: dict) -> list:
     list_without_duplicates = list()
@@ -157,5 +166,7 @@ def _get_list_without_duplicates_from_dict(dic: dict) -> list:
 def get_all_for_services() -> dict:
     all_transparency_info = dict()
     for service in get_services():
-        all_transparency_info[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
+        all_transparency_info[service] = _get_list_without_duplicates_from_dict(
+            _get_transparency_groups_from_service(service)
+        )
     return all_transparency_info

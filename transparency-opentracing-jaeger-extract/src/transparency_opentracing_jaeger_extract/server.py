@@ -71,6 +71,7 @@ def autos():
         return JAEGER_NOT_REACHABLE_EXCEPTION
     return autos
 
+
 @app.route("/api/3rdparty", methods=["GET"])
 def thirdparties():
     try:
