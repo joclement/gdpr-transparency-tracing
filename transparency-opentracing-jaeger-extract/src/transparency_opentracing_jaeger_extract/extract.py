@@ -98,7 +98,7 @@ def _get_value_from_service_with_key(key: str, service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
     values = list()
     for group in transparency_groups:
-        if transparency_groups[group][key] and transparency_groups[group][key] not in values:
+        if key in transparency_groups[group] and transparency_groups[group][key] not in values:
             values.append(transparency_groups[group][key])
 
     return values
