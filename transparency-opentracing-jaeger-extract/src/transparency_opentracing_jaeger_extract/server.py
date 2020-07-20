@@ -45,6 +45,15 @@ def origins():
     return origins
 
 
+@app.route("/api/recipients", methods=["GET"])
+def recipients():
+    try:
+        recipients = extract.get_recipients_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return recipients
+
+
 @app.route("/api/durations", methods=["GET"])
 def durations():
     try:
