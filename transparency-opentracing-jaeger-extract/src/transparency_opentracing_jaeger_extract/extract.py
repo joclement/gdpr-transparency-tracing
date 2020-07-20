@@ -100,16 +100,6 @@ def get_all_for_services() -> dict:
     return all_transparency_info
 
 
-#legacy method, remove when _get_value_from_service_with_key is tested thoroughly
-def _get_purposes_from_service(service: str) -> list:
-    transparency_groups = _get_transparency_groups_from_service(service)
-    purposes = list()
-    for group in transparency_groups:
-        if transparency_groups[group]["purpose"] and transparency_groups[group]["purpose"] not in purposes:
-            purposes.append(transparency_groups[group]["purpose"])
-
-    return purposes
-
 def _get_value_from_service_with_key(key: str, service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
     values = list()
@@ -123,7 +113,7 @@ def _get_value_from_service_with_key(key: str, service: str) -> list:
 def get_purposes_for_services() -> dict:
     purposes = dict()
     for service in get_services():
-        purposes[service] = _get_purposes_from_service(service)
+        purposes[service] = _get_value_from_service_with_key("purpose", service)
     return purposes
 
 def get_categories_for_services() -> dict:
