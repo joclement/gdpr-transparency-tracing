@@ -24,6 +24,42 @@ def test_purposes_succeeds(client):
     assert response.is_json is True
 
 
+def test_recipients_succeeds(client):
+    response = client.get("/api/recipients")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
+def test_origins_succeeds(client):
+    response = client.get("/api/origins")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
+def test_data_categories_succeeds(client):
+    response = client.get("/api/categories")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
+def test_durations_succeeds(client):
+    response = client.get("/api/durations")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
+def test_automated_succeeds(client):
+    response = client.get("/api/automated")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
+def test_3rdparty_succeeds(client):
+    response = client.get("/api/3rdparty")
+    assert response.status_code == 200
+    assert response.is_json is True
+
+
 def test_all_succeeds(client):
     response = client.get("/api/all")
     assert response.status_code == 200

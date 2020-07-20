@@ -9,24 +9,6 @@ app = Flask(__name__)
 JAEGER_NOT_REACHABLE_EXCEPTION = {"error": "Jaeger not reachable"}
 
 
-@app.route("/api/groups/no-duplicates", methods=["GET"])
-def groups_without_duplicates():
-    try:
-        all_groups = extract.get_groups_for_services_without_duplicates()
-    except requests.RequestException:
-        return JAEGER_NOT_REACHABLE_EXCEPTION
-    return all_groups
-
-
-@app.route("/api/groups", methods=["GET"])
-def groups():
-    try:
-        all_groups = extract.get_groups_for_services()
-    except requests.RequestException:
-        return JAEGER_NOT_REACHABLE_EXCEPTION
-    return all_groups
-
-
 @app.route("/api/all", methods=["GET"])
 def all_infos():
     try:
@@ -61,6 +43,15 @@ def origins():
     except requests.RequestException:
         return JAEGER_NOT_REACHABLE_EXCEPTION
     return origins
+
+
+@app.route("/api/recipients", methods=["GET"])
+def recipients():
+    try:
+        recipients = extract.get_recipients_for_services()
+    except requests.RequestException:
+        return JAEGER_NOT_REACHABLE_EXCEPTION
+    return recipients
 
 
 @app.route("/api/durations", methods=["GET"])

@@ -35,47 +35,76 @@ def mock_requests_get_traces_of_service(mocker):
     mock.return_value.__enter__.return_value.json.return_value = {
         "data": [
             {
-                "traceID": "f37aa340e7461d7f",
+                "traceID": "66703e117cc594d8",
                 "spans": [
                     {
-                        "traceID": "f37aa340e7461d7f",
-                        "spanID": "f37aa340e7461d7f",
+                        "traceID": "66703e117cc594d8",
+                        "spanID": "66703e117cc594d8",
                         "flags": 1,
                         "operationName": "hello world",
                         "references": [],
-                        "startTime": 1594058149000000,
-                        "duration": 9713,
+                        "startTime": 1594976900567000,
+                        "duration": 11309,
                         "tags": [
-                            {"key": "duration", "type": "string", "value": "1h"},
-                            {"key": "auto", "type": "bool", "value": False},
                             {
-                                "key": "purpose",
+                                "key": "0_purpose_0",
                                 "type": "string",
-                                "value": "dummy purpose",
+                                "value": "DEVELOPMENT"
                             },
-                            {"key": "sampler.type", "type": "string", "value": "const"},
                             {
-                                "key": "recipients",
+                                "key": "sampler.type",
                                 "type": "string",
-                                "value": "recipient1, recipient2",
+                                "value": "const"
                             },
-                            {"key": "sampler.param", "type": "bool", "value": True},
-                            {"key": "origin", "type": "string", "value": "world"},
                             {
-                                "key": "category",
-                                "type": "string",
-                                "value": "dummy data category",
+                                "key": "sampler.param",
+                                "type": "bool",
+                                "value": True
                             },
-                            {"key": "3rdparty", "type": "bool", "value": False},
+                            {
+                                "key": "0_recipient_1",
+                                "type": "string",
+                                "value": "RECIPIENT2"
+                            },
+                            {
+                                "key": "0_recipient_0",
+                                "type": "string",
+                                "value": "RECIPIENT1"
+                            },
+                            {
+                                "key": "0_3rdparty",
+                                "type": "bool",
+                                "value": False
+                            },
+                            {
+                                "key": "0_category_0",
+                                "type": "string",
+                                "value": "DUMMY DATA CATEGORY"
+                            },
+                            {
+                                "key": "0_origin_0",
+                                "type": "string",
+                                "value": "PERRY_THE_PLATYPUS"
+                            },
+                            {
+                                "key": "0_duration",
+                                "type": "string",
+                                "value": "NO_RETENTION"
+                            },
+                            {
+                                "key": "0_auto",
+                                "type": "bool",
+                                "value": False
+                            },
                             {
                                 "key": "internal.span.format",
                                 "type": "string",
-                                "value": "proto",
-                            },
+                                "value": "proto"
+                            }
                         ],
                         "logs": [],
                         "processID": "p1",
-                        "warnings": None,
+                        "warnings": None
                     }
                 ],
                 "processes": {
@@ -85,61 +114,94 @@ def mock_requests_get_traces_of_service(mocker):
                             {
                                 "key": "hostname",
                                 "type": "string",
-                                "value": "43932b2a616b",
+                                "value": "0b4b9814ba97"
                             },
-                            {"key": "ip", "type": "string", "value": "172.18.0.6"},
+                            {
+                                "key": "ip",
+                                "type": "string",
+                                "value": "172.19.0.5"
+                            },
                             {
                                 "key": "jaeger.version",
                                 "type": "string",
-                                "value": "Java-0.35.1",
-                            },
-                        ],
+                                "value": "Java-0.35.1"
+                            }
+                        ]
                     }
                 },
-                "warnings": None,
+                "warnings": None
             },
             {
-                "traceID": "1d52717b07840539",
+                "traceID": "7c54005b8fa9ae40",
                 "spans": [
                     {
-                        "traceID": "1d52717b07840539",
-                        "spanID": "1d52717b07840539",
+                        "traceID": "7c54005b8fa9ae40",
+                        "spanID": "7c54005b8fa9ae40",
                         "flags": 1,
                         "operationName": "hello world",
                         "references": [],
-                        "startTime": 1594058151931000,
-                        "duration": 43,
+                        "startTime": 1594977022423000,
+                        "duration": 62,
                         "tags": [
-                            {"key": "duration", "type": "string", "value": "1h"},
-                            {"key": "auto", "type": "bool", "value": False},
                             {
-                                "key": "purpose",
+                                "key": "0_purpose_0",
                                 "type": "string",
-                                "value": "dummy purpose",
+                                "value": "DEVELOPMENT"
                             },
-                            {"key": "sampler.type", "type": "string", "value": "const"},
                             {
-                                "key": "recipients",
+                                "key": "sampler.type",
                                 "type": "string",
-                                "value": "recipient1, recipient2",
+                                "value": "const"
                             },
-                            {"key": "sampler.param", "type": "bool", "value": True},
-                            {"key": "origin", "type": "string", "value": "world"},
                             {
-                                "key": "category",
-                                "type": "string",
-                                "value": "dummy data category",
+                                "key": "sampler.param",
+                                "type": "bool",
+                                "value": True
                             },
-                            {"key": "3rdparty", "type": "bool", "value": False},
+                            {
+                                "key": "0_recipient_1",
+                                "type": "string",
+                                "value": "RECIPIENT2"
+                            },
+                            {
+                                "key": "0_recipient_0",
+                                "type": "string",
+                                "value": "RECIPIENT1"
+                            },
+                            {
+                                "key": "0_3rdparty",
+                                "type": "bool",
+                                "value": False
+                            },
+                            {
+                                "key": "0_category_0",
+                                "type": "string",
+                                "value": "DUMMY DATA CATEGORY"
+                            },
+                            {
+                                "key": "0_origin_0",
+                                "type": "string",
+                                "value": "PERRY_THE_PLATYPUS"
+                            },
+                            {
+                                "key": "0_duration",
+                                "type": "string",
+                                "value": "NO_RETENTION"
+                            },
+                            {
+                                "key": "0_auto",
+                                "type": "bool",
+                                "value": False
+                            },
                             {
                                 "key": "internal.span.format",
                                 "type": "string",
-                                "value": "proto",
-                            },
+                                "value": "proto"
+                            }
                         ],
                         "logs": [],
                         "processID": "p1",
-                        "warnings": None,
+                        "warnings": None
                     }
                 ],
                 "processes": {
@@ -149,88 +211,125 @@ def mock_requests_get_traces_of_service(mocker):
                             {
                                 "key": "hostname",
                                 "type": "string",
-                                "value": "43932b2a616b",
+                                "value": "0b4b9814ba97"
                             },
-                            {"key": "ip", "type": "string", "value": "172.18.0.6"},
+                            {
+                                "key": "ip",
+                                "type": "string",
+                                "value": "172.19.0.5"
+                            },
                             {
                                 "key": "jaeger.version",
                                 "type": "string",
-                                "value": "Java-0.35.1",
-                            },
-                        ],
+                                "value": "Java-0.35.1"
+                            }
+                        ]
                     }
                 },
-                "warnings": None,
+                "warnings": None
             },
-            {
-                "traceID": "9616ad0001d2ec4c",
-                "spans": [
-                    {
-                        "traceID": "9616ad0001d2ec4c",
-                        "spanID": "9616ad0001d2ec4c",
-                        "flags": 1,
-                        "operationName": "hello world",
-                        "references": [],
-                        "startTime": 1594058158556000,
-                        "duration": 54,
-                        "tags": [
-                            {"key": "duration", "type": "string", "value": "1h"},
-                            {"key": "auto", "type": "bool", "value": False},
-                            {
-                                "key": "purpose",
-                                "type": "string",
-                                "value": "dummy purpose",
-                            },
-                            {"key": "sampler.type", "type": "string", "value": "const"},
-                            {
-                                "key": "recipients",
-                                "type": "string",
-                                "value": "recipient1, recipient2",
-                            },
-                            {"key": "sampler.param", "type": "bool", "value": True},
-                            {"key": "origin", "type": "string", "value": "world"},
-                            {
-                                "key": "category",
-                                "type": "string",
-                                "value": "dummy data category",
-                            },
-                            {"key": "3rdparty", "type": "bool", "value": False},
-                            {
-                                "key": "internal.span.format",
-                                "type": "string",
-                                "value": "proto",
-                            },
-                        ],
-                        "logs": [],
-                        "processID": "p1",
-                        "warnings": None,
-                    }
-                ],
-                "processes": {
-                    "p1": {
-                        "serviceName": "helloworld",
-                        "tags": [
-                            {
-                                "key": "hostname",
-                                "type": "string",
-                                "value": "43932b2a616b",
-                            },
-                            {"key": "ip", "type": "string", "value": "172.18.0.6"},
-                            {
-                                "key": "jaeger.version",
-                                "type": "string",
-                                "value": "Java-0.35.1",
-                            },
-                        ],
-                    }
-                },
-                "warnings": None,
+        {
+            "traceID": "59c9dc53c0e1f88b",
+            "spans": [
+                {
+                    "traceID": "59c9dc53c0e1f88b",
+                    "spanID": "59c9dc53c0e1f88b",
+                    "flags": 1,
+                    "operationName": "hello world",
+                    "references": [],
+                    "startTime": 1594977023320000,
+                    "duration": 56,
+                    "tags": [
+                        {
+                            "key": "0_purpose_0",
+                            "type": "string",
+                            "value": "DEVELOPMENT"
+                        },
+                        {
+                            "key": "sampler.type",
+                            "type": "string",
+                            "value": "const"
+                        },
+                        {
+                            "key": "sampler.param",
+                            "type": "bool",
+                            "value": True
+                        },
+                        {
+                            "key": "0_recipient_1",
+                            "type": "string",
+                            "value": "RECIPIENT2"
+                        },
+                        {
+                            "key": "0_recipient_0",
+                            "type": "string",
+                            "value": "RECIPIENT1"
+                        },
+                        {
+                            "key": "0_3rdparty",
+                            "type": "bool",
+                            "value": False
+                        },
+                        {
+                            "key": "0_category_0",
+                            "type": "string",
+                            "value": "DUMMY DATA CATEGORY"
+                        },
+                        {
+                            "key": "0_origin_0",
+                            "type": "string",
+                            "value": "PERRY_THE_PLATYPUS"
+                        },
+                        {
+                            "key": "0_duration",
+                            "type": "string",
+                            "value": "NO_RETENTION"
+                        },
+                        {
+                            "key": "0_auto",
+                            "type": "bool",
+                            "value": False
+                        },
+                        {
+                            "key": "internal.span.format",
+                            "type": "string",
+                            "value": "proto"
+                        }
+                    ],
+                    "logs": [],
+                    "processID": "p1",
+                    "warnings": None
+                }
+            ],
+            "processes": {
+                "p1": {
+                    "serviceName": "helloworld",
+                    "tags": [
+                        {
+                            "key": "hostname",
+                            "type": "string",
+                            "value": "0b4b9814ba97"
+                        },
+                        {
+                            "key": "ip",
+                            "type": "string",
+                            "value": "172.19.0.5"
+                        },
+                        {
+                            "key": "jaeger.version",
+                            "type": "string",
+                            "value": "Java-0.35.1"
+                        }
+                    ]
+                }
             },
-        ],
+            "warnings": None
+        }
+    ],
         "total": 0,
         "limit": 0,
         "offset": 0,
-        "errors": None,
+        "errors": None
     }
     return mock
 
@@ -264,46 +363,26 @@ def test_get_traces_from_service(mock_requests_get_traces_of_service):
     assert type(result) is dict
 
 
-def test_remove_duplicate_dicts_from_list_empty():
-    result = extract._remove_duplicate_dicts_from_list(list())
-    assert type(result) is list
-    assert len(result) == 0
+def test_get_transparency_groups_from_service(mock_requests_get_traces_of_service):
+    result = extract._get_transparency_groups_from_service("helloworld")
+    assert len(result) == 3
+    print(result)
+    assert result[0]["purpose"] == ["DEVELOPMENT"]
+    assert result[0]["category"] == ["DUMMY DATA CATEGORY"]
+    assert result[0]["recipient"] == ["RECIPIENT1", "RECIPIENT2"]
 
 
-def test_remove_duplicate_dicts_from_list():
-    input_list = [{"a": 123, "b": 1234}, {"a": 3222, "b": 1234}, {"a": 123, "b": 1234}]
-    result = extract._remove_duplicate_dicts_from_list(input_list)
-    assert type(result) is list
-    assert len(result) == len(input_list) - 1
-    assert dict({"a": 3222, "b": 1234}) in result
-    assert dict({"a": 123, "b": 1234}) in result
+def test_get_value_from_service_with_key_succeeds_list(mock_requests_get_traces_of_service):
+    result = extract._get_value_from_service_with_key("purpose", "helloworld")
+    assert result == [["DEVELOPMENT"]]
 
+def test_get_value_from_service_with_key_succeeds_single(mock_requests_get_traces_of_service):
+    result = extract._get_value_from_service_with_key("duration", "helloworld")
+    assert result == ["NO_RETENTION"]
 
-def test_remove_duplicate_dicts_from_list_containing_lists():
-    input_list = [
-        {"a": 123, "b": 1234, "c": ("1", "2")},
-        {"a": 3222, "b": 1234, "c": ("1", "2")},
-        {"a": 123, "b": 1234, "c": ("1", "2")},
-    ]
-    result = extract._remove_duplicate_dicts_from_list(input_list)
-    assert type(result) is list
-    assert len(result) == len(input_list) - 1
-    assert dict({"a": 3222, "b": 1234, "c": ("1", "2")}) in result
-    assert dict({"a": 123, "b": 1234, "c": ("1", "2")}) in result
-
-
-def test_get_transparency_tags_from_service(mock_requests_get_traces_of_service):
-    result = extract._get_transparency_tags_from_service("helloworld")
-    assert len(result) == 1
-    assert result[0]["purpose"] == "dummy purpose"
-    assert result[0]["category"] == "dummy data category"
-    assert result[0]["recipients"] == ("recipient1", "recipient2")
-
-
-def test_get_purpose_from_service_succeeds(mock_requests_get_traces_of_service):
-    result = extract._get_purposes_from_service("helloworld")
-    assert result == ["dummy purpose"]
-
+def test_get_value_from_service_with_key_succeeds_bool(mock_requests_get_traces_of_service):
+    result = extract._get_value_from_service_with_key("auto", "helloworld")
+    assert result == [False]
 
 @pytest.mark.e2e
 def test_get_all_for_services_succeeds_in_production():

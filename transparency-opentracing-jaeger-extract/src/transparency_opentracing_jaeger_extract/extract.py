@@ -9,15 +9,18 @@ else:
 
 JAEGER_QUERY_ADDRESS = "http://" + jaeger_query_host + ":16686/api/"
 
-TRANSPARENCY_CATEGORIES = [
+TRANSPARENCY_LIST_CATEGORIES = [
     "purpose",
     "category",
+    "origin",
+    "recipient",
+]
+TRANSPARENCY_CATEGORIES = [
     "3rdparty",
     "duration",
-    "origin",
     "auto",
-    "recipient"
 ]
+TRANSPARENCY_CATEGORIES.extend(TRANSPARENCY_LIST_CATEGORIES)
 
 
 def get_services() -> set:
@@ -28,7 +31,7 @@ def get_services() -> set:
     if data["data"] is None:
         services = set()
     else:
-        services = data["data"]
+        services = set(data["data"])
     if "jaeger-query" in services:
         services.remove("jaeger-query")
     return services
@@ -44,7 +47,7 @@ def _get_traces_from_service(service: str):
 
 def _generate_new_group() -> dict:
     transparency_tags = dict()
-    for tag_name in TRANSPARENCY_CATEGORIES:
+    for tag_name in TRANSPARENCY_LIST_CATEGORIES:
         transparency_tags[tag_name] = list()
     return transparency_tags
 
@@ -78,7 +81,10 @@ def _get_transparency_groups_from_service(service: str) -> dict:
                             span_groups.append(_generate_new_group())
                             seen_groups.append(i)
 
-                span_groups[group_number][tag_key].insert(tag_number, tag["value"])
+                if tag_key in TRANSPARENCY_LIST_CATEGORIES:
+                    span_groups[group_number][tag_key].insert(tag_number, tag["value"])
+                else:
+                    span_groups[group_number][tag_key] = tag["value"]
 
             for g in seen_groups:
                 if span_groups[g]:
@@ -87,28 +93,12 @@ def _get_transparency_groups_from_service(service: str) -> dict:
     return groups
 
 
-def get_all_for_services() -> dict:
-    all_transparency_info = dict()
-    for service in get_services():
-        all_transparency_info[service] = _get_transparency_groups_from_service(service)
-    return all_transparency_info
-
-
-#legacy method, remove when _get_value_from_service_with_key is tested thoroughly
-def _get_purposes_from_service(service: str) -> list:
-    transparency_groups = _get_transparency_groups_from_service(service)
-    purposes = list()
-    for group in transparency_groups:
-        if transparency_groups[group]["purpose"] and transparency_groups[group]["purpose"] not in purposes:
-            purposes.append(transparency_groups[group]["purpose"])
-
-    return purposes
 
 def _get_value_from_service_with_key(key: str, service: str) -> list:
     transparency_groups = _get_transparency_groups_from_service(service)
     values = list()
     for group in transparency_groups:
-        if transparency_groups[group][key] and transparency_groups[group][key] not in values:
+        if key in transparency_groups[group] and transparency_groups[group][key] not in values:
             values.append(transparency_groups[group][key])
 
     return values
@@ -117,7 +107,7 @@ def _get_value_from_service_with_key(key: str, service: str) -> list:
 def get_purposes_for_services() -> dict:
     purposes = dict()
     for service in get_services():
-        purposes[service] = _get_purposes_from_service(service)
+        purposes[service] = _get_value_from_service_with_key("purpose", service)
     return purposes
 
 def get_categories_for_services() -> dict:
@@ -156,14 +146,6 @@ def get_autos_for_services() -> dict:
         autos[service] = _get_value_from_service_with_key("auto", service)
     return autos
 
-
-def get_groups_for_services() -> dict:
-    groups = dict()
-    for service in get_services():
-        groups[service] = _get_transparency_groups_from_service(service)
-    return groups
-
-
 def _get_list_without_duplicates_from_dict(dic: dict) -> list:
     list_without_duplicates = list()
     for i in dic:
@@ -172,8 +154,8 @@ def _get_list_without_duplicates_from_dict(dic: dict) -> list:
     return list_without_duplicates
 
 
-def get_groups_for_services_without_duplicates() -> dict:
-    lists = dict()
+def get_all_for_services() -> dict:
+    all_transparency_info = dict()
     for service in get_services():
-        lists[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
-    return lists
+        all_transparency_info[service] = _get_list_without_duplicates_from_dict(_get_transparency_groups_from_service(service))
+    return all_transparency_info
