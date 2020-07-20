@@ -380,6 +380,10 @@ def test_get_value_from_service_with_key_succeeds_single(mock_requests_get_trace
     result = extract._get_value_from_service_with_key("duration", "helloworld")
     assert result == ["NO_RETENTION"]
 
+def test_get_value_from_service_with_key_succeeds_bool(mock_requests_get_traces_of_service):
+    result = extract._get_value_from_service_with_key("auto", "helloworld")
+    assert result == [False]
+
 @pytest.mark.e2e
 def test_get_all_for_services_succeeds_in_production():
     result = extract.get_all_for_services()
