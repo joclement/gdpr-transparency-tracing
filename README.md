@@ -15,7 +15,7 @@ this repository:
 * docker-compose
 * python
 * pip
-* curl or alterantives
+* curl or alternatives
 * optional: make
 
 The project has been tested for Ubuntu18.04. It will most likely run on other
