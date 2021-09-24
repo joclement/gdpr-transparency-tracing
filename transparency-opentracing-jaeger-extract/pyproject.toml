@@ -1,3 +1,9 @@
+[tool.poetry]
+name = "transparency-opentracing-jaeger-extract"
+version = "0.1.1"
+description = "Simple jaeger extract json api server"
+authors = ["Joris Clement <j.clement@campus.tu-berlin.de>"]
+
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
 
@@ -8,12 +14,6 @@ source = ["transparency_opentracing_jaeger_extract"]
 [tool.coverage.report]
 show_missing = true
 fail_under = 80
-
-[tool.poetry]
-name = "transparency-opentracing-jaeger-extract"
-version = "0.1.1"
-description = "Simple jaeger extract json api server"
-authors = ["Joris Clement <j.clement@campus.tu-berlin.de>"]
 
 [tool.poetry.scripts]
 transparency-opentracing-jaeger-extract = "transparency_opentracing_jaeger_extract.server:main"
