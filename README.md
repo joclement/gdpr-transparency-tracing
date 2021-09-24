@@ -9,7 +9,8 @@ personal data into tracing tools such as Jaeger.
 With this it could be achieved that transparency reports respectively privacy
 policy documents are more specific and also more accurate.
 The idea for this came from [Dr. Frank Pallas](https://www.ise.tu-berlin.de/menue/team/dr_ing_frank_pallas/),
-who instructed the Privacy Engineering course.
+who instructed the Privacy Engineering course, and from
+[Dominik Ernst](https://www.ise.tu-berlin.de/menue/team/dominik_ernst/).
 This repository contains an initial implementation of this idea.
 
 ## Get started
