@@ -1,4 +1,4 @@
-# Peng project
+# GDPR Transparency Tracing
 
 ## Overview
 This project was developed during particiation of the course
