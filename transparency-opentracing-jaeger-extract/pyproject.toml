@@ -2,7 +2,8 @@
 name = "transparency-opentracing-jaeger-extract"
 version = "0.1.1"
 description = "Simple jaeger extract json api server"
-authors = ["Joris Clement <j.clement@campus.tu-berlin.de>"]
+authors = ["Joris Clement <j.clement@campus.tu-berlin.de>",
+           "Juri Otto Orson Welz <welz@campus.tu-berlin.de>"]
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
