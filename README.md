@@ -16,7 +16,7 @@ this repository:
 * python
 * pip
 * curl or alternatives
-* optional: make
+* make
 
 The project has been tested for Ubuntu18.04. It will most likely run on other
 Linux distributions and also on MacOS. We don't know about Windows.
